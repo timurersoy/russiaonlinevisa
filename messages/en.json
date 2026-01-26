@@ -1,0 +1,1093 @@
+{
+    "VisaCalculator": {
+        "title": "Visa Calculator",
+        "intro": "You can use this calculator to determine how long you will be allowed to stay in Russia under an e-visa.",
+        "entryDateLabel": "Intended date of entry into Russia",
+        "calculateButton": "Calculate",
+        "helperText": "Enter your intended date of entry into Russia",
+        "resultText": "The allowed period of stay in Russia until:",
+        "resultSubtext": "(calculated based on the intended date of entry)",
+        "placeholder": "DD.MM.YYYY"
+    },
+    "Navbar": {
+        "apply": "Apply Now",
+        "track": "Track Application",
+        "home": "Home",
+        "calculator": "Visa Calculator",
+        "instructions": "Instructions",
+        "faq": "FAQ",
+        "services": "Extra Services",
+        "contact": "Contact",
+        "about": "About Us"
+    },
+    "FileUpload": {
+        "dragDrop": "Click or Drag to Upload",
+        "formats": "SVG, PNG, JPG or PDF (max. 5MB)"
+    },
+    "Footer": {
+        "description": "Your trusted partner for electronic visas to Russia. Fast, secure, and fully online process. russiaonlinevisa.com is a subsidiary of Timtur Travel Agency",
+        "headings": {
+            "application": "Application",
+            "company": "Company",
+            "legal": "Legal"
+        },
+        "links": {
+            "apply": "Apply Now",
+            "track": "Track Application",
+            "services": "Our Services",
+            "instructions": "Instructions",
+            "about": "About Us",
+            "contact": "Contact Us",
+            "faq": "FAQ",
+            "privacy": "Privacy Policy",
+            "terms": "Services Agreement"
+        },
+        "copyright": "© {year} Russian Online Visa. All rights reserved.",
+        "brand": "Operated by Timtur Travel Agency"
+    },
+    "HomePage": {
+        "heroTitle": "Get Your E-Visa to Russia Fast & Easy",
+        "heroSubtitle": "Fast, convenient and reliable electronic visa application center. Apply securely from home and receive your visa in as little as 6 days. No embassy visits required.",
+        "startApplication": "Start Application",
+        "trackApplication": "Track Application",
+        "stats": {
+            "daysTitle": "6 Days",
+            "daysDesc": "Average Processing",
+            "countriesTitle": "65+",
+            "countriesDesc": "Eligible Countries",
+            "supportTitle": "24/7",
+            "supportDesc": "Online Support"
+        },
+        "info": {
+            "subheading": "Direct & Secure",
+            "title": "Your E-Visa to Russia is Only One Application Away",
+            "italic": "and It Takes Only 5 Minutes with Us!",
+            "desc": "Russia welcomes millions of visitors every year. russianonlinevisa.com simplifies the process, making it easier than ever to visit for tourism, business, or humanitarian purposes.",
+            "card1Title": "Simple Requirements",
+            "card1Desc": "All you need is a valid passport (6+ months validity), a digital photo, and a credit card for payment. No invitation letter needed.",
+            "card2Title": "Global Access",
+            "card2Desc": "Citizens from over 65 countries including Türkiye, China, India, and EU nations are eligible for the Russian e-visa through russianonlinevisa.com",
+            "card3Title": "Fast Processing",
+            "card3Desc": "Most applications are processed within 6 business days. Receive your visa as a PDF via email ready to print."
+        },
+        "how": {
+            "title": "HOW DOES IT WORK?",
+            "desc": "Get your Russian e-Visa in 4 simple steps. Our streamlined process makes it easy and secure.",
+            "step1Title": "Apply Online",
+            "step1Desc": "Fill out the simplified application form and make a secure payment using your credit card.",
+            "step2Title": "Wait for Approval",
+            "step2Desc": "Most applications are processed within 6 days. We'll verify your documents for you.",
+            "step3Title": "Print Your Visa",
+            "step3Desc": "Receive your e-Visa PDF via email. Print it out to show at the border crossing.",
+            "step4Title": "Enjoy Your Trip!",
+            "step4Desc": "Present your passport and e-Visa at the checkpoint and enter the Russian Federation."
+        },
+        "eligible": {
+            "title": "WHO CAN APPLY?",
+            "desc": "Citizens of the 65 countries are among those eligible for the Russian e-visa including: Türkiye, France, China, India, Italy, Mexico, Estonia, Germany, Saudi Arabia, Kuwait, Netherlands and <link>more</link>.",
+            "checkList": "Check full eligibility list"
+        },
+        "cta": {
+            "title": "Ready to start your journey?",
+            "desc": "Apply online today and get your Russian e-Visa in a few simple steps. Secure, fast, and reliable.",
+            "button": "Apply Now"
+        }
+    },
+    "InteractiveMap": {
+        "hostRussia": "Host (Russia)",
+        "eligibleCountries": "Eligible Countries",
+        "other": "Other",
+        "tooltipHost": "{name} - Host",
+        "tooltipEligible": "{name} - Eligible"
+    },
+    "ApplyPage": {
+        "title": "Choose Your Application Method",
+        "description": "Select the option that best suits your needs. For most travelers, the Instant Application is the fastest and easiest choice.",
+        "Instant": {
+            "recommended": "Recommended",
+            "title": "Instant Application",
+            "desc": "Complete the entire process online in minutes. Upload your documents, pay securely, and receive your visa via email.",
+            "features": {
+                "upload": "Online Photo & Passport Upload",
+                "form": "Simple Step-by-Step Form",
+                "processing": "<strong>6 Day</strong> Standard Processing"
+            },
+            "button": "Start Instant Application"
+        },
+        "Offline": {
+            "title": "Offline Application",
+            "desc": "Prefer a personal touch? Get in touch with one of our specialized agents to define your specific travel needs.",
+            "features": {
+                "consultation": "Personalized Consultation",
+                "itinerary": "Complex Itinerary Support",
+                "processing": "Agent-Assisted Processing",
+                "groups": "Group Applications"
+            },
+            "button": "Contact an Agent"
+        }
+    },
+    "ApplyInstantPage": {
+        "title": "Instant Visa Application",
+        "description": "Upload your documents and fill your details to receive your visa in 6 days."
+    },
+    "ApplyForm": {
+        "steps": {
+            "1": "Upload Documents",
+            "2": "Contact Details",
+            "3": "Visit Information",
+            "4": "Personal Details",
+            "5": "Review & Submit"
+        },
+        "labels": {
+            "nationality": "Nationality",
+            "personalPhoto": "Personal Photo",
+            "passportCover": "Passport Cover Page",
+            "phone": "Phone Number",
+            "email": "Email Address",
+            "address": "Current Residence Address",
+            "occupancy": "Occupancy",
+            "companyName": "Company Name",
+            "position": "Position",
+            "schoolName": "School Name",
+            "travelDate": "Intended Date to Travel",
+            "visitType": "Type of Visit",
+            "purpose": "Purpose of Visit",
+            "optional": "(Optional)",
+            "firstCity": "First City to Enter",
+            "accommodationType": "Type of Accommodation",
+            "hotelName": "Name of the Hotel",
+            "apartmentAddress": "Address of the Apartment",
+            "hostName": "Host Name & Surname",
+            "relationship": "Degree of Relativity",
+            "hostAddress": "Host Address",
+            "hostPhone": "Host Phone Number",
+            "visitedCountries": "Countries visited in last 3 years",
+            "gender": "Gender",
+            "maritalStatus": "Marital Status",
+            "partnerName": "Name & Surname",
+            "partnerBirthday": "Birthday",
+            "partnerBirthPlace": "Birth Place",
+            "father": "Father's Details",
+            "mother": "Mother's Details",
+            "nameSurname": "Name & Surname",
+            "birthday": "Birthday",
+            "birthPlace": "Birth Place",
+            "partnerDetails": "Partner Details",
+            "passportExpiry": "Passport Expiration Date",
+            "documents": "Documents"
+        },
+        "options": {
+            "selectCountry": "Select Country",
+            "selectOccupancy": "Select Occupancy",
+            "working": "Working",
+            "student": "Student",
+            "unemployed": "Unemployed/Retired",
+            "selectType": "Select Type",
+            "guestVisit": "Guest Visit",
+            "tourism": "Tourism",
+            "businessTrip": "Business Trip",
+            "eventParticipation": "Event Participation",
+            "selectAccommodation": "Select Accommodation",
+            "hotel": "Hotel",
+            "rentalApartment": "Rental Apartment",
+            "individual": "Individual",
+            "selectGender": "Select Gender",
+            "male": "Male",
+            "female": "Female",
+            "selectStatus": "Select Status",
+            "single": "Single",
+            "married": "Married"
+        },
+        "errors": {
+            "required": "Required",
+            "uploadPhoto": "Please upload your photo",
+            "uploadPassport": "Please upload passport cover",
+            "docRequired": "This document is required",
+            "passportExpiryInvalid": "Passport must be valid for at least 6 months from the date of application."
+        },
+        "help": {
+            "passportExpiryInfo": "Your passport must be valid for at least 6 months from the date of application.",
+            "photo": "Recent color photo, white background. Face must be clearly visible.",
+            "passport": "Scan of your passport data page. Must show details clearly.",
+            "viewPhotoReq": "View photo requirements",
+            "viewPassportReq": "View passport requirements"
+        },
+        "modal": {
+            "photoTitle": "Photo Requirements",
+            "passportTitle": "Passport Cover Page Requirements",
+            "photoList": [
+                "The photo must be no more than six months old as of the date of the application and reflect your current appearance.",
+                "The photo must show you alone. No foreign objects (chair back, pictures on the walls, etc.) or other people must be visible.",
+                "The photo must be taken in full-face view. The head must not be tilted or turned. Look directly at the camera with a neutral expression, mouth closed, eyes open.",
+                "No hair across your eyes. Uniform lighting, no shadows, no flash reflections, no red eyes.",
+                "Plain light-colored background with no shadows.",
+                "Head coverings for religious reasons are allowed but must not conceal facial features. Face clearly visible from chin to forehead.",
+                "If wearing glasses, eyes must be clearly visible. No flash reflection, no tinted lenses. Avoid heavy frames. Frames must not cover eyes.",
+                "Photo must show top of head and top of shoulders. Head centered and fully shown from hairline to chin."
+            ],
+            "passportList": [
+                "The photo of the passport data page must correspond to the information that you enter in the application for an e-visa.",
+                "The photo must be taken strictly from the front without tilting or turning. Foreign objects must not enter the frame.",
+                "The image should be fully visible on the data page of your passport, including the machine readable data. The image should be crisp, clear and in focus.",
+                "The photo must be taken under normal lighting conditions. The photo should be free of shadows and flash reflections.",
+                "The application may be rejected if the uploaded photo does not meet the requirements.",
+                "You shall present the passport referring to the cover page photo uploaded at the Russian border while entering."
+            ]
+        },
+        "buttons": {
+            "back": "Back",
+            "next": "Next Step",
+            "processing": "Processing...",
+            "submit": "Pay & Submit",
+            "returnHome": "Return to Home"
+        },
+        "success": {
+            "title": "Application Submitted!",
+            "desc": "Your application has been received successfully. We will review your documents and process your visa within",
+            "days": "6 business days",
+            "appId": "Application ID"
+        },
+        "summary": {
+            "title": "Summary",
+            "uploaded": "Uploaded (2 files)"
+        },
+        "warning": {
+            "title": "Action Required",
+            "desc": "Please fill in all the required blanks.",
+            "passportValidity": "Important: Your passport must have at least 6 months validity from the date of application."
+        },
+        "placeholders": {
+            "phone": "+1 234 567 890",
+            "email": "john@example.com",
+            "address": "Street, City, Country",
+            "company": "Company Name",
+            "position": "Job Title",
+            "school": "University Name",
+            "hotel": "Hotel Name",
+            "host": "Host Name",
+            "hostAddress": "Host Address",
+            "hostPhone": "Host Phone",
+            "optional": "Or leave empty if none",
+            "countries": "List countries separated by comma",
+            "relationship": "e.g. Friend, Brother",
+            "entryDate": "DD.MM.YYYY"
+        },
+        "review": {
+            "title": "Please carefully review all your details below. This is exactly how it will appear on your application.",
+            "personalDetails": "Personal Details",
+            "passportTravel": "Passport & Travel",
+            "contactInfo": "Contact Information",
+            "uploadedDocs": "Uploaded Documents",
+            "legalConsent": "Legal Consent",
+            "born": "Born:",
+            "partner": "Partner",
+            "employment": "Employment",
+            "studentAt": "Student at",
+            "unemployed": "Unemployed",
+            "uploaded": "Uploaded",
+            "missing": "Missing",
+            "uploadWarning": "* You must upload the required documents in Step 1 before submitting.",
+            "privacyAgree": "I acknowledge that I have read and agree to the",
+            "serviceAgree": "I agree to the",
+            "terms": "and Terms of Use.",
+            "feeSummary": "Fee Summary",
+            "totalFee": "Total Fee",
+            "processingTime": "Processing Time",
+            "days": "6 days",
+            "securePayment": "Secure payment processing",
+            "support": "24/7 customer support"
+        }
+    },
+    "ContactPage": {
+        "title": "Contact Us",
+        "description": "We are here to help you 24/7. Reach out to our support team for any questions regarding your Russia e-Visa application.",
+        "sidebar": {
+            "phoneTitle": "Phone & WhatsApp",
+            "phoneSupport": "24/7 Support",
+            "emailTitle": "Email Support",
+            "emailResponse": "Fast Response Time",
+            "faqTitle": "Have a quick question?",
+            "faqDesc": "Check our Frequently Asked Questions for immediate answers about eligibility, documents, and processing times.",
+            "faqButton": "View FAQ"
+        },
+        "form": {
+            "title": "Send us a Message",
+            "name": "Full Name",
+            "email": "Email Address",
+            "subject": "Subject",
+            "message": "Message",
+            "submit": "Send Message",
+            "submitting": "Sending Message...",
+            "placeholders": {
+                "name": "Enter your full name",
+                "email": "Enter your email",
+                "message": "How can we help you?"
+            },
+            "subjects": {
+                "general": "General Inquiry",
+                "status": "Application Status",
+                "payment": "Payment Issue",
+                "tech": "Technical Support",
+                "partnership": "Partnership"
+            },
+            "success": {
+                "title": "Message Sent Successfully!",
+                "message": "Thank you for contacting us. Our team will review your message and get back to you at <strong>info@russiaonlinevisa.com</strong> shortly.",
+                "sendAnother": "Send another message"
+            },
+            "error": "Failed to send message. Please try again."
+        }
+    },
+    "AboutPage": {
+        "title": "About Russiaonlinevisa.com",
+        "description": {
+            "p1": "<strong>Russiaonlinevisa.com</strong> is a specialized service powered by <strong>Timtur Travel Agency</strong>, dedicated to providing fast and reliable e-visa assistance for travelers visiting the Russian Federation.",
+            "p2": "We are backed by the heritage of Timtur, an exclusive firm established over 30 years ago in Istanbul, Türkiye. While our legacy is built on premium business tourism and bespoke VIP arrangements, we bring that same level of precision and professionalism to your visa application process.",
+            "p3": "We operate officially under <strong>TÜRSAB License No: 3305</strong>, ensuring your travel documentation is managed by a certified and trusted industry veteran.",
+            "p4": "For more information about the parent company, you may visit <link>www.timtur.com</link>"
+        },
+        "links": {
+            "termsTitle": "Services Agreement",
+            "termsDesc": "Review our mandatory terms and conditions",
+            "privacyTitle": "Personal Data Protection Law",
+            "privacyDesc": "Learn how we protect your information"
+        }
+    },
+    "ServicesAgreementPage": {
+        "backLink": "Back to About Us",
+        "header": {
+            "tag": "Terms of Use",
+            "title": "Service Agreement",
+            "scope": "Scope of Validity: www.russiaonlinevisa.com",
+            "lastUpdated": "Last Updated: <strong>20/01/2026</strong>"
+        },
+        "sections": [
+            {
+                "id": "1",
+                "title": "Parties",
+                "content": "This Service Agreement (“Agreement”) is entered into between:",
+                "list": [
+                    "<strong>The Service Provider:</strong> TİM-TUR TURİZM İÇ-DIŞ TİC.LTD.ŞTİ. (hereinafter referred to as the “Company”), located at SEHREMİNİ MAH. KIZILELMA CAD. No:2 FATİH/ İSTANBUL, 34104 TÜRKİYE, operating the website <red>www.russiaonlinevisa.com</red>.",
+                    "<strong>The User:</strong> Any individual or entity who accesses the website and purchases services (hereinafter referred to as the “User”)."
+                ],
+                "note": "By purchasing services on this website, the User declares that they have read, understood, and accepted all terms of this Agreement without reservation."
+            },
+            {
+                "id": "2",
+                "title": "Subject and Nature of the Agreement",
+                "content": "The subject of this Agreement is to define the mutual rights and obligations regarding the Russia electronic visa (e-visa) consultancy and processing services provided by the Company to the User.",
+                "disclaimer": {
+                    "title": "Important Disclaimer:",
+                    "text": "www.russiaonlinevisa.com is a private consultancy platform managed by TİM-TUR TURİZM. It is not an official government body and is not directly affiliated with the Government of the Russian Federation. We provide professional guidance, document verification, and submission services to facilitate the visa process. This Agreement is governed by the laws of the Republic of Türkiye."
+                }
+            },
+            {
+                "id": "3",
+                "title": "Scope of Services",
+                "content": "The Company agrees to provide the following services:",
+                "list": [
+                    "<strong>Consultation:</strong> Informing the User about eligibility and application requirements.",
+                    "<strong>Verification:</strong> Reviewing the User's documents (passport, photos) to ensure they meet consular standards before submission.",
+                    "<strong>Processing:</strong> Accurately filling out the Visa Application Form on the official Russian Ministry of Foreign Affairs portal.",
+                    "<strong>Submission & Delivery:</strong> Submitting the application and delivering the approved E-Visa to the User via email.",
+                    "<strong>Status Updates:</strong> Notifying the User of the application outcome (Approval or Rejection)."
+                ]
+            },
+            {
+                "id": "4",
+                "title": "Pricing and Payment Structure",
+                "content": "The total fee displayed on the checkout page is a consolidation of the following costs:",
+                "list": [
+                    "<strong>Government Mandated Fee:</strong> The fixed consular fee paid directly to the Russian Federation's official visa system.",
+                    "<strong>Service & Consultancy Fee:</strong> The fee charged by the Company for document verification, data entry, professional support, and system maintenance.",
+                    "<strong>Bank & Transaction Costs:</strong> Commission fees charged by the Payment Service Provider (PSP) for processing the credit/debit card transaction.",
+                    "<strong>Expedited Service Fee (Optional):</strong> Additional fees applicable only if the User selects \"Fast\" or \"Priority\" processing options."
+                ],
+                "note": "<strong>Payment Terms:</strong> The total amount is collected in a single transaction. By completing the payment, the User agrees to this fee structure."
+            },
+            {
+                "id": "5",
+                "title": "Refund and Cancellation Policy",
+                "content": "Due to the nature of the service, the following refund rules apply strictly:",
+                "subsections": [
+                    {
+                        "title": "Voluntary Cancellation Window (30 Minutes)",
+                        "text": "If the User requests a cancellation via email within 30 minutes of making the payment, a full refund will be issued."
+                    },
+                    {
+                        "title": "Statutory Right of Withdrawal Exception",
+                        "text": "Pursuant to Article 15 (ğ) of the Turkish Distance Contracts Regulation (Official Gazette: 27.11.2014, No: 29188), the Right of Withdrawal does not apply to \"contracts regarding services performed instantly in the electronic environment.\" Once the Company begins reviewing the User's file (which typically occurs 30 minutes after payment), the service is deemed \"performed,\" and no refund can be issued."
+                    },
+                    {
+                        "title": "Non-Refundable Government Fees",
+                        "text": "Once the application has been submitted to the Russian authorities, the Government Fee component is strictly non-refundable, regardless of the visa outcome."
+                    }
+                ],
+                "endList": [
+                    "<strong>Refund Procedure:</strong> All cancellation requests must be sent to <link>info@russiaonlinevisa.com</link>.",
+                    "<strong>Error Protection:</strong> In the event of a system error resulting in a duplicate charge, the overpaid amount will be refunded in full immediately upon detection."
+                ]
+            },
+            {
+                "id": "6",
+                "title": "User’s Obligations",
+                "content": "The User agrees and warrants that:",
+                "list": [
+                    "All information provided (Identity, Passport Data, Travel Dates) is accurate, complete, and up-to-date.",
+                    "The documents submitted are authentic and free from forgery.",
+                    "They understand that the final decision to grant or deny a visa rests solely with the Russian Federation authorities. The Company cannot guarantee visa approval.",
+                    "They will respond promptly to any requests for additional information from the Company."
+                ]
+            },
+            {
+                "id": "7",
+                "title": "Limitation of Liability",
+                "list": [
+                    "<strong>Third-Party Delays:</strong> The Company is not responsible for delays caused by the Russian Ministry of Foreign Affairs, technical failures of the government website, or banking system outages.",
+                    "<strong>User Error:</strong> The Company is not liable for visa rejections or travel disruptions caused by incorrect information provided by the User (e.g., typos in passport numbers, wrong dates).",
+                    "<strong>Scope:</strong> The Company’s liability is strictly limited to the service fee paid by the User. The Company is solely an intermediary consultancy service."
+                ]
+            },
+            {
+                "id": "8",
+                "title": "Privacy and Data Protection",
+                "content": "All personal data provided by the User is processed in accordance with the Personal Data Protection Law (KVKK) and our Privacy Policy. Data is used solely for the purpose of visa processing and is not sold to third parties."
+            },
+            {
+                "id": "9",
+                "title": "Intellectual Property",
+                "content": "All content on <red>www.russiaonlinevisa.com</red> (including text, logos, software, and design) is the intellectual property of TİM-TUR TURİZM İÇ-DIŞ TİC.LTD.ŞTİ. Unauthorized copying, reproduction, or commercial use is prohibited."
+            },
+            {
+                "id": "10",
+                "title": "Dispute Resolution",
+                "content": "This Agreement is governed by Turkish Law. In the event of any dispute arising from the interpretation or execution of this Agreement that cannot be resolved amicably, the Istanbul (Central / Çağlayan) Courts and Enforcement Offices shall have exclusive jurisdiction."
+            },
+            {
+                "id": "11",
+                "title": "Contact Information",
+                "content": "For questions, support, or legal notifications, please contact us:",
+                "details": {
+                    "company": "Company Name",
+                    "address": "Address",
+                    "email": "Email",
+                    "website": "Website"
+                }
+            }
+        ]
+    },
+    "PersonalDataPage": {
+        "backLink": "Back to About Us",
+        "header": {
+            "tag": "Legal Policy",
+            "title": "Privacy Policy and Clarification Text",
+            "subtitle": "On the Protection of Personal Data",
+            "lastUpdated": "Last Updated: <strong>20/01/2026</strong>"
+        },
+        "sections": [
+            {
+                "id": "1",
+                "title": "Introduction and Data Controller",
+                "content": [
+                    "<strong>TİM-TUR TURİZM İÇ-DIŞ TİC.LTD.ŞTİ.</strong> (hereinafter referred to as “The Company”, “We”, or “Us”), acting as the Data Controller, is committed to protecting the privacy and security of your personal data.",
+                    "This Policy has been prepared in accordance with the Law on the Protection of Personal Data No. 6698 (“KVKK”) of the Republic of Türkiye and, where applicable, the General Data Protection Regulation (“GDPR”). It outlines how we collect, process, and safeguard the information you provide while using <blue>www.russiaonlinevisa.com</blue> (the “Website”).",
+                    "By using our services to apply for a visa, you acknowledge that you have read and understood this policy."
+                ]
+            },
+            {
+                "id": "2",
+                "title": "Personal Data We Collect",
+                "content": "To process your visa application and provide our services, we collect the following categories of data:",
+                "list": [
+                    "<strong>Identity Information:</strong> Name, surname, date of birth, place of birth, passport number, issue/expiry dates, citizenship, and gender.",
+                    "<strong>Contact Information:</strong> E-mail address, phone number, and residential/mailing address.",
+                    "<strong>Visual & Document Data:</strong> Scanned copies of passports, biometric photographs, and other supporting documents required by the consulate.",
+                    "<strong>Transaction Security & Technical Data:</strong> IP address, browser type, device information, access logs, and cookie data.",
+                    "<strong>Financial Information:</strong> Credit/debit card details. <br /><em>Note: We utilize secure third-party payment processors. We do not store your full credit card number or CVV code on our servers.</em>"
+                ]
+            },
+            {
+                "id": "3",
+                "title": "Purpose of Processing Personal Data",
+                "content": "We process your personal data based on legal grounds stipulated in Article 5 and 6 of the KVKK for the following purposes:",
+                "cards": [
+                    {
+                        "title": "Performance of a Contract",
+                        "text": "To process and submit your Russia e-visa application to the relevant authorities."
+                    },
+                    {
+                        "title": "Service Operations",
+                        "text": "To create user accounts, communicate application status updates, and provide customer support."
+                    },
+                    {
+                        "title": "Legal Obligations",
+                        "text": "To comply with Turkish tax laws, data retention laws, and international travel regulations."
+                    },
+                    {
+                        "title": "Legitimate Interest",
+                        "text": "To improve our website functionality, prevent fraud, and ensure transaction security."
+                    }
+                ]
+            },
+            {
+                "id": "4",
+                "title": "Method of Collection and Legal Basis",
+                "content": "Your personal data is collected electronically via our Website forms, email correspondence, and cookies. The legal bases for processing include:",
+                "list": [
+                    "Establishment and performance of a contract (Visa processing).",
+                    "Explicit consent (where required for special categories of data or international transfer).",
+                    "Compliance with legal obligations of the Data Controller."
+                ]
+            },
+            {
+                "id": "5",
+                "title": "International Data Transfer",
+                "box": {
+                    "p1": "Due to the nature of our business (Visa Services), your personal data must be transferred abroad, specifically to the governmental authorities of the Russian Federation and related consular intermediaries.",
+                    "p2": "By submitting your application, you explicitly consent to the transfer of your identity and document data to servers and authorities located outside of your country of residence and outside of Türkiye, solely for the purpose of visa issuance."
+                }
+            },
+            {
+                "id": "6",
+                "title": "Sharing Data with Third Parties",
+                "content": "We do not sell or rent your data. Data is shared only with:",
+                "list": [
+                    "<strong>Government Authorities:</strong> The Ministry of Foreign Affairs of the Russian Federation (for visa issuance) and Turkish legal authorities (if requested by court order).",
+                    "<strong>Service Providers:</strong> Trusted third parties who assist us in operating our website, conducting our business, or serving our users (e.g., secure payment gateways, hosting providers, email delivery services). These parties are bound by confidentiality agreements."
+                ]
+            },
+            {
+                "id": "7",
+                "title": "Data Storage, Security, and Retention",
+                "content": "We implement appropriate technical and administrative measures to prevent unlawful processing of and access to your data.",
+                "list": [
+                    "<strong>Security:</strong> Data is stored on secure, encrypted servers. Access is restricted to authorized personnel only.",
+                    "<strong>Retention Period:</strong> We retain your personal data for as long as necessary to fulfill the purposes outlined in this policy.",
+                    "<strong>Details:</strong>"
+                ],
+                "sublist": [
+                    "Visa Application Data: Retained for maximum 1 year after service completion for dispute resolution.",
+                    "Financial Records: Retained for 10 years in accordance with the Turkish Commercial Code and Tax Procedure Law.",
+                    "After the retention period expires, data is securely deleted, destroyed, or anonymized."
+                ]
+            },
+            {
+                "id": "8",
+                "title": "Your Rights (Under KVKK Article 11 and GDPR)",
+                "content": "As a data subject, you have the right to apply to us to:",
+                "list": [
+                    "Learn whether your personal data is being processed.",
+                    "Request information regarding the processing if your data has been processed.",
+                    "Learn the purpose of processing and accordance with that purpose.",
+                    "Know the third parties to whom your data is transferred.",
+                    "Request correction of incomplete or inaccurate data.",
+                    "Request the deletion or destruction of your personal data.",
+                    "Object to negative consequences from automated systems analysis.",
+                    "Claim compensation for unlawful processing damages."
+                ],
+                "note": "To exercise these rights, please contact us via the details provided in Section 10."
+            },
+            {
+                "id": "9",
+                "title": "Cookie Usage",
+                "content": "We use cookies to enhance your experience.",
+                "list": [
+                    "<strong>Essential Cookies:</strong> Necessary for the website to function (e.g., holding your application data while you pay).",
+                    "<strong>Analytics Cookies:</strong> Help us understand how visitors use our site. You can disable cookies through your browser settings; however, this may prevent you from completing your visa application online."
+                ]
+            },
+            {
+                "id": "10",
+                "title": "Contact Information",
+                "content": "For requests regarding your personal data or to exercise your legal rights, you may contact the Data Controller at:",
+                "details": {
+                    "company": "Company Name",
+                    "address": "Address",
+                    "email": "Email",
+                    "website": "Website"
+                }
+            }
+        ]
+    },
+    "TrackingPage": {
+        "title": "Track Your Application",
+        "description": "Coming soon: Status tracking functionality."
+    },
+    "ServicesPage": {
+        "title": "Extra Services",
+        "description": "The parent company of <blue>russianonlinevisa.com</blue>, <blue>Timtur Travel Agency</blue> is an experienced business travel agency.",
+        "networkTitle": "Operational Network Services",
+        "contact": "For the given services above, please visit <link>www.timtur.com</link> or get in touch with us through <mail>timtur@timtur.com</mail>.",
+        "list": {
+            "travelPlanning": "Travel Planning",
+            "corporate": "Corporate Travel Partnership",
+            "accommodation": "Accommodation",
+            "flights": "Flight Ticketing & Private Jet Services",
+            "meetGreet": "Meet & Greet and Interpretation",
+            "guiding": "Private Guiding",
+            "transfers": "Private Transfers",
+            "tours": "Bespoke Tour Programs",
+            "visa": "Visa Consultancy",
+            "meetings": "Meeting Organization",
+            "tradeFairs": "Trade Fair Support",
+            "yachts": "Yacht Charter Services"
+        }
+    },
+    "FaqPage": {
+        "title": "Frequently Asked Questions",
+        "description": "Everything you need to know about the Russia Electronic Visa application process.",
+        "sections": {
+            "general": {
+                "title": "General Information",
+                "items": {
+                    "whatIs": {
+                        "q": "What exactly is the Russia E-visa?",
+                        "a": "It is an electronic travel authorization that allows you to visit Russia for tourism, business, scientific, or sporting events. It is applied for entirely online."
+                    },
+                    "guarantee": {
+                        "q": "Does this visa guarantee my entry into Russia?",
+                        "a": "No. The visa grants you permission to travel to the border, but the final decision to allow entry rests with the immigration officer upon arrival."
+                    },
+                    "stayDuration": {
+                        "q": "How long can I stay in Russia?",
+                        "a": "Once the visa is issued, you have a window of 120 days to enter the country. After you enter, you can stay for a maximum of 30 days."
+                    },
+                    "multiEntry": {
+                        "q": "Is this a multi-entry visa?",
+                        "a": "No. The E-visa is valid for a single entry only. If you leave and want to return, you must apply for a new one."
+                    },
+                    "work": {
+                        "q": "Can I use this visa for work or employment?",
+                        "a": "No. This visa is strictly for tourism, guest visits, or short business meetings. Employment is prohibited."
+                    },
+                    "transit": {
+                        "q": "Can I use this visa just to transit through Russia?",
+                        "a": "No, this visa does not have a \"transit\" category. If you are entering the country during a layover, you must apply as a tourist or visitor. If you are staying in the airport transit zone, you generally do not need this visa."
+                    }
+                }
+            },
+            "requirements": {
+                "title": "Requirements & Documents",
+                "items": {
+                    "documents": {
+                        "q": "What documents do I need to apply?",
+                        "a": "You need a valid passport, a digital photo (3.5x4.5 cm with a white background), and a completed online application form."
+                    },
+                    "passport": {
+                        "q": "What are the passport requirements?",
+                        "a": "Your passport must be valid for at least 6 months from the date you intend to enter Russia. It must also have at least 2 blank pages for stamps."
+                    },
+                    "insurance": {
+                        "q": "Do I need health insurance?",
+                        "a": "No. Although it is heavily suggested, it is not mandatory to get a single-entry visa."
+                    },
+                    "children": {
+                        "q": "I am traveling with children. Do they need their own visas?",
+                        "a": "Yes. Even if a child is registered in your passport, a separate application must be submitted for each minor."
+                    },
+                    "dualCitizenship": {
+                        "q": "I am a Russian citizen with an expired passport. Can I use a foreign passport to enter?",
+                        "a": "No. Russian citizens must enter and exit the country using valid Russian travel documents."
+                    }
+                }
+            },
+            "process": {
+                "title": "Application Process",
+                "items": {
+                    "duration": {
+                        "q": "How long does the application process take?",
+                        "a": "Processing usually takes 6 calendar days. However, if there are errors in your application, it may take longer."
+                    },
+                    "family": {
+                        "q": "Can I apply for my whole family in one form?",
+                        "a": "No. You can fill out forms on their behalf, but a separate application must be submitted for every single individual."
+                    },
+                    "mistakes": {
+                        "q": "What happens if I make a mistake on the application form?",
+                        "a": "If the error is found during processing, the application may be returned to you for corrections. If you have already received the visa and notice a mistake (like a wrong birthdate), you cannot fix it; you must submit and pay for a completely new application."
+                    },
+                    "language": {
+                        "q": "Which language should I use to fill out the form?",
+                        "a": "You must fill out the form using English (Latin) characters only."
+                    },
+                    "parentsInfo": {
+                        "q": "What if I don't know my parents' information?",
+                        "a": "If you do not have information about your parents, simply leave those specific fields blank."
+                    }
+                }
+            },
+            "payment": {
+                "title": "Payment & Refunds",
+                "items": {
+                    "cost": {
+                        "q": "How much does it cost and how do I pay?",
+                        "a": "The visa fee and the service fee cost 110 USD in total. You can use major credit cards (Visa, MasterCard)."
+                    },
+                    "othersCard": {
+                        "q": "Can I pay with someone else's credit card?",
+                        "a": "Yes, you may use a card that belongs to another person to pay the fee."
+                    },
+                    "refund": {
+                        "q": "Is the fee refundable if my visa is denied?",
+                        "a": "No. Once the application is submitted and paid for, the fee is non-refundable regardless of the outcome."
+                    }
+                }
+            },
+            "travel": {
+                "title": "Travel & Entry",
+                "items": {
+                    "entryPoints": {
+                        "q": "Where can I enter Russia?",
+                        "a": "You can only enter and exit through specific government-approved checkpoints (international airports, seaports, and land borders). You cannot use unauthorized crossings."
+                    },
+                    "freedom": {
+                        "q": "Can I travel freely once I am inside Russia?",
+                        "a": "Yes, you are free to visit any city or region, except for specific restricted zones that require special military or government permits."
+                    },
+                    "hotel": {
+                        "q": "Do I need to book a hotel before applying?",
+                        "a": "You must provide the contact details (name, address, phone) of where you plan to stay, but you do not need to provide proof of a confirmed booking during the application."
+                    },
+                    "registration": {
+                        "q": "What is \"Migration Registration\" and do I need it?",
+                        "a": "Yes. Any foreigner staying in Russia for more than 7 working days must be registered. If you stay at a hotel, they will handle this for you automatically."
+                    },
+                    "support": {
+                        "q": "What if I need help or my application is delayed?",
+                        "a": "You can track your status online. If you need assistance, please contact the Visa Application Center at <email>info@timtur.com</email> or call <phone>+90 530 202 85 30</phone>."
+                    }
+                }
+            }
+        }
+    },
+    "InstructionsPage": {
+        "title": "CHARACTERISTICS OF THE RUSSIAN E-VISA AND CONDITIONS FOR ITS ISSUANCE",
+        "important": {
+            "title": "IMPORTANT NOTE ON STAY DURATION",
+            "text1": "The permitted period of stay in the Russian Federation on the basis of a unified e-visa of up to 30 days <strong>DOES NOT IMPLY</strong> the possibility of staying for 720 hours net time (24 hours x 30). The day of arrival and the day of departure are counted as two days.",
+            "text2": "Also, the visa is valid for 120 days. It means that upon receiving the visa, you have maximum 120 days to enter the Russian Federation and you are allowed to stay for maximum 30 days. To determine the allowed staying period, you may use “visa calculator” on our website."
+        },
+        "intro": {
+            "p1": "The unified e-visa is a single entry visa. The validity period of a unified electronic visa is 120 days from the date of issue. The permitted period of stay in the Russian Federation on the basis of a unified e-visa within its validity period shall not exceed 30 days from the date of entry.",
+            "p2": "Your passport must be machine-readable and issued by your country of nationality. Your passport must be valid for at least 6 months from the date of submitting the application for a unified e-visa. If your passport does not meet these requirements, the e-visa application cannot be accepted for processing. There must be sufficient space in your passport for border crossing stamps."
+        },
+        "countries": {
+            "title": "Eligible Countries",
+            "desc": "Only citizens of the following foreign countries, the list of which is approved by the Government of the Russian Federation, are eligible for the e-visa:",
+            "list": [
+                "Austria",
+                "Barbados",
+                "Bahrain",
+                "Belgium",
+                "Bulgaria",
+                "Bhutan",
+                "Cambodia",
+                "China (including Taiwan)",
+                "Croatia",
+                "Cyprus",
+                "Czech Republic",
+                "Denmark",
+                "Eswatini",
+                "Estonia",
+                "Finland",
+                "France",
+                "Germany",
+                "Greece",
+                "Hungary",
+                "Iceland",
+                "India",
+                "Indonesia",
+                "Iran",
+                "Ireland",
+                "Italy",
+                "Japan",
+                "Jordan",
+                "Kenya",
+                "The Democratic People's Republic of Korea",
+                "Kuwait",
+                "Latvia",
+                "Liechtenstein",
+                "Lithuania",
+                "Luxembourg",
+                "Malaysia",
+                "Malta",
+                "Mexico",
+                "Monaco",
+                "Myanmar",
+                "Netherlands",
+                "North Macedonia",
+                "Norway",
+                "Oman",
+                "Papua New Guinea",
+                "Philippines",
+                "Poland",
+                "Portugal",
+                "Romania",
+                "Saint Lucia",
+                "San Marino",
+                "Saudi Arabia",
+                "Singapore",
+                "Slovakia",
+                "Slovenia",
+                "Spain",
+                "Sweden",
+                "Switzerland",
+                "Tonga",
+                "Trinidad and Tobago",
+                "Turkmenistan",
+                "Türkiye",
+                "Vatican",
+                "Vietnam",
+                "Zimbabwe"
+            ]
+        },
+        "checkpoints": {
+            "title": "Allowed Border Crossing Points",
+            "desc": "E-visa is valid for entry through the following border crossing points:",
+            "types": {
+                "air": "Air Checkpoints",
+                "auto": "Automobile Checkpoints",
+                "rail": "Railway Checkpoints",
+                "maritime": "Maritime Checkpoints",
+                "pedestrian": "Pedestrian Checkpoints",
+                "river": "River Checkpoints"
+            },
+            "regions": {
+                "altai": "Altai Territory",
+                "arkhangelsk": "Arkhangelsk Region",
+                "astrakhan": "Astrakhan Region",
+                "belgorod": "Belgorod Region",
+                "bryansk": "Bryansk Region",
+                "bashkortostan": "Republic of Bashkortostan",
+                "buryatia": "Republic of Buryatia",
+                "volgograd": "Volgograd Region",
+                "dagestan": "Republic of Dagestan",
+                "sverdlovsk": "Sverdlovsk Region",
+                "stavropol": "Stavropol Territory",
+                "transbaikal": "Trans-Baikal Territory",
+                "irkutsk": "Irkutsk Region",
+                "kabardino": "Kabardino-Balkarian Republic",
+                "kaliningrad": "Kaliningrad Region",
+                "kaluga": "Kaluga Region",
+                "kamchatka": "Kamchatka Territory",
+                "kemerovo": "Kemerovo Region",
+                "krasnodar": "Krasnodar Territory",
+                "krasnoyarsk": "Krasnoyarsk Territory",
+                "moscow": "Moscow and Moscow Region",
+                "omsk": "Omsk Region",
+                "orenburg": "Orenburg Region",
+                "komi": "Komi Republic",
+                "lipetsk": "Lipetsk Region",
+                "murmansk": "Murmansk Region",
+                "nizhny": "Nizhny Novgorod Region",
+                "novosibirsk": "Novosibirsk Region",
+                "primorsky": "Primorsky Krai",
+                "perm": "Perm Region",
+                "rostov": "Rostov Region",
+                "samara": "Samara Region",
+                "saratov": "Saratov Region",
+                "spb": "St. Petersburg and Leningrad Region",
+                "sakhalin": "Sakhalin Region",
+                "ossetia": "Republic of North Ossetia – Alania",
+                "tatarstan": "Republic of Tatarstan",
+                "tomsk": "Tomsk Region",
+                "tyumen": "Tyumen Region",
+                "ulyanovsk": "Ulyanovsk Region",
+                "chelyabinsk": "Chelyabinsk Region",
+                "chuvash": "Chuvash Republic",
+                "khabarovsk": "Khabarovsk Territory",
+                "khakassia": "Republic of Khakassia",
+                "chechen": "Chechen Republic",
+                "chukotka": "Chukotka Autonomous Area",
+                "yaroslavl": "Yaroslavaya oblast",
+                "altaiRep": "Republic of Altai",
+                "karelia": "Republic of Karelia",
+                "primorye": "Primorye Territory",
+                "pskov": "Pskov Region",
+                "magadan": "Magadan Region",
+                "amur": "Amur Region",
+                "jewish": "Jewish Autonomous Oblast"
+            },
+            "points": {
+                "barnaul": "Barnaul",
+                "arkhangelsk": "Arkhangelsk (Talagi)",
+                "astrakhan": "Astrakhan (Narimanovo)",
+                "belgorod": "Belgorod",
+                "bryansk": "Bryansk",
+                "ufa": "Ufa",
+                "ulanUde": "Ulan-Ude (Mukhino)",
+                "volgograd": "Volgograd (Gumrak)",
+                "makhachkala": "Makhachkala (Uytash)",
+                "yekaterinburg": "Yekaterinburg (Koltsovo)",
+                "mineralnye": "Mineralnye Vody",
+                "chita": "Chita (Kadala)",
+                "irkutsk": "Irkutsk",
+                "nalchik": "Nalchik",
+                "kaliningrad": "Kaliningrad (Khrabrovo)",
+                "kaluga": "Kaluga (Grabtsevo)",
+                "petropavlovsk": "Petropavlovsk-Kamchatsky (Elizovo)",
+                "kemerovo": "Kemerovo",
+                "krasnodar": "Krasnodar (Pashkovsky)",
+                "sochi": "Sochi",
+                "krasnoyarsk": "Krasnoyarsk (Emelyanovo)",
+                "vnukovo": "Moscow (Vnukovo)",
+                "domodedovo": "Moscow (Domodedovo)",
+                "sheremetyevo": "Moscow (Sheremetyevo)",
+                "zhukovsky": "Moscow (Zhukovsky)",
+                "omsk": "Omsk (Central)",
+                "orenburg": "Orenburg (Central)",
+                "syktyvkar": "Syktyvkar",
+                "lipetsk": "Lipetsk",
+                "murmansk": "Murmansk",
+                "nizhny": "Nizhny Novgorod (Strigino)",
+                "novosibirsk": "Novosibirsk (Tolmachevo)",
+                "vladivostok": "Vladivostok (Knevichi)",
+                "perm": "Perm (Bolshoe Savino)",
+                "rostov": "Rostov-on-Don (Platov)",
+                "samara": "Samara (Kurumoch)",
+                "saratov": "Saratov (Gagarin)",
+                "pulkovo": "Saint Petersburg (Pulkovo)",
+                "yuzhno": "Yuzhno-Sakhalinsk (Khomutovo)",
+                "vladikavkaz": "Vladikavkaz (Beslan)",
+                "kazan": "Kazan",
+                "tomsk": "Tomsk (Bogashevo)",
+                "tyumen": "Tyumen (Roshchino)",
+                "ulyanovsk": "Ulyanovsk (Vostochny)",
+                "chelyabinsk": "Chelyabinsk (Balandino)",
+                "cheboksary": "Cheboksary",
+                "khabarovsk": "Khabarovsk (New)",
+                "abakan": "Abakan",
+                "grozny": "Grozny (North)",
+                "anadyr": "Anadyr (Ugolnyy)",
+                "yaroslavl": "Yaroslavl (Tunoshna)",
+                "tashanta": "Tashanta",
+                "kyakhta": "Kyakhta",
+                "bagrationovsk": "Bagrationovsk",
+                "gusev": "Gusev",
+                "mamonovoGrzechotki": "Mamonovo (Grzechotki)",
+                "mamonovoGronovo": "Mamonovo (Gronovo)",
+                "morskoje": "Morskoje",
+                "pogranichny": "Pogranichny",
+                "sovetsk": "Sovetsk",
+                "chernyshevskoe": "Chernyshevskoe",
+                "vyartsilya": "Vyartsilya",
+                "lyuttya": "Lyuttya",
+                "suoperya": "Suoperya",
+                "salla": "Salla",
+                "poltavka": "Poltavka",
+                "turiyRog": "Turiy Rog",
+                "burachki": "Burachki",
+                "kunichina": "Kunichina Gora",
+                "shumilkino": "Shumilkino",
+                "ubylinka": "Ubylinka",
+                "brusnitchnoe": "Brusnitchnoe",
+                "ivangorod": "Ivangorod",
+                "ivangorodClosed": "Ivangorod (from February 1, 2024 it will be temporarily closed for reconstruction)",
+                "svetogorsk": "Svetogorsk",
+                "torfjanovka": "Torfjanovka",
+                "verkhnyLars": "Verkhny Lars",
+                "solovyovsk": "Solovyovsk",
+                "starotsurukhaitui": "Starotsurukhaitui",
+                "zabaykalsk": "Zabaykalsk",
+                "naushki": "Naushki",
+                "mamonovo": "Mamonovo",
+                "makhalino": "Makhalino",
+                "pogranichnyy": "Pogranichnyy",
+                "khasan": "Khasan",
+                "finlyandskiy": "St. Petersburg-Finlyandskiy",
+                "petropavlovskSea": "Petropavlovsk-Kamchatsky",
+                "kaliningradSea": "Kaliningrad (checkpoints in the cities of Kaliningrad and Svetly)",
+                "sochiSea": "Sochi (International Center for Sea Passenger and Cruise Transportation)",
+                "magadan": "Magadan",
+                "kandalaksha": "Kandalaksha",
+                "murmanskSea": "Murmansk",
+                "vladivostokSea": "Vladivostok",
+                "zarubino": "Zarubino",
+                "posiet": "Posiet",
+                "bigPortSpb": "Big port Saint Petersburg (Marine Station, Fort Constantin, English Embankment and Lieutenant Schmidt Embankment)",
+                "vysotsk": "Vysotsk",
+                "passengerPortSpb": "Passenger Port of Saint Petersburg",
+                "korsakov": "Korsakov",
+                "nikolayevsk": "Nikolayevsk-on-Amur",
+                "blagoveshchensk": "Blagoveshchensk",
+                "amurzet": "Amurzet",
+                "pokrovka": "Pokrovka",
+                "khabarovskRiver": "Khabarovsk"
+            }
+        },
+        "rules": {
+            "title": "Rules, Conditions & Procedure",
+            "items": {
+                "noInvitations": {
+                    "title": "No Invitations Needed",
+                    "text": "E-visa applicants are not required to submit an invitation letter, hotel booking confirmation or any other document confirming the purpose of their travel to the Russian Federation."
+                },
+                "activities": {
+                    "title": "Permitted Activities",
+                    "text": "The unified e-visa entitles you to enter the Russian Federation and stay in the Russian Federation for private or business visit, tourism, as well as for participating in scientific, cultural, socio-political, economic, sporting events and carrying out relevant communications and contacts. If the purpose of your trip to the Russian Federation is none of the above, you have to apply to a diplomatic mission or consular post of the Russian Federation for a regular (not electronic) visa."
+                },
+                "movement": {
+                    "title": "Freedom of Movement",
+                    "text": "Foreign citizens arriving in the Russian Federation on the basis of a unified e-visa have the right to freedom of movement within the entire territory of the Russian Federation, except for visits to territories, organizations and facilities to which a special permit is required."
+                },
+                "extension": {
+                    "title": "Extension Policy",
+                    "text": "The period of validity of an electronic visa and/or the permitted period of stay may be extended only in cases where it is impossible to leave the territory of the Russian Federation due to the need of emergency treatment or unsurmountable circumstances (force majeure) or natural disasters. Extension is carried out by the Ministry of Internal Affairs of the Russian Federation."
+                },
+                "existing": {
+                    "title": "Existing Visas",
+                    "text": "If you have a valid Russian visa in your passport, you do not need to apply for a unified e-visa. You can visit the Russian Federation with a regular visa within its validity period without the restrictions established for the unified e-visa. The validity of a regular visa cannot be extended by obtaining an e-visa."
+                },
+                "timing": {
+                    "title": "Application Timing",
+                    "text": "The application can be submitted no earlier than 86 days and no later than 6 days before the expected date of entry into the Russian Federation."
+                },
+                "consent": {
+                    "title": "Data Consent",
+                    "text": "Before completing the unified e-visa application, you will need to give your consent to the automated processing, transmission and storage of the data in your application for the purposes of issuing a unified e-visa."
+                },
+                "correction": {
+                    "title": "Correction Process",
+                    "text": "If the processing of the application reveals that any of the information stated therein is incorrect, it will be no longer processed and be returned to you for editing with the fields to be corrected being indicated and comments. An application shall be returned for editing no later than two calendar days from the date of submission. In case such necessity occurs, our agents will get in touch with you through the contact info you provide."
+                },
+                "mandatory": {
+                    "title": "Mandatory Information",
+                    "text": "Indication of date, month and year of birth is mandatory when filling out the application form. If your full date of birth is not specified in your passport, the unified e-visa application cannot be accepted for processing."
+                },
+                "minors": {
+                    "title": "Minors",
+                    "text": "If you are travelling with minor children indicated in your passport, a separate application for a unified e-visa must be submitted for each child. All minor children travelling with their parents must have a separate e-visa."
+                },
+                "accuracy": {
+                    "title": "Accuracy & Revocation",
+                    "text": "The information you provide in your application must be complete and accurate. Any incorrect information may lead to the revocation of the already issued visa at the border crossing point of the Russian Federation or in the territory of the Russian Federation."
+                },
+                "insurance": {
+                    "title": "Medical Insurance",
+                    "text": "Foreign citizens staying in the Russian Federation on the basis of unified e-visas are required to have a medical insurance valid in the territory of the Russian Federation for the entire duration of their stay, with the exception of citizens of the following foreign countries who are exempt from this requirement on the basis of reciprocity."
+                },
+                "refusals": {
+                    "title": "Refusals",
+                    "text": "A unified e-visa may be refused in cases established by the legislation of the Russian Federation."
+                }
+            }
+        },
+        "status": {
+            "title": "Application Status & Decisions",
+            "items": {
+                "processing": {
+                    "title": "Processing:",
+                    "text": "All applications undergo a validation process. If your application is correct, its status will change to “Accepted for processing”. If incorrect data is found, the status will change to “Correction required”. You will need to edit and submit for reprocessing."
+                },
+                "completion": {
+                    "title": "Completion:",
+                    "text": "Once a decision has been made, status will change to “Processing completed”. You can download a PDF file with the result which is sent to your email."
+                },
+                "positive": {
+                    "title": "Positive Decision:",
+                    "text": "Be sure to print the notification with your e-visa or save it on your mobile device. You will need to show the notification to the representatives of a transport company when boarding and to the border officers."
+                }
+            }
+        }
+    }
+}

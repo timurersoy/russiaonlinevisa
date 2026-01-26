@@ -1,0 +1,1093 @@
+{
+    "FileUpload": {
+        "dragDrop": "Dosya Yüklemek için Tıklayın veya Sürükleyin",
+        "formats": "SVG, PNG, JPG veya PDF (maks. 5MB)"
+    },
+    "VisaCalculator": {
+        "title": "Vize Hesaplayıcı",
+        "intro": "E-vize ile Rusya'da ne kadar süre kalabileceğinizi hesaplamak için bu takvimi kullanabilirsiniz.",
+        "entryDateLabel": "Rusya'ya planlanan giriş tarihi",
+        "calculateButton": "Hesapla",
+        "helperText": "Rusya'ya planladığınız seyahat başlangıç tarihini girin",
+        "resultText": "Rusya'da izin verilen kalış süresi sonu:",
+        "resultSubtext": "(planlanan seyahat tarihine göre hesaplanmıştır)",
+        "placeholder": "GG.AA.YYYY"
+    },
+    "Navbar": {
+        "apply": "Hemen Başvur",
+        "track": "Başvuru Takip",
+        "home": "Anasayfa",
+        "calculator": "Vize Hesaplayıcı",
+        "instructions": "Talimatlar",
+        "faq": "SSS",
+        "services": "Diğer Hizmetler",
+        "contact": "İletişim",
+        "about": "Hakkımızda"
+    },
+    "Footer": {
+        "description": "Rusya'ya e-vizesi için bir numaralı asistanınız. Hızlı, güvenilir ve online başvuru süreci. russiaonlinevisa.com, Timtur Seyahat Acentesi'nin iştirakidir.",
+        "headings": {
+            "application": "Başvuru",
+            "company": "Şirket",
+            "legal": "Yasal"
+        },
+        "links": {
+            "apply": "Hemen Başvur",
+            "track": "Başvuru Takip",
+            "services": "Hizmetlerimiz",
+            "instructions": "Talimatlar",
+            "about": "Hakkımızda",
+            "contact": "İletişim",
+            "faq": "SSS",
+            "privacy": "Gizlilik Politikası",
+            "terms": "Hizmet Sözleşmesi"
+        },
+        "copyright": "© {year} Russian Online Visa. Tüm hakları saklıdır.",
+        "brand": "Timtur Seyahat Acentesi tarafından işletilmektedir."
+    },
+    "HomePage": {
+        "heroTitle": "Rusya E-Vizesi: Hızlı ve Kolay Başvuru",
+        "heroSubtitle": "Tüm işlemlerinizi online tamamlayın. Vizenizi 6 gün içinde, konsolosluk randevusu veya ziyareti gerekmeden mail adresinize gönderelim.",
+        "startApplication": "Hemen Başvur",
+        "trackApplication": "Başvuru Takip",
+        "stats": {
+            "daysTitle": "6 GÜN",
+            "daysDesc": "Ortalama İşlem Süresi",
+            "countriesTitle": "65+",
+            "countriesDesc": "Geçerli Pasaport",
+            "supportTitle": "7/24",
+            "supportDesc": "Çevrimiçi Destek"
+        },
+        "info": {
+            "subheading": "Hızlı & Güvenilir",
+            "title": "Online Vize Asistanınız ile Rusya Vizesi Almak Artık Çok Daha Kolay!",
+            "italic": "Sadece 5 dakikada başvurun!",
+            "desc": "Rusya, ziyaretçilerini ağırlamaya devam ederken, biz de russianonlinevisa.com'da bu yolculuğun ilk adımını sizin için sorunsuz hale getiriyoruz. İster gezi, ister iş, ister ziyaret için olsun; vize stresini bize bırakın.",
+            "card1Title": "Basit ve Direkt Başvuru",
+            "card1Desc": "İhtiyacınız olanlar sadece üç şey: geçerli pasaportunuz, güncel bir fotoğrafınız ve ödeme yapabileceğiniz bir kartınız. Davetiye mektubuna gerek kalmadan, başvurunuzu birkaç dakika içinde tamamlayabilirsiniz.",
+            "card2Title": "Tüm Dünyadan Erişim",
+            "card2Desc": "Dünya çapında erişim: Türkiye, Çin, Hindistan ve AB ülkeleri de dahil 65'ten fazla ülkenin vatandaşları, Rusya e-Vizesi için güvenle bize başvurabilir. Uygunluk durumunuzu anında kontrol edin ve seyahatinize hızla başlayın.",
+            "card3Title": "Hızlı Sonuç",
+            "card3Desc": "Çoğu başvuru 6 iş günü içinde sonuçlanır. Vizenizi e-posta yoluyla yazdırılmaya hazır PDF olarak alın."
+        },
+        "how": {
+            "title": "NASIL ÇALIŞIR?",
+            "desc": "Rusya e-vizenizi sadece 4 kolay adımda alın. Basitleştirilmiş sürecimiz, işleminizi hızlı ve güvenli kılar.",
+            "step1Title": "Online Başvurunuzu Yapın",
+            "step1Desc": "Basit başvuru formumuzu doldurun ve güvenli ödemenizi kredi/banka kartınızla tamamlayın.",
+            "step2Title": "Onay Sürecini Bekleyin",
+            "step2Desc": "Başvuruların çoğu 6 gün içinde sonuçlanır. Belgeleriniz eksiksiz ve doğru şekilde kontrol edilir.",
+            "step3Title": "Vizenizi Alın ve Yazdırın",
+            "step3Desc": "Onaylanan e-vize PDF'iniz e-posta adresinize gönderilir. Seyahat öncesi bir çıktısını almayı unutmayın.",
+            "step4Title": "Rusya'ya Hoş Geldiniz!",
+            "step4Desc": "Pasaportunuz ve yazdırılmış e-Vizeniz ile giriş noktasındaki yetkililere gösterin ve Rusya'ya giriş yapın."
+        },
+        "eligible": {
+            "title": "KİMLER BAŞVURABİLİR?",
+            "desc": "Türkiye, Fransa, Çin, Hindistan, İtalya, Meksika, Estonya, Almanya, Suudi Arabistan, Kuveyt, Hollanda ve <link>daha fazlası</link> dahil olmak üzere 65 ülkenin vatandaşları Rusya e-Vizesi için başvuruda bulunabilir.",
+            "checkList": "Tüm uygun ülkeleri görüntüleyin"
+        },
+        "cta": {
+            "title": "Rusya yolculuğunuza başlamaya hazır mısınız?",
+            "desc": "Bugün online başvurunuzu tamamlayın ve Rusya e-vizenizi birkaç adımda alın. Kolay, hızlı ve güvenilir.",
+            "button": "Hemen Başvur"
+        }
+    },
+    "InteractiveMap": {
+        "hostRussia": "Ev Sahibi (Rusya)",
+        "eligibleCountries": "Uygun Ülkeler",
+        "other": "Diğer",
+        "tooltipHost": "{name} - Ev Sahibi",
+        "tooltipEligible": "{name} - Uygun"
+    },
+    "ApplyPage": {
+        "title": "Başvuru Yönteminizi Seçin",
+        "description": "İhtiyaçlarınıza en uygun seçeneği belirleyin. Çoğu gezgin için Anında Başvuru en hızlı ve kolay seçimdir.",
+        "Instant": {
+            "recommended": "Önerilen",
+            "title": "Anında Başvuru",
+            "desc": "Tüm süreci dakikalar içinde online tamamlayın. Belgelerinizi yükleyin, güvenli ödeme yapın ve vizenizi e-posta ile alın.",
+            "features": {
+                "upload": "Online Fotoğraf & Pasaport Yükleme",
+                "form": "Basit Adım Adım Form",
+                "processing": "<strong>6 Gün</strong> Standart İşlem Süresi"
+            },
+            "button": "Anında Başvuruyu Başlat"
+        },
+        "Offline": {
+            "title": "Offline Başvuru",
+            "desc": "Kişisel bir dokunuş mu tercih ediyorsunuz? Özel seyahat ihtiyaçlarınızı belirlemek için uzman acentelerimizden biriyle iletişime geçin.",
+            "features": {
+                "consultation": "Kişiselleştirilmiş Danışmanlık",
+                "itinerary": "Karmaşık Seyahat Planı Desteği",
+                "processing": "Acente Destekli İşlem",
+                "groups": "Grup Başvuruları"
+            },
+            "button": "Bir Acenteyle İletişime Geç"
+        }
+    },
+    "ApplyInstantPage": {
+        "title": "Anında Vize Başvurusu",
+        "description": "Belgelerinizi yükleyin ve detaylarınızı doldurun, vizenizi 6 günde alın."
+    },
+    "ApplyForm": {
+        "steps": {
+            "1": "Belgeleri Yükle",
+            "2": "İletişim Bilgileri",
+            "3": "Ziyaret Bilgileri",
+            "4": "Kişisel Bilgiler",
+            "5": "Önizle & Gönder"
+        },
+        "labels": {
+            "nationality": "Uyruk",
+            "personalPhoto": "Kişisel Fotoğraf",
+            "passportCover": "Pasaport Kapak Sayfası",
+            "phone": "Telefon Numarası",
+            "email": "E-posta Adresi",
+            "address": "Mevcut İkamet Adresi",
+            "occupancy": "Meslek Durumu",
+            "companyName": "Şirket Adı",
+            "position": "Pozisyon",
+            "schoolName": "Okul Adı",
+            "travelDate": "Planlanan Seyahat Tarihi",
+            "visitType": "Ziyaret Türü",
+            "purpose": "Ziyaret Amacı",
+            "optional": "(İsteğe Bağlı)",
+            "firstCity": "Giriş Yapılacak İlk Şehir",
+            "accommodationType": "Konaklama Türü",
+            "hotelName": "Otel Adı",
+            "apartmentAddress": "Daire Adresi",
+            "hostName": "Ev Sahibi Adı & Soyadı",
+            "relationship": "Yakınlık Derecesi",
+            "hostAddress": "Ev Sahibi Adresi",
+            "hostPhone": "Ev Sahibi Telefonu",
+            "visitedCountries": "Son 3 yılda ziyaret edilen ülkeler",
+            "gender": "Cinsiyet",
+            "maritalStatus": "Medeni Durum",
+            "partnerName": "Eş Adı & Soyadı",
+            "partnerBirthday": "Doğum Tarihi",
+            "partnerBirthPlace": "Doğum Yeri",
+            "father": "Baba Bilgileri",
+            "mother": "Anne Bilgileri",
+            "nameSurname": "Adı & Soyadı",
+            "birthday": "Doğum Tarihi",
+            "birthPlace": "Doğum Yeri",
+            "partnerDetails": "Eş Bilgileri",
+            "passportExpiry": "Pasaport Geçerlilik Tarihi",
+            "documents": "Belgeler"
+        },
+        "options": {
+            "selectCountry": "Ülke Seçin",
+            "selectOccupancy": "Meslek Seçin",
+            "working": "Çalışıyor",
+            "student": "Öğrenci",
+            "unemployed": "İşsiz/Emekli",
+            "selectType": "Tür Seçin",
+            "guestVisit": "Misafir Ziyareti",
+            "tourism": "Turizm",
+            "businessTrip": "İş Gezisi",
+            "eventParticipation": "Etkinlik Katılımı",
+            "selectAccommodation": "Konaklama Seçin",
+            "hotel": "Otel",
+            "rentalApartment": "Kiralık Daire",
+            "individual": "Bireysel",
+            "selectGender": "Cinsiyet Seçin",
+            "male": "Erkek",
+            "female": "Kadın",
+            "selectStatus": "Durum Seçin",
+            "single": "Bekar",
+            "married": "Evli"
+        },
+        "errors": {
+            "required": "Gerekli",
+            "uploadPhoto": "Lütfen fotoğrafınızı yükleyin",
+            "uploadPassport": "Lütfen pasaport kapağını yükleyin",
+            "docRequired": "Bu belge gerekli",
+            "passportExpiryInvalid": "Pasaport, başvuru tarihinden itibaren en az 6 ay geçerli olmalıdır."
+        },
+        "help": {
+            "passportExpiryInfo": "Pasaportunuz, başvuru tarihinizden itibaren en az 6 ay boyunca geçerli olmalıdır.",
+            "photo": "Güncel renkli fotoğraf, beyaz arka plan. Yüz net bir şekilde görünmelidir.",
+            "passport": "Pasaport bilgi sayfasının taranmış hali. Detaylar net görünmelidir.",
+            "viewPhotoReq": "Fotoğraf gereksinimlerini görüntüle",
+            "viewPassportReq": "Pasaport gereksinimlerini görüntüle"
+        },
+        "modal": {
+            "photoTitle": "Fotoğraf Gereksinimleri",
+            "passportTitle": "Pasaport Kapak Sayfası Gereksinimleri",
+            "photoList": [
+                "Fotoğraf başvuru tarihinden itibaren altı aydan eski olmamalı ve güncel halinizi yansıtmalıdır.",
+                "Fotoğrafta sadece siz olmalısınız. Yabancı cisimler (sandalye arkası, duvardaki resimler vb.) veya başka insanlar görünmemelidir.",
+                "Fotoğraf tam karşıdan çekilmelidir. Baş eğik veya dönük olmamalıdır. Doğrudan kameraya bakılmalı, nötr bir ifade, ağız kapalı, gözler açık olmalıdır.",
+                "Gözlerinizi kapatan saç olmamalıdır. Eşit aydınlatma, gölge olmamalı, flaş yansıması olmamalı, kırmızı göz olmamalıdır.",
+                "Gölgesiz düz açık renkli arka plan.",
+                "Dini nedenlerle başörtüsü takılmasına izin verilir ancak yüz hatlarını gizlememelidir. Yüz çeneden alına kadar net bir şekilde görünmelidir.",
+                "Gözlük takıyorsanız gözler net görünmelidir. Flaş yansıması olmamalı, renkli cam olmamalıdır. Kalın çerçevelerden kaçının. Çerçeveler gözleri kapatmamalıdır.",
+                "Fotoğraf başın tepesini ve omuzların üst kısmını göstermelidir. Baş ortalanmış ve saç çizgisinden çeneye kadar tamamen görünmelidir."
+            ],
+            "passportList": [
+                "Pasaport veri sayfasının fotoğrafı, e-vize başvurusunda girdiğiniz bilgilerle eşleşmelidir.",
+                "Fotoğraf tam karşıdan, eğmeden veya döndürmeden çekilmelidir. Yabancı cisimler kareye girmemelidir.",
+                "Görüntü pasaportunuzun veri sayfasını, makine tarafından okunabilir veriler dahil olmak üzere tamamen göstermelidir. Görüntü net, temiz ve odaklanmış olmalıdır.",
+                "Fotoğraf normal aydınlatma koşullarında çekilmelidir. Fotoğrafta gölge ve flaş yansıması olmamalıdır.",
+                "Yüklenen fotoğraf gereksinimleri karşılamazsa başvuru reddedilebilir.",
+                "Giriş yaparken Rusya sınırında yüklenen kapak sayfası fotoğrafına atıfta bulunan pasaportu ibraz etmelisiniz."
+            ]
+        },
+        "buttons": {
+            "back": "Geri",
+            "next": "Sonraki Adım",
+            "processing": "İşleniyor...",
+            "submit": "Öde ve Gönder",
+            "returnHome": "Ana Sayfaya Dön"
+        },
+        "success": {
+            "title": "Başvuru Gönderildi!",
+            "desc": "Başvurunuz başarıyla alındı. Belgelerinizi inceleyip vizenizi şu sürede işleme alacağız:",
+            "days": "6 iş günü",
+            "appId": "Başvuru No"
+        },
+        "summary": {
+            "title": "Özet",
+            "uploaded": "Yüklendi (2 dosya)"
+        },
+        "warning": {
+            "title": "İşlem Gerekli",
+            "desc": "Lütfen tüm gerekli alanları doldurun.",
+            "passportValidity": "Önemli: Pasaportunuzun başvuru tarihinden itibaren en az 6 ay geçerliliği olmalıdır."
+        },
+        "placeholders": {
+            "phone": "+90 555 123 4567",
+            "email": "ornek@email.com",
+            "address": "Mahalle, Cadde, Şehir, Ülke",
+            "company": "Şirket Adı",
+            "position": "İş Ünvanı",
+            "school": "Okul Adı",
+            "hotel": "Otel Adı",
+            "host": "Ev Sahibi Adı",
+            "hostAddress": "Ev Sahibi Adresi",
+            "hostPhone": "Ev Sahibi Telefonu",
+            "optional": "Yoksa boş bırakın",
+            "countries": "Ülkeleri virgülle ayırarak listeleyin",
+            "relationship": "örn. Arkadaş, Kardeş",
+            "entryDate": "GG.AA.YYYY"
+        },
+        "review": {
+            "title": "Lütfen aşağıdaki bilgilerinizi dikkatlice kontrol edin. Başvurunuzda tam olarak bu şekilde görünecektir.",
+            "personalDetails": "Kişisel Bilgiler",
+            "passportTravel": "Pasaport ve Seyahat",
+            "contactInfo": "İletişim Bilgileri",
+            "uploadedDocs": "Yüklenen Belgeler",
+            "legalConsent": "Yasal Onay",
+            "born": "Doğum:",
+            "partner": "Eş",
+            "employment": "Çalışma Durumu",
+            "studentAt": "Öğrenci -",
+            "unemployed": "Çalışmıyor",
+            "uploaded": "Yüklendi",
+            "missing": "Eksik",
+            "uploadWarning": "* Başvuruyu tamamlamadan önce 1. Adımda gerekli belgeleri yüklemelisiniz.",
+            "privacyAgree": "Okudum ve kabul ediyorum:",
+            "serviceAgree": "Kabul ediyorum:",
+            "terms": "ve Kullanım Koşulları.",
+            "feeSummary": "Ücret Özeti",
+            "totalFee": "Toplam Ücret",
+            "processingTime": "İşlem Süresi",
+            "days": "6 gün",
+            "securePayment": "Güvenli ödeme işlemi",
+            "support": "7/24 müşteri desteği"
+        }
+    },
+    "ContactPage": {
+        "title": "İletişim",
+        "description": "Size yardımcı olmak için 7/24 buradayız. Rusya e-Vize başvurunuzla ilgili her türlü sorunuz için destek ekibimize ulaşabilirsiniz.",
+        "sidebar": {
+            "phoneTitle": "Telefon & WhatsApp",
+            "phoneSupport": "7/24 Destek",
+            "emailTitle": "E-posta Desteği",
+            "emailResponse": "Hızlı Yanıt Süresi",
+            "faqTitle": "Hızlı bir sorunuz mu var?",
+            "faqDesc": "Uygunluk, belgeler ve işlem süreleri hakkında anında yanıtlar için Sıkça Sorulan Sorular bölümümüzü kontrol edin.",
+            "faqButton": "SSS'yi Görüntüle"
+        },
+        "form": {
+            "title": "Bize Mesaj Gönderin",
+            "name": "Ad Soyad",
+            "email": "E-posta Adresi",
+            "subject": "Konu",
+            "message": "Mesaj",
+            "submit": "Mesaj Gönder",
+            "submitting": "Mesaj Gönderiliyor...",
+            "placeholders": {
+                "name": "Adınızı ve soyadınızı girin",
+                "email": "E-posta adresinizi girin",
+                "message": "Size nasıl yardımcı olabiliriz?"
+            },
+            "subjects": {
+                "general": "Genel Bilgi",
+                "status": "Başvuru Durumu",
+                "payment": "Ödeme Sorunu",
+                "tech": "Teknik Destek",
+                "partnership": "İş Ortaklığı"
+            },
+            "success": {
+                "title": "Mesaj Başarıyla Gönderildi!",
+                "message": "Bizimle iletişime geçtiğiniz için teşekkür ederiz. Ekibimiz mesajınızı inceleyecek ve kısa süre içinde <strong>info@russiaonlinevisa.com</strong> adresinden size geri dönüş yapacaktır.",
+                "sendAnother": "Başka bir mesaj gönder"
+            },
+            "error": "Mesaj gönderilemedi. Lütfen tekrar deneyin."
+        }
+    },
+    "AboutPage": {
+        "title": "Russiaonlinevisa.com Hakkında",
+        "description": {
+            "p1": "<strong>Russiaonlinevisa.com</strong>, Rusya Federasyonu'nu ziyaret eden gezginlere hızlı ve güvenilir e-vize desteği sağlayan, <strong>Timtur Seyahat Acentesi</strong> tarafından desteklenen özel bir hizmettir.",
+            "p2": "Arkamızda, Türkiye İstanbul'da 30 yılı aşkın bir süre önce kurulmuş seçkin bir firma olan Timtur'un mirası var. Mirasımız premium iş turizmi ve kişiye özel VIP düzenlemeler üzerine kurulu olsa da, aynı hassasiyet ve profesyonellik seviyesini vize başvuru sürecinize de taşıyoruz.",
+            "p3": "Resmi olarak <strong>TÜRSAB Belge No: 3305</strong> altında faaliyet gösteriyoruz, bu da seyahat belgelerinizin sertifikalı ve güvenilir bir sektör emektarı tarafından yönetildiğini garanti ediyor.",
+            "p4": "Ana şirket hakkında daha fazla bilgi için <link>www.timtur.com</link> adresini ziyaret edebilirsiniz."
+        },
+        "links": {
+            "termsTitle": "Hizmet Sözleşmesi",
+            "termsDesc": "Zorunlu şart ve koşullarımızı inceleyin",
+            "privacyTitle": "Kişisel Verilerin Korunması Kanunu",
+            "privacyDesc": "Bilgilerinizi nasıl koruduğumuzu öğrenin"
+        }
+    },
+    "ServicesAgreementPage": {
+        "backLink": "Hakkımızda Sayfasına Dön",
+        "header": {
+            "tag": "Kullanım Şartları",
+            "title": "Hizmet Sözleşmesi",
+            "scope": "Geçerlilik Kapsamı: www.russiaonlinevisa.com",
+            "lastUpdated": "Son Güncelleme: <strong>20/01/2026</strong>"
+        },
+        "sections": [
+            {
+                "id": "1",
+                "title": "Taraflar",
+                "content": "Bu Hizmet Sözleşmesi (“Sözleşme”) aşağıdaki taraflar arasında akdedilmiştir:",
+                "list": [
+                    "<strong>Hizmet Sağlayıcı:</strong> SEHREMİNİ MAH. KIZILELMA CAD. No:2 FATİH/ İSTANBUL, 34104 TÜRKİYE adresinde mukim, <red>www.russiaonlinevisa.com</red> web sitesini işleten TİM-TUR TURİZM İÇ-DIŞ TİC.LTD.ŞTİ. (bundan böyle “Şirket” olarak anılacaktır).",
+                    "<strong>Kullanıcı:</strong> Web sitesine erişen ve hizmet satın alan herhangi bir gerçek veya tüzel kişi (bundan böyle “Kullanıcı” olarak anılacaktır)."
+                ],
+                "note": "Kullanıcı, bu web sitesinden hizmet satın alarak, bu Sözleşmenin tüm şartlarını okuduğunu, anladığını ve çekincesiz olarak kabul ettiğini beyan eder."
+            },
+            {
+                "id": "2",
+                "title": "Sözleşmenin Konusu ve Niteliği",
+                "content": "Bu Sözleşmenin konusu, Şirket tarafından Kullanıcıya sağlanan Rusya elektronik vize (e-vize) danışmanlık ve işlem hizmetlerine ilişkin karşılıklı hak ve yükümlülükleri tanımlamaktır.",
+                "disclaimer": {
+                    "title": "Önemli Feragatname:",
+                    "text": "www.russiaonlinevisa.com, TİM-TUR TURİZM tarafından yönetilen özel bir danışmanlık platformudur. Resmi bir devlet kurumu değildir ve Rusya Federasyonu Hükümeti ile doğrudan bağlantılı değildir. Vize sürecini kolaylaştırmak için profesyonel rehberlik, belge doğrulama ve başvuru hizmetleri sunuyoruz. Bu Sözleşme Türkiye Cumhuriyeti yasalarına tabidir."
+                }
+            },
+            {
+                "id": "3",
+                "title": "Hizmet Kapsamı",
+                "content": "Şirket aşağıdaki hizmetleri sağlamayı kabul eder:",
+                "list": [
+                    "<strong>Danışmanlık:</strong> Kullanıcıyı uygunluk ve başvuru gereklilikleri hakkında bilgilendirmek.",
+                    "<strong>Doğrulama:</strong> Gönderilmeden önce konsolosluk standartlarını karşıladığından emin olmak için Kullanıcının belgelerini (pasaport, fotoğraflar) incelemek.",
+                    "<strong>İşleme:</strong> Resmi Rusya Dışişleri Bakanlığı portalında Vize Başvuru Formunu doğru bir şekilde doldurmak.",
+                    "<strong>Başvuru ve Teslimat:</strong> Başvuruyu göndermek ve onaylanan E-Vizeyi e-posta yoluyla Kullanıcıya teslim etmek.",
+                    "<strong>Durum Güncellemeleri:</strong> Kullanıcıyı başvuru sonucu (Onay veya Ret) hakkında bilgilendirmek."
+                ]
+            },
+            {
+                "id": "4",
+                "title": "Fiyatlandırma ve Ödeme Yapısı",
+                "content": "Ödeme sayfasında gösterilen toplam ücret, aşağıdaki maliyetlerin bir konsolidasyonudur:",
+                "list": [
+                    "<strong>Devlet Zorunlu Harcı:</strong> Doğrudan Rusya Federasyonu'nun resmi vize sistemine ödenen sabit konsolosluk ücreti.",
+                    "<strong>Hizmet ve Danışmanlık Ücreti:</strong> Belge doğrulama, veri girişi, profesyonel destek ve sistem bakımı için Şirket tarafından alınan ücret.",
+                    "<strong>Banka ve İşlem Maliyetleri:</strong> Kredi/banka kartı işlemini işlemek için Ödeme Hizmeti Sağlayıcısı (PSP) tarafından alınan komisyon ücretleri.",
+                    "<strong>Hızlandırılmış Hizmet Ücreti (İsteğe Bağlı):</strong> Yalnızca Kullanıcı \"Hızlı\" veya \"Öncelikli\" işlem seçeneklerini seçerse geçerli olan ek ücretler."
+                ],
+                "note": "<strong>Ödeme Koşulları:</strong> Toplam tutar tek bir işlemde tahsil edilir. Ödemeyi tamamlayarak, Kullanıcı bu ücret yapısını kabul eder."
+            },
+            {
+                "id": "5",
+                "title": "İade ve İptal Politikası",
+                "content": "Hizmetin doğası gereği, aşağıdaki iade kuralları kesinlikle uygulanır:",
+                "subsections": [
+                    {
+                        "title": "Gönüllü İptal Süresi (30 Dakika)",
+                        "text": "Kullanıcı, ödeme yapıldıktan sonraki 30 dakika içinde e-posta yoluyla iptal talebinde bulunursa, tam iade yapılacaktır."
+                    },
+                    {
+                        "title": "Cayma Hakkı İstisnası",
+                        "text": "Mesafeli Sözleşmeler Yönetmeliği'nin (R.G.: 27.11.2014, Sayı: 29188) 15 (ğ) Maddesi uyarınca, Cayma Hakkı, \"elektronik ortamda anında ifa edilen hizmetlere ilişkin sözleşmeler\" için geçerli değildir. Şirket, Kullanıcının dosyasını incelemeye başladığında (genellikle ödemeden 30 dakika sonra), hizmet \"ifa edilmiş\" sayılır ve iade yapılamaz."
+                    },
+                    {
+                        "title": "İade Edilemeyen Devlet Harçları",
+                        "text": "Başvuru Rus makamlarına gönderildikten sonra, vize sonucuna bakılmaksızın Devlet Harcı bileşeni kesinlikle iade edilemez."
+                    }
+                ],
+                "endList": [
+                    "<strong>İade Prosedürü:</strong> Tüm iptal talepleri <link>info@russiaonlinevisa.com</link> adresine gönderilmelidir.",
+                    "<strong>Hata Koruması:</strong> Mükerrer tahsilatla sonuçlanan bir sistem hatası durumunda, fazla ödenen tutar tespit edildikten hemen sonra iade edilecektir."
+                ]
+            },
+            {
+                "id": "6",
+                "title": "Kullanıcının Yükümlülükleri",
+                "content": "Kullanıcı şunları kabul ve taahhüt eder:",
+                "list": [
+                    "Sağlanan tüm bilgilerin (Kimlik, Pasaport Verileri, Seyahat Tarihleri) doğru, eksiksiz ve güncel olduğunu.",
+                    "Gönderilen belgelerin gerçek olduğunu ve sahtecilik içermediğini.",
+                    "Vize verme veya reddetme konusundaki nihai kararın yalnızca Rusya Federasyonu makamlarına ait olduğunu anladığını. Şirket vize onayını garanti edemez.",
+                    "Şirketten gelen ek bilgi taleplerine derhal yanıt vereceğini."
+                ]
+            },
+            {
+                "id": "7",
+                "title": "Sorumluluğun Sınırlandırılması",
+                "list": [
+                    "<strong>Üçüncü Taraf Gecikmeleri:</strong> Şirket, Rusya Dışişleri Bakanlığı'ndan kaynaklanan gecikmelerden, devlet web sitesindeki teknik arızalardan veya bankacılık sistemi kesintilerinden sorumlu değildir.",
+                    "<strong>Kullanıcı Hatası:</strong> Şirket, Kullanıcı tarafından sağlanan yanlış bilgilerden (örn. pasaport numaralarındaki yazım hataları, yanlış tarihler) kaynaklanan vize reddi veya seyahat aksaklıklarından sorumlu değildir.",
+                    "<strong>Kapsam:</strong> Şirketin sorumluluğu, kesinlikle Kullanıcı tarafından ödenen hizmet bedeli ile sınırlıdır. Şirket yalnızca bir aracı danışmanlık hizmetidir."
+                ]
+            },
+            {
+                "id": "8",
+                "title": "Gizlilik ve Veri Koruma",
+                "content": "Kullanıcı tarafından sağlanan tüm kişisel veriler, Kişisel Verilerin Korunması Kanunu (KVKK) ve Gizlilik Politikamıza uygun olarak işlenir. Veriler yalnızca vize işlemleri amacıyla kullanılır ve üçüncü taraflara satılmaz."
+            },
+            {
+                "id": "9",
+                "title": "Fikri Mülkiyet",
+                "content": "<red>www.russiaonlinevisa.com</red> üzerindeki tüm içerik (metin, logolar, yazılım ve tasarım dahil) TİM-TUR TURİZM İÇ-DIŞ TİC.LTD.ŞTİ.'nin fikri mülkiyetindedir. İzinsiz kopyalanması, çoğaltılması veya ticari kullanımı yasaktır."
+            },
+            {
+                "id": "10",
+                "title": "Uyuşmazlık Çözümü",
+                "content": "Bu Sözleşme Türk Hukukuna tabidir. Bu Sözleşmenin yorumlanmasından veya uygulanmasından doğabilecek ve dostane yollarla çözülemeyen her türlü ihtilafta İstanbul (Merkez / Çağlayan) Mahkemeleri ve İcra Daireleri yetkilidir."
+            },
+            {
+                "id": "11",
+                "title": "İletişim Bilgileri",
+                "content": "Sorular, destek veya yasal bildirimler için lütfen bizimle iletişime geçin:",
+                "details": {
+                    "company": "Şirket Adı",
+                    "address": "Adres",
+                    "email": "E-posta",
+                    "website": "Web Sitesi"
+                }
+            }
+        ]
+    },
+    "PersonalDataPage": {
+        "backLink": "Hakkımızda Sayfasına Dön",
+        "header": {
+            "tag": "Yasal Politika",
+            "title": "Gizlilik Politikası ve Aydınlatma Metni",
+            "subtitle": "Kişisel Verilerin Korunması Hakkında",
+            "lastUpdated": "Son Güncelleme: <strong>20/01/2026</strong>"
+        },
+        "sections": [
+            {
+                "id": "1",
+                "title": "Giriş ve Veri Sorumlusu",
+                "content": [
+                    "Veri Sorumlusu sıfatıyla hareket eden <strong>TİM-TUR TURİZM İÇ-DIŞ TİC.LTD.ŞTİ.</strong> (bundan böyle “Şirket”, “Biz” olarak anılacaktır), kişisel verilerinizin gizliliğini ve güvenliğini korumayı taahhüt eder.",
+                    "Bu Politika, Türkiye Cumhuriyeti'nin 6698 sayılı Kişisel Verilerin Korunması Kanunu (“KVKK”) ve uygulanabilir olduğu durumlarda Genel Veri Koruma Yönetmeliği (“GDPR”) uyarınca hazırlanmıştır. <blue>www.russiaonlinevisa.com</blue> (“Web Sitesi”) adresini kullanırken sağladığınız bilgileri nasıl topladığımızı, işlediğimizi ve koruduğumuzu özetlemektedir.",
+                    "Hizmetlerimizi vize başvurusu yapmak için kullanarak, bu politikayı okuduğunuzu ve anladığınızı kabul edersiniz."
+                ]
+            },
+            {
+                "id": "2",
+                "title": "Topladığımız Kişisel Veriler",
+                "content": "Vize başvurunuzu işlemek ve hizmetlerimizi sağlamak için aşağıdaki veri kategorilerini topluyoruz:",
+                "list": [
+                    "<strong>Kimlik Bilgileri:</strong> Ad, soyad, doğum tarihi, doğum yeri, pasaport numarası, veriliş/bitiş tarihleri, vatandaşlık ve cinsiyet.",
+                    "<strong>İletişim Bilgileri:</strong> E-posta adresi, telefon numarası ve ikamet/posta adresi.",
+                    "<strong>Görsel ve Belge Verileri:</strong> Pasaportların taranmış kopyaları, biyometrik fotoğraflar ve konsolosluk tarafından istenen diğer destekleyici belgeler.",
+                    "<strong>İşlem Güvenliği ve Teknik Veriler:</strong> IP adresi, tarayıcı türü, cihaz bilgileri, erişim kayıtları ve çerez verileri.",
+                    "<strong>Finansal Bilgiler:</strong> Kredi/banka kartı detayları. <br /><em>Not: Güvenli üçüncü taraf ödeme işlemcileri kullanıyoruz. Tam kredi kartı numaranızı veya CVV kodunuzu sunucularımızda saklamıyoruz.</em>"
+                ]
+            },
+            {
+                "id": "3",
+                "title": "Kişisel Verilerin İşlenme Amacı",
+                "content": "Kişisel verilerinizi, KVKK'nın 5. ve 6. maddelerinde belirtilen hukuki sebeplere dayanarak aşağıdaki amaçlarla işliyoruz:",
+                "cards": [
+                    {
+                        "title": "Sözleşmenin İfası",
+                        "text": "Rusya e-vize başvurunuzu işlemek ve ilgili makamlara sunmak."
+                    },
+                    {
+                        "title": "Hizmet Operasyonları",
+                        "text": "Kullanıcı hesapları oluşturmak, başvuru durumu güncellemelerini iletmek ve müşteri desteği sağlamak."
+                    },
+                    {
+                        "title": "Yasal Yükümlülükler",
+                        "text": "Türk vergi yasalarına, veri saklama yasalarına ve uluslararası seyahat düzenlemelerine uymak."
+                    },
+                    {
+                        "title": "Meşru Menfaat",
+                        "text": "Web sitemizin işlevselliğini geliştirmek, dolandırıcılığı önlemek ve işlem güvenliğini sağlamak."
+                    }
+                ]
+            },
+            {
+                "id": "4",
+                "title": "Toplama Yöntemi ve Hukuki Sebep",
+                "content": "Kişisel verileriniz Web Sitemizdeki formlar, e-posta yazışmaları ve çerezler aracılığıyla elektronik ortamda toplanmaktadır. İşleme için hukuki sebepler şunlardır:",
+                "list": [
+                    "Bir sözleşmenin kurulması ve ifası (Vize işlemleri).",
+                    "Açık rıza (özel nitelikli veriler veya yurtdışına aktarım için gerektiğinde).",
+                    "Veri Sorumlusunun hukuki yükümlülüklerine uyum."
+                ]
+            },
+            {
+                "id": "5",
+                "title": "Yurtdışına Veri Aktarımı",
+                "box": {
+                    "p1": "İşimizin doğası gereği (Vize Hizmetleri), kişisel verileriniz yurtdışına, özellikle Rusya Federasyonu devlet makamlarına ve ilgili konsolosluk aracılarına aktarılmalıdır.",
+                    "p2": "Başvurunuzu göndererek, kimlik ve belge verilerinizin yalnızca vize verilmesi amacıyla ikamet ettiğiniz ülkenin dışındaki ve Türkiye dışındaki sunuculara ve yetkililere aktarılmasına açıkça rıza gösterirsiniz."
+                }
+            },
+            {
+                "id": "6",
+                "title": "Verilerin Üçüncü Taraflarla Paylaşılması",
+                "content": "Verilerinizi satmıyoruz veya kiralamıyoruz. Veriler yalnızca şu kişilerle paylaşılır:",
+                "list": [
+                    "<strong>Devlet Makamları:</strong> Rusya Federasyonu Dışişleri Bakanlığı (vize verilmesi için) ve Türk adli makamları (mahkeme emri ile talep edilirse).",
+                    "<strong>Hizmet Sağlayıcılar:</strong> Web sitemizi işletmemize, işimizi yürütmemize veya kullanıcılarımıza hizmet vermemize yardımcı olan güvenilir üçüncü taraflar (örn. güvenli ödeme ağ geçitleri, barındırma sağlayıcıları, e-posta gönderim hizmetleri). Bu taraflar gizlilik sözleşmeleri ile bağlıdır."
+                ]
+            },
+            {
+                "id": "7",
+                "title": "Veri Saklama, Güvenlik ve İmha",
+                "content": "Verilerinizin hukuka aykırı olarak işlenmesini ve erişilmesini önlemek için uygun teknik ve idari tedbirleri alıyoruz.",
+                "list": [
+                    "<strong>Güvenlik:</strong> Veriler güvenli, şifreli sunucularda saklanır. Erişim yalnızca yetkili personel ile sınırlıdır.",
+                    "<strong>Saklama Süresi:</strong> Kişisel verilerinizi, bu politikada belirtilen amaçları yerine getirmek için gerekli olduğu sürece saklıyoruz.",
+                    "<strong>Detaylar:</strong>"
+                ],
+                "sublist": [
+                    "Vize Başvuru Verileri: Uyuhmazlık çözümü için hizmet tamamlandıktan sonra en fazla 1 yıl saklanır.",
+                    "Finansal Kayıtlar: Türk Ticaret Kanunu ve Vergi Usul Kanunu uyarınca 10 yıl saklanır.",
+                    "Saklama süresi dolduktan sonra veriler güvenli bir şekilde silinir, yok edilir veya anonim hale getirilir."
+                ]
+            },
+            {
+                "id": "8",
+                "title": "Haklarınız (KVKK Madde 11 ve GDPR Kapsamında)",
+                "content": "Veri sahibi olarak, bize başvurarak şunları talep etme hakkına sahipsiniz:",
+                "list": [
+                    "Kişisel verilerinizin işlenip işlenmediğini öğrenme.",
+                    "Verileriniz işlenmişse buna ilişkin bilgi talep etme.",
+                    "İşlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme.",
+                    "Verilerinizin aktarıldığı üçüncü kişileri bilme.",
+                    "Eksik veya yanlış verilerin düzeltilmesini isteme.",
+                    "Kişisel verilerinizin silinmesini veya yok edilmesini isteme.",
+                    "Otomatik sistemler analizinden kaynaklanan olumsuz sonuçlara itiraz etme.",
+                    "Kanuna aykırı işleme nedeniyle oluşan zararın tazminini talep etme."
+                ],
+                "note": "Bu hakları kullanmak için lütfen Bölüm 10'daki bilgiler aracılığıyla bizimle iletişime geçin."
+            },
+            {
+                "id": "9",
+                "title": "Çerez Kullanımı",
+                "content": "Deneyiminizi geliştirmek için çerezler kullanıyoruz.",
+                "list": [
+                    "<strong>Zorunlu Çerezler:</strong> Web sitesinin çalışması için gereklidir (örn. ödeme yaparken başvuru verilerinizi tutmak).",
+                    "<strong>Analitik Çerezler:</strong> Ziyaretçilerin sitemizi nasıl kullandığını anlamamıza yardımcı olur. Tarayıcı ayarlarınızdan çerezleri devre dışı bırakabilirsiniz; ancak bu, vize başvurunuzu çevrimiçi olarak tamamlamanızı engelleyebilir."
+                ]
+            },
+            {
+                "id": "10",
+                "title": "İletişim Bilgileri",
+                "content": "Kişisel verilerinizle ilgili talepleriniz veya yasal haklarınızı kullanmak için Veri Sorumlusu ile iletişime geçebilirsiniz:",
+                "details": {
+                    "company": "Şirket Adı",
+                    "address": "Adres",
+                    "email": "E-posta",
+                    "website": "Web Sitesi"
+                }
+            }
+        ]
+    },
+    "TrackingPage": {
+        "title": "Başvurunuzu Takip Edin",
+        "description": "Çok yakında: Durum takip özelliği."
+    },
+    "ServicesPage": {
+        "title": "Diğer Hizmetler",
+        "description": "<blue>russianonlinevisa.com</blue>'un ana şirketi olan <blue>Timtur Seyahat Acentesi</blue>, deneyimli bir iş seyahati acentesidir.",
+        "networkTitle": "Operasyonel Ağ Hizmetleri",
+        "contact": "Yukarıdaki hizmetler için lütfen <link>www.timtur.com</link> adresini ziyaret edin veya <mail>timtur@timtur.com</mail> üzerinden bizimle iletişime geçin.",
+        "list": {
+            "travelPlanning": "Seyahat Planlama",
+            "corporate": "Kurumsal Seyahat Ortaklığı",
+            "accommodation": "Konaklama",
+            "flights": "Uçak Bileti & Özel Jet Hizmetleri",
+            "meetGreet": "Karşılama ve Tercümanlık",
+            "guiding": "Özel Rehberlik",
+            "transfers": "Özel Transferler",
+            "tours": "Kişiye Özel Tur Programları",
+            "visa": "Vize Danışmanlığı",
+            "meetings": "Toplantı Organizasyonu",
+            "tradeFairs": "Fuar Desteği",
+            "yachts": "Yat Kiralama Hizmetleri"
+        }
+    },
+    "FaqPage": {
+        "title": "Sıkça Sorulan Sorular",
+        "description": "Rusya Elektronik Vize başvuru süreci hakkında bilmeniz gereken her şey.",
+        "sections": {
+            "general": {
+                "title": "Genel Bilgiler",
+                "items": {
+                    "whatIs": {
+                        "q": "Rusya E-vizesi tam olarak nedir?",
+                        "a": "Turizm, iş, bilimsel veya spor etkinlikleri için Rusya'yı ziyaret etmenize izin veren elektronik bir seyahat iznidir. Tamamen online olarak başvurulur."
+                    },
+                    "guarantee": {
+                        "q": "Bu vize Rusya'ya girişimi garanti eder mi?",
+                        "a": "Hayır. Vize size sınıra kadar seyahat etme izni verir, ancak giriş izni verme konusundaki nihai karar varışta göçmenlik memuruna aittir."
+                    },
+                    "stayDuration": {
+                        "q": "Rusya'da ne kadar kalabilirim?",
+                        "a": "Vize verildikten sonra, ülkeye girmek için 120 günlük bir süreniz vardır. Girdikten sonra en fazla 30 gün kalabilirsiniz."
+                    },
+                    "multiEntry": {
+                        "q": "Bu çok girişli bir vize mi?",
+                        "a": "Hayır. E-vize yalnızca tek giriş için geçerlidir. Ayrılırsanız ve geri dönmek isterseniz, yeni bir vize için başvurmalısınız."
+                    },
+                    "work": {
+                        "q": "Bu vizeyi çalışmak veya işe girmek için kullanabilir miyim?",
+                        "a": "Hayır. Bu vize kesinlikle turizm, misafir ziyaretleri veya kısa iş görüşmeleri içindir. Çalışmak yasaktır."
+                    },
+                    "transit": {
+                        "q": "Bu vizeyi sadece Rusya üzerinden transit geçmek için kullanabilir miyim?",
+                        "a": "Hayır, bu vizenin bir \"transit\" kategorisi yoktur. Bekleme sırasında ülkeye giriyorsanız, turist veya ziyaretçi olarak başvurmalısınız. Havaalanı transit bölgesinde kalacaksanız, genellikle bu vizeye ihtiyacınız yoktur."
+                    }
+                }
+            },
+            "requirements": {
+                "title": "Gereksinimler ve Belgeler",
+                "items": {
+                    "documents": {
+                        "q": "Başvurmak için hangi belgelere ihtiyacım var?",
+                        "a": "Geçerli bir pasaport, dijital bir fotoğraf (3.5x4.5 cm, beyaz fonlu) ve doldurulmuş online başvuru formuna ihtiyacınız var."
+                    },
+                    "passport": {
+                        "q": "Pasaport gereksinimleri nelerdir?",
+                        "a": "Pasaportunuz Rusya'ya girmeyi planladığınız tarihten itibaren en az 6 ay geçerli olmalıdır. Ayrıca damgalar için en az 2 boş sayfası olmalıdır."
+                    },
+                    "insurance": {
+                        "q": "Sağlık sigortasına ihtiyacım var mı?",
+                        "a": "Hayır. Şiddetle tavsiye edilse de, tek girişli vize almak için zorunlu değildir."
+                    },
+                    "children": {
+                        "q": "Çocuklarla seyahat ediyorum. Onların kendi vizelerine ihtiyacı var mı?",
+                        "a": "Evet. Bir çocuk pasaportunuza kayıtlı olsa bile, her küçük için ayrı bir başvuru yapılmalıdır."
+                    },
+                    "dualCitizenship": {
+                        "q": "Süresi dolmuş pasaportu olan bir Rus vatandaşıyım. Girmek için yabancı pasaport kullanabilir miyim?",
+                        "a": "Hayır. Rus vatandaşları ülkeye geçerli Rus seyahat belgelerini kullanarak girmeli ve çıkmalıdır."
+                    }
+                }
+            },
+            "process": {
+                "title": "Başvuru Süreci",
+                "items": {
+                    "duration": {
+                        "q": "Başvuru süreci ne kadar sürer?",
+                        "a": "İşlem genellikle 6 takvim günü sürer. Ancak başvurunuzda hatalar varsa daha uzun sürebilir."
+                    },
+                    "family": {
+                        "q": "Tüm ailem için tek bir formda başvurabilir miyim?",
+                        "a": "Hayır. Onlar adına formları doldurabilirsiniz ancak her bir birey için ayrı bir başvuru yapılmalıdır."
+                    },
+                    "mistakes": {
+                        "q": "Başvuru formunda hata yaparsam ne olur?",
+                        "a": "Hata işlem sırasında fark edilirse, başvuru düzeltmeniz için size iade edilebilir. Vizeyi zaten aldıysanız ve bir hata (yanlış doğum tarihi gibi) fark ederseniz, bunu düzeltemezsiniz; tamamen yeni bir başvuru yapmalı ve ödeme yapmalısınız."
+                    },
+                    "language": {
+                        "q": "Formu doldurmak için hangi dili kullanmalıyım?",
+                        "a": "Formu yalnızca İngilizce (Latin) karakterler kullanarak doldurmalısınız."
+                    },
+                    "parentsInfo": {
+                        "q": "Ebeveynlerimin bilgilerini bilmiyorsam ne olur?",
+                        "a": "Ebeveynleriniz hakkında bilginiz yoksa, ilgili alanları boş bırakmanız yeterlidir."
+                    }
+                }
+            },
+            "payment": {
+                "title": "Ödeme ve İadeler",
+                "items": {
+                    "cost": {
+                        "q": "Ücret ne kadar ve nasıl öderim?",
+                        "a": "Vize ücreti ve hizmet bedeli toplam 110 USD'dir. Başlıca kredi kartlarını (Visa, MasterCard) kullanabilirsiniz."
+                    },
+                    "othersCard": {
+                        "q": "Başkasının kredi kartıyla ödeme yapabilir miyim?",
+                        "a": "Evet, ücreti ödemek için başka birine ait bir kartı kullanabilirsiniz."
+                    },
+                    "refund": {
+                        "q": "Vizem reddedilirse ücret iade edilir mi?",
+                        "a": "Hayır. Başvuru yapılıp ödendikten sonra, sonuç ne olursa olsun ücret iade edilmez."
+                    }
+                }
+            },
+            "travel": {
+                "title": "Seyahat ve Giriş",
+                "items": {
+                    "entryPoints": {
+                        "q": "Rusya'ya nereden girebilirim?",
+                        "a": "Yalnızca hükümet tarafından onaylanmış belirli kontrol noktalarından (uluslararası havalimanları, limanlar ve kara sınırları) giriş ve çıkış yapabilirsiniz. Yetkisiz geçişleri kullanamazsınız."
+                    },
+                    "freedom": {
+                        "q": "Rusya içindeyken serbestçe seyahat edebilir miyim?",
+                        "a": "Evet, özel askeri veya hükümet izni gerektiren belirli kısıtlı bölgeler dışında herhangi bir şehri veya bölgeyi ziyaret etmekte özgürsünüz."
+                    },
+                    "hotel": {
+                        "q": "Başvurmadan önce otel rezervasyonu yapmam gerekir mi?",
+                        "a": "Kalmayı planladığınız yerin iletişim bilgilerini (isim, adres, telefon) vermeniz gerekir, ancak başvuru sırasında onaylanmış bir rezervasyon kanıtı sunmanız gerekmez."
+                    },
+                    "registration": {
+                        "q": "\"Göç Kaydı\" nedir ve buna ihtiyacım var mı?",
+                        "a": "Evet. Rusya'da 7 iş gününden fazla kalan her yabancının kayıt yaptırması gerekir. Bir otelde kalırsanız, bunu sizin için otomatik olarak hallederler."
+                    },
+                    "support": {
+                        "q": "Yardıma ihtiyacım olursa veya başvurum gecikirse ne olur?",
+                        "a": "Durumunuzu online takip edebilirsiniz. Yardıma ihtiyacınız varsa lütfen <email>info@timtur.com</email> adresinden veya <phone>+90 530 202 85 30</phone> numarasından Vize Başvuru Merkezi ile iletişime geçin."
+                    }
+                }
+            }
+        }
+    },
+    "InstructionsPage": {
+        "title": "RUSYA E-VİZESİNİN ÖZELLİKLERİ VE VERİLME KOŞULLARI",
+        "important": {
+            "title": "KALIŞ SÜRESİ HAKKINDA ÖNEMLİ NOT",
+            "text1": "Rusya Federasyonu'nda tek bir e-vize temelinde izin verilen kalış süresi 30 güne kadardır, ancak bu net 720 saat (24 saat x 30) kalma olasılığını <strong>İFADE ETMEZ</strong>. Varış günü ve ayrılış günü iki gün olarak sayılır.",
+            "text2": "Ayrıca vize 120 gün geçerlidir. Bu, vizeyi aldıktan sonra Rusya Federasyonu'na girmek için maksimum 120 gününüz olduğu ve maksimum 30 gün kalmanıza izin verildiği anlamına gelir. İzin verilen kalış süresini belirlemek için web sitemizdeki \"vize hesaplayıcısını\" kullanabilirsiniz."
+        },
+        "intro": {
+            "p1": "Tek e-vize tek girişli bir vizedir. Tek elektronik vizenin geçerlilik süresi, düzenlendiği tarihten itibaren 120 gündür. Tek e-vize temelinde Rusya Federasyonu'nda izin verilen kalış süresi, geçerlilik süresi içinde giriş tarihinden itibaren 30 günü geçemez.",
+            "p2": "Pasaportunuz makine okunabilir olmalı ve vatandaşlığınızın bulunduğu ülke tarafından verilmiş olmalıdır. Pasaportunuz, tek e-vize başvurusunun yapıldığı tarihten itibaren en az 6 ay geçerli olmalıdır. Pasaportunuz bu gereksinimleri karşılamıyorsa, e-vize başvurusu işleme alınamaz. Pasaportunuzda sınır geçiş damgaları için yeterli alan bulunmalıdır."
+        },
+        "countries": {
+            "title": "Uygun Ülkeler",
+            "desc": "Yalnızca listesi Rusya Federasyonu Hükümeti tarafından onaylanan aşağıdaki yabancı ülkelerin vatandaşları e-vize için uygundur:",
+            "list": [
+                "Avusturya",
+                "Barbados",
+                "Bahreyn",
+                "Belçika",
+                "Bulgaristan",
+                "Butan",
+                "Kamboçya",
+                "Çin (Tayvan dahil)",
+                "Hırvatistan",
+                "Kıbrıs",
+                "Çek Cumhuriyeti",
+                "Danimarka",
+                "Esvatini",
+                "Estonya",
+                "Finlandiya",
+                "Fransa",
+                "Almanya",
+                "Yunanistan",
+                "Macaristan",
+                "İzlanda",
+                "Hindistan",
+                "Endonezya",
+                "İran",
+                "İrlanda",
+                "İtalya",
+                "Japonya",
+                "Ürdün",
+                "Kenya",
+                "Kore Demokratik Halk Cumhuriyeti",
+                "Kuveyt",
+                "Letonya",
+                "Lihtenştayn",
+                "Litvanya",
+                "Lüksemburg",
+                "Malezya",
+                "Malta",
+                "Meksika",
+                "Monako",
+                "Myanmar",
+                "Hollanda",
+                "Kuzey Makedonya",
+                "Norveç",
+                "Umman",
+                "Papua Yeni Gine",
+                "Filipinler",
+                "Polonya",
+                "Portekiz",
+                "Romanya",
+                "Saint Lucia",
+                "San Marino",
+                "Suudi Arabistan",
+                "Singapur",
+                "Slovakya",
+                "Slovenya",
+                "İspanya",
+                "İsveç",
+                "İsviçre",
+                "Tonga",
+                "Trinidad ve Tobago",
+                "Türkmenistan",
+                "Türkiye",
+                "Vatikan",
+                "Vietnam",
+                "Zimbabve"
+            ]
+        },
+        "checkpoints": {
+            "title": "İzin Verilen Sınır Geçiş Noktaları",
+            "desc": "E-vize, aşağıdaki sınır geçiş noktalarından giriş için geçerlidir:",
+            "types": {
+                "air": "Hava Kontrol Noktaları",
+                "auto": "Otomobil Kontrol Noktaları",
+                "rail": "Demiryolu Kontrol Noktaları",
+                "maritime": "Deniz Kontrol Noktaları",
+                "pedestrian": "Yaya Kontrol Noktaları",
+                "river": "Nehir Kontrol Noktaları"
+            },
+            "regions": {
+                "altai": "Altay Bölgesi",
+                "arkhangelsk": "Arhangelsk Bölgesi",
+                "astrakhan": "Astrahan Bölgesi",
+                "belgorod": "Belgorod Bölgesi",
+                "bryansk": "Bryansk Bölgesi",
+                "bashkortostan": "Başkurdistan Cumhuriyeti",
+                "buryatia": "Buryatya Cumhuriyeti",
+                "volgograd": "Volgograd Bölgesi",
+                "dagestan": "Dağıstan Cumhuriyeti",
+                "sverdlovsk": "Sverdlovsk Bölgesi",
+                "stavropol": "Stavropol Bölgesi",
+                "transbaikal": "Transbaykal Bölgesi",
+                "irkutsk": "İrkutsk Bölgesi",
+                "kabardino": "Kabardey-Balkar Cumhuriyeti",
+                "kaliningrad": "Kaliningrad Bölgesi",
+                "kaluga": "Kaluga Bölgesi",
+                "kamchatka": "Kamçatka Bölgesi",
+                "kemerovo": "Kemerovo Bölgesi",
+                "krasnodar": "Krasnodar Bölgesi",
+                "krasnoyarsk": "Krasnoyarsk Bölgesi",
+                "moscow": "Moskova ve Moskova Bölgesi",
+                "omsk": "Omsk Bölgesi",
+                "orenburg": "Orenburg Bölgesi",
+                "komi": "Komi Cumhuriyeti",
+                "lipetsk": "Lipetsk Bölgesi",
+                "murmansk": "Murmansk Bölgesi",
+                "nizhny": "Nizhny Novgorod Bölgesi",
+                "novosibirsk": "Novosibirsk Bölgesi",
+                "primorsky": "Primorsky Krayı",
+                "perm": "Perm Bölgesi",
+                "rostov": "Rostov Bölgesi",
+                "samara": "Samara Bölgesi",
+                "saratov": "Saratov Bölgesi",
+                "spb": "St. Petersburg ve Leningrad Bölgesi",
+                "sakhalin": "Sahalin Bölgesi",
+                "ossetia": "Kuzey Osetya - Alanya Cumhuriyeti",
+                "tatarstan": "Tataristan Cumhuriyeti",
+                "tomsk": "Tomsk Bölgesi",
+                "tyumen": "Tyumen Bölgesi",
+                "ulyanovsk": "Ulyanovsk Bölgesi",
+                "chelyabinsk": "Çelyabinsk Bölgesi",
+                "chuvash": "Çuvaş Cumhuriyeti",
+                "khabarovsk": "Habarovsk Bölgesi",
+                "khakassia": "Hakasya Cumhuriyeti",
+                "chechen": "Çeçen Cumhuriyeti",
+                "chukotka": "Çukotka Özerk Bölgesi",
+                "yaroslavl": "Yaroslavl Bölgesi",
+                "altaiRep": "Altay Cumhuriyeti",
+                "karelia": "Karelya Cumhuriyeti",
+                "primorye": "Primorye Bölgesi",
+                "pskov": "Pskov Bölgesi",
+                "magadan": "Magadan Bölgesi",
+                "amur": "Amur Bölgesi",
+                "jewish": "Yahudi Özerk Bölgesi"
+            },
+            "points": {
+                "barnaul": "Barnaul",
+                "arkhangelsk": "Arhangelsk (Talagi)",
+                "astrakhan": "Astrahan (Narimanovo)",
+                "belgorod": "Belgorod",
+                "bryansk": "Bryansk",
+                "ufa": "Ufa",
+                "ulanUde": "Ulan-Ude (Mukhino)",
+                "volgograd": "Volgograd (Gumrak)",
+                "makhachkala": "Mahaçkale (Uytash)",
+                "yekaterinburg": "Yekaterinburg (Koltsovo)",
+                "mineralnye": "Mineralnye Vody",
+                "chita": "Çita (Kadala)",
+                "irkutsk": "İrkutsk",
+                "nalchik": "Nalçik",
+                "kaliningrad": "Kaliningrad (Khrabrovo)",
+                "kaluga": "Kaluga (Grabtsevo)",
+                "petropavlovsk": "Petropavlovsk-Kamçatski (Elizovo)",
+                "kemerovo": "Kemerovo",
+                "krasnodar": "Krasnodar (Pashkovsky)",
+                "sochi": "Soçi",
+                "krasnoyarsk": "Krasnoyarsk (Emelyanovo)",
+                "vnukovo": "Moskova (Vnukovo)",
+                "domodedovo": "Moskova (Domodedovo)",
+                "sheremetyevo": "Moskova (Sheremetyevo)",
+                "zhukovsky": "Moskova (Zhukovsky)",
+                "omsk": "Omsk (Merkez)",
+                "orenburg": "Orenburg (Merkez)",
+                "syktyvkar": "Sıktıvkar",
+                "lipetsk": "Lipetsk",
+                "murmansk": "Murmansk",
+                "nizhny": "Nizhny Novgorod (Strigino)",
+                "novosibirsk": "Novosibirsk (Tolmachevo)",
+                "vladivostok": "Vladivostok (Knevichi)",
+                "perm": "Perm (Bolshoe Savino)",
+                "rostov": "Rostov-na-Donu (Platov)",
+                "samara": "Samara (Kurumoch)",
+                "saratov": "Saratov (Gagarin)",
+                "pulkovo": "St. Petersburg (Pulkovo)",
+                "yuzhno": "Yuzhno-Sahalinsk (Khomutovo)",
+                "vladikavkaz": "Vladikavkaz (Beslan)",
+                "kazan": "Kazan",
+                "tomsk": "Tomsk (Bogashevo)",
+                "tyumen": "Tyumen (Roshchino)",
+                "ulyanovsk": "Ulyanovsk (Vostochny)",
+                "chelyabinsk": "Çelyabinsk (Balandino)",
+                "cheboksary": "Şeboksarı (Cheboksary)",
+                "khabarovsk": "Habarovsk (Yeni)",
+                "abakan": "Abakan",
+                "grozny": "Grozny (Kuzey)",
+                "anadyr": "Anadyr (Ugolnyy)",
+                "yaroslavl": "Yaroslavl (Tunoshna)",
+                "tashanta": "Tashanta",
+                "kyakhta": "Kyakhta",
+                "bagrationovsk": "Bagrationovsk",
+                "gusev": "Gusev",
+                "mamonovoGrzechotki": "Mamonovo (Grzechotki)",
+                "mamonovoGronovo": "Mamonovo (Gronovo)",
+                "morskoje": "Morskoje",
+                "pogranichny": "Pogranichny",
+                "sovetsk": "Sovetsk",
+                "chernyshevskoe": "Chernyshevskoe",
+                "vyartsilya": "Vyartsilya",
+                "lyuttya": "Lyuttya",
+                "suoperya": "Suoperya",
+                "salla": "Salla",
+                "poltavka": "Poltavka",
+                "turiyRog": "Turiy Rog",
+                "burachki": "Burachki",
+                "kunichina": "Kunichina Gora",
+                "shumilkino": "Shumilkino",
+                "ubylinka": "Ubylinka",
+                "brusnitchnoe": "Brusnitchnoe",
+                "ivangorod": "Ivangorod",
+                "ivangorodClosed": "Ivangorod (1 Şubat 2024 tarihinden itibaren yeniden yapılanma nedeniyle geçici olarak kapalı olacaktır)",
+                "svetogorsk": "Svetogorsk",
+                "torfjanovka": "Torfjanovka",
+                "verkhnyLars": "Verkhny Lars",
+                "solovyovsk": "Solovyovsk",
+                "starotsurukhaitui": "Starotsurukhaitui",
+                "zabaykalsk": "Zabaykalsk",
+                "naushki": "Naushki",
+                "mamonovo": "Mamonovo",
+                "makhalino": "Makhalino",
+                "pogranichnyy": "Pogranichnyy",
+                "khasan": "Khasan",
+                "finlyandskiy": "St. Petersburg-Finlyandskiy",
+                "petropavlovskSea": "Petropavlovsk-Kamçatski",
+                "kaliningradSea": "Kaliningrad (Kaliningrad ve Svetly şehirlerindeki kontrol noktaları)",
+                "sochiSea": "Soçi (Uluslararası Deniz Yolcu ve Kruvaziyer Taşımacılığı Merkezi)",
+                "magadan": "Magadan",
+                "kandalaksha": "Kandalaksha",
+                "murmanskSea": "Murmansk",
+                "vladivostokSea": "Vladivostok",
+                "zarubino": "Zarubino",
+                "posiet": "Posiet",
+                "bigPortSpb": "Büyük Liman St. Petersburg (Deniz İstasyonu, Fort Constantin, İngiliz Rıhtımı ve Teğmen Schmidt Rıhtımı)",
+                "vysotsk": "Vysotsk",
+                "passengerPortSpb": "St. Petersburg Yolcu Limanı",
+                "korsakov": "Korsakov",
+                "nikolayevsk": "Nikolayevsk-na-Amure",
+                "blagoveshchensk": "Blagoveshchensk",
+                "amurzet": "Amurzet",
+                "pokrovka": "Pokrovka",
+                "khabarovskRiver": "Habarovsk"
+            }
+        },
+        "rules": {
+            "title": "Kurallar, Koşullar ve Prosedür",
+            "items": {
+                "noInvitations": {
+                    "title": "Davetiye Gerekmez",
+                    "text": "E-vize başvuru sahiplerinin Rusya Federasyonu'na seyahat amaçlarını doğrulayan bir davetiye mektubu, otel rezervasyon onayı veya başka herhangi bir belge sunmaları gerekmez."
+                },
+                "activities": {
+                    "title": "İzin Verilen Faaliyetler",
+                    "text": "Tek e-vize, Rusya Federasyonu'na özel veya iş ziyareti, turizm amacıyla girme ve kalma hakkının yanı sıra bilimsel, kültürel, sosyo-politik, ekonomik, sportif etkinliklere katılma ve ilgili iletişim ve temasları yürütme hakkı verir. Rusya Federasyonu'na seyahatinizin amacı yukarıdakilerden hiçbiri değilse, normal (elektronik olmayan) bir vize için Rusya Federasyonu diplomatik misyonuna veya konsolosluğuna başvurmanız gerekir."
+                },
+                "movement": {
+                    "title": "Hareket Özgürlüğü",
+                    "text": "Tek e-vize temelinde Rusya Federasyonu'na gelen yabancı vatandaşlar, özel izin gerektiren bölgelere, kuruluşlara ve tesislere yapılan ziyaretler dışında, Rusya Federasyonu topraklarının tamamında hareket etme özgürlüğüne sahiptir."
+                },
+                "extension": {
+                    "title": "Uzatma Politikası",
+                    "text": "Elektronik vizenin geçerlilik süresi ve/veya izin verilen kalış süresi, yalnızca acil tedavi ihtiyacı veya aşılmaz koşullar (mücbir sebep) veya doğal afetler nedeniyle Rusya Federasyonu topraklarından ayrılmanın imkansız olduğu durumlarda uzatılabilir. Uzatma işlemi Rusya Federasyonu İçişleri Bakanlığı tarafından gerçekleştirilir."
+                },
+                "existing": {
+                    "title": "Mevcut Vizeler",
+                    "text": "Pasaportunuzda geçerli bir Rusya vizesi varsa, tek e-vize başvurusunda bulunmanız gerekmez. Rusya Federasyonu'nu, tek e-vize için belirlenen kısıtlamalar olmaksızın, geçerlilik süresi içinde normal bir vize ile ziyaret edebilirsiniz. Normal bir vizenin geçerliliği e-vize alınarak uzatılamaz."
+                },
+                "timing": {
+                    "title": "Başvuru Zamanlaması",
+                    "text": "Başvuru, Rusya Federasyonu'na beklenen giriş tarihinden en erken 86 gün ve en geç 6 gün önce yapılabilir."
+                },
+                "consent": {
+                    "title": "Veri Onayı",
+                    "text": "Tek e-vize başvurusunu tamamlamadan önce, başvurunuzdaki verilerin tek e-vize verilmesi amacıyla otomatik olarak işlenmesine, iletilmesine ve saklanmasına izin vermeniz gerekecektir."
+                },
+                "correction": {
+                    "title": "Düzeltme Süreci",
+                    "text": "Başvurunun işlenmesi sırasında belirtilen bilgilerden herhangi birinin yanlış olduğu ortaya çıkarsa, işlem durdurulur ve düzeltilmesi gereken alanlar ve yorumlarla birlikte düzenleme yapmanız için size iade edilir. Bir başvuru, gönderim tarihinden itibaren en geç iki takvim günü içinde düzenleme için iade edilir. Böyle bir gereklilik durumunda, acentelerimiz verdiğiniz iletişim bilgileri aracılığıyla sizinle iletişime geçecektir."
+                },
+                "mandatory": {
+                    "title": "Zorunlu Bilgiler",
+                    "text": "Başvuru formunu doldururken doğum günü, ayı ve yılının belirtilmesi zorunludur. Tam doğum tarihiniz pasaportunuzda belirtilmemişse, tek e-vize başvurusu işleme kabul edilemez."
+                },
+                "minors": {
+                    "title": "Küçükler",
+                    "text": "Pasaportunuzda belirtilen reşit olmayan çocuklarla seyahat ediyorsanız, her çocuk için ayrı bir tek e-vize başvurusu yapılmalıdır. Ebeveynleriyle seyahat eden tüm reşit olmayan çocukların ayrı bir e-vizesi olmalıdır."
+                },
+                "accuracy": {
+                    "title": "Doğruluk ve İptal",
+                    "text": "Başvurunuzda verdiğiniz bilgiler tam ve doğru olmalıdır. Herhangi bir yanlış bilgi, halihazırda verilmiş olan vizenin Rusya Federasyonu sınır geçiş noktasında veya Rusya Federasyonu topraklarında iptal edilmesine yol açabilir."
+                },
+                "insurance": {
+                    "title": "Sağlık Sigortası",
+                    "text": "Tek e-vize temelinde Rusya Federasyonu'nda kalan yabancı vatandaşların, karşılıklılık ilkesine göre bu gereklilikten muaf tutulan aşağıdaki yabancı ülkelerin vatandaşları haricinde, kaldıkları süre boyunca Rusya Federasyonu topraklarında geçerli bir sağlık sigortasına sahip olmaları gerekir."
+                },
+                "refusals": {
+                    "title": "Retler",
+                    "text": "Tek e-vize, Rusya Federasyonu mevzuatı tarafından belirlenen durumlarda reddedilebilir."
+                }
+            }
+        },
+        "status": {
+            "title": "Başvuru Durumu ve Kararlar",
+            "items": {
+                "processing": {
+                    "title": "İşleme:",
+                    "text": "Tüm başvurular bir doğrulama sürecinden geçer. Başvurunuz doğruysa, durumu “İşleme alındı” olarak değişecektir. Yanlış veri bulunursa, durum “Düzeltme gerekli” olarak değişecektir. Düzenlemeniz ve yeniden işleme için göndermeniz gerekecektir."
+                },
+                "completion": {
+                    "title": "Tamamlama:",
+                    "text": "Bir karar verildikten sonra, durum “İşlem tamamlandı” olarak değişecektir. Sonucu içeren bir PDF dosyasını e-postanıza gönderilen bağlantıdan indirebilirsiniz."
+                },
+                "positive": {
+                    "title": "Olumlu Karar:",
+                    "text": "E-vizenizle birlikte bildirimi yazdırdığınızdan veya mobil cihazınıza kaydettiğinizden emin olun. Uçağa binerken taşıma şirketi temsilcilerine ve sınır görevlilerine bildirimi göstermeniz gerekecektir."
+                }
+            }
+        }
+    }
+}

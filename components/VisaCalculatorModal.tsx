@@ -85,7 +85,7 @@ export default function VisaCalculatorModal({ isOpen, onClose }: VisaCalculatorM
                             <div className="relative mt-2 visa-calendar-wrapper">
                                 <DatePicker
                                     selected={entryDate}
-                                    onChange={(date) => setEntryDate(date)}
+                                    onChange={(date: any) => setEntryDate(date)}
                                     locale={locale} // Uses the current app locale
                                     minDate={minDate}
                                     maxDate={maxDate}

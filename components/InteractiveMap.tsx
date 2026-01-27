@@ -34,6 +34,13 @@ export default function InteractiveMap() {
         );
     };
 
+    const [mounted, setMounted] = useState(false);
+    React.useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    if (!mounted) return <div className="w-full h-[500px] bg-blue-50/30 rounded-xl border border-gray-100 flex items-center justify-center text-gray-400">Loading map...</div>;
+
     return (
         <div className="w-full h-[500px] bg-blue-50/30 rounded-xl overflow-hidden relative border border-gray-100">
             {content && (

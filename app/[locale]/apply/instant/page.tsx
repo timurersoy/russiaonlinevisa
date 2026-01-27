@@ -1,8 +1,16 @@
 import InstantApplyForm from '@/components/InstantApplyForm';
 import { useTranslations } from 'next-intl';
 
-export default function InstantApplyPage() {
-    const t = useTranslations('ApplyInstantPage');
+import { setRequestLocale, getTranslations } from 'next-intl/server';
+
+export default async function InstantApplyPage({
+    params
+}: {
+    params: Promise<{ locale: string }>;
+}) {
+    const { locale } = await params;
+    setRequestLocale(locale);
+    const t = await getTranslations('ApplyInstantPage');
     return (
         <div className="bg-gray-50 min-h-screen py-16 sm:py-24">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

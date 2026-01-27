@@ -3,8 +3,16 @@ import { ShieldCheck, Globe, Clock, UserCheck, FileEdit, CreditCard, MailCheck, 
 import InteractiveMap from '@/components/InteractiveMap';
 import { useTranslations } from 'next-intl';
 
-export default function Home() {
-    const t = useTranslations('HomePage');
+import { setRequestLocale, getTranslations } from 'next-intl/server';
+
+export default async function Home({
+    params
+}: {
+    params: Promise<{ locale: string }>;
+}) {
+    const { locale } = await params;
+    setRequestLocale(locale);
+    const t = await getTranslations('HomePage');
     return (
         <div className="flex flex-col">
             {/* Hero Section */}

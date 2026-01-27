@@ -4,8 +4,16 @@ import { Link } from '@/app/i18n/navigation';
 import { useTranslations } from 'next-intl';
 import ServicesAgreementContent from '@/components/policies/ServicesAgreementContent';
 
-export default function ServicesAgreementPage() {
-    const t = useTranslations('ServicesAgreementPage');
+import { setRequestLocale, getTranslations } from 'next-intl/server';
+
+export default async function ServicesAgreementPage({
+    params
+}: {
+    params: Promise<{ locale: string }>;
+}) {
+    const { locale } = await params;
+    setRequestLocale(locale);
+    const t = await getTranslations('ServicesAgreementPage');
 
     return (
         <div className="bg-gray-50 min-h-screen py-16">

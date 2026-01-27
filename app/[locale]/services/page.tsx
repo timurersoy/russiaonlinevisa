@@ -3,8 +3,16 @@ import Image from 'next/image';
 import { CheckCircle, Briefcase } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
-export default function ServicesPage() {
-    const t = useTranslations('ServicesPage');
+import { setRequestLocale, getTranslations } from 'next-intl/server';
+
+export default async function ServicesPage({
+    params
+}: {
+    params: Promise<{ locale: string }>;
+}) {
+    const { locale } = await params;
+    setRequestLocale(locale);
+    const t = await getTranslations('ServicesPage');
 
     const serviceKeys = [
         'travelPlanning',

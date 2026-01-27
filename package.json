@@ -6,7 +6,7 @@
     "predev": "prisma generate",
     "dev": "next dev",
     "dev:3001": "next dev -p 3001",
-    "build": "next build",
+    "build": "npx prisma generate && next build",
     "start": "next start",
     "lint": "eslint"
   },

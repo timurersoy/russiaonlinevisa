@@ -4,8 +4,16 @@ import { Link } from '@/app/i18n/navigation';
 import { useTranslations } from 'next-intl';
 import PersonalDataContent from '@/components/policies/PersonalDataContent';
 
-export default function PersonalDataPage() {
-    const t = useTranslations('PersonalDataPage');
+import { setRequestLocale, getTranslations } from 'next-intl/server';
+
+export default async function PersonalDataPage({
+    params
+}: {
+    params: Promise<{ locale: string }>;
+}) {
+    const { locale } = await params;
+    setRequestLocale(locale);
+    const t = await getTranslations('PersonalDataPage');
 
     return (
         <div className="bg-gray-50 min-h-screen py-16">

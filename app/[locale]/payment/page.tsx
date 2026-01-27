@@ -1,7 +1,15 @@
 import { Link } from '@/app/i18n/navigation';
 import { CheckCircle } from 'lucide-react';
 
-export default function PaymentPage() {
+import { setRequestLocale } from 'next-intl/server';
+
+export default async function PaymentPage({
+    params
+}: {
+    params: Promise<{ locale: string }>;
+}) {
+    const { locale } = await params;
+    setRequestLocale(locale);
     return (
         <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-md">

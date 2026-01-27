@@ -6,10 +6,14 @@ import Image from 'next/image';
 import Navbar from '@/components/Navbar';
 import { Facebook, Linkedin, Instagram } from 'lucide-react';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, getTranslations } from 'next-intl/server';
+import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 
 const inter = Inter({ subsets: ['latin'] });
+
+export async function generateStaticParams() {
+    return ['en', 'tr', 'ru', 'ar', 'zh'].map((locale) => ({ locale }));
+}
 
 export const metadata: Metadata = {
     title: 'Russia Online Visa',
@@ -33,6 +37,9 @@ export default async function RootLayout({
     if (!['en', 'tr', 'ru', 'ar', 'zh'].includes(locale)) {
         notFound();
     }
+
+    // Enable static rendering
+    setRequestLocale(locale);
 
     // Providing all messages to the client
     // side is the easiest way to get started

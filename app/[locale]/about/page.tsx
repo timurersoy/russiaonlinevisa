@@ -4,8 +4,16 @@ import { Link } from '@/app/i18n/navigation';
 import { FileText, Shield } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
-export default function AboutPage() {
-    const t = useTranslations('AboutPage');
+import { setRequestLocale, getTranslations } from 'next-intl/server';
+
+export default async function AboutPage({
+    params
+}: {
+    params: Promise<{ locale: string }>;
+}) {
+    const { locale } = await params;
+    setRequestLocale(locale);
+    const t = await getTranslations('AboutPage');
 
     return (
         <div className="bg-white min-h-screen py-16">

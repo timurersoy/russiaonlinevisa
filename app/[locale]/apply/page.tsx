@@ -2,8 +2,16 @@ import { Link } from '@/app/i18n/navigation';
 import { Zap, User, Upload, Clock, CheckCircle, Users } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
-export default function ApplySelectionPage() {
-    const t = useTranslations('ApplyPage');
+import { setRequestLocale, getTranslations } from 'next-intl/server';
+
+export default async function ApplySelectionPage({
+    params
+}: {
+    params: Promise<{ locale: string }>;
+}) {
+    const { locale } = await params;
+    setRequestLocale(locale);
+    const t = await getTranslations('ApplyPage');
     return (
         <div className="min-h-screen bg-gray-50 py-16 sm:py-24">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

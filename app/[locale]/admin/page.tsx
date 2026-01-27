@@ -7,13 +7,22 @@ import { prisma } from '@/lib/prisma';
 import { Link } from '@/app/i18n/navigation';
 import { LogOut } from 'lucide-react';
 import AdminMessagesTable from '@/components/AdminMessagesTable';
+import { setRequestLocale, getTranslations } from 'next-intl/server';
 
-const JWT_SECRET = process.env.JWT_SECRET || 'fallback-secret-for-dev-only-change-in-prod';
+// Validated inside functions
+const JWT_SECRET = process.env.JWT_SECRET;
+
 
 async function getAdminSession() {
     const cookieStore = await cookies();
     const token = cookieStore.get('admin_session')?.value;
     if (!token) return null;
+
+    if (!JWT_SECRET) {
+        console.error("JWT_SECRET missing");
+        return null;
+    }
+
     try {
         return jwt.verify(token, JWT_SECRET);
     } catch {
@@ -21,7 +30,15 @@ async function getAdminSession() {
     }
 }
 
-export default async function AdminDashboardPage() {
+export default async function AdminDashboardPage({
+    params
+}: {
+    params: Promise<{ locale: string }>;
+}) {
+    const { locale } = await params;
+    setRequestLocale(locale);
+    const t = await getTranslations('AdminPage');
+
     const session = await getAdminSession();
     if (!session) {
         redirect('/login');
@@ -51,7 +68,7 @@ export default async function AdminDashboardPage() {
 
     return (
         <div className="min-h-screen bg-gray-50">
-            {/* Navbar (Keep existing) */}
+            {/* Navbar */}
             <nav className="bg-[#0039A6] text-white shadow-md">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="flex h-16 items-center justify-between">
@@ -104,5 +121,3 @@ export default async function AdminDashboardPage() {
         </div>
     );
 }
-
-

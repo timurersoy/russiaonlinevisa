@@ -2,14 +2,16 @@ import { createCipheriv, createDecipheriv, randomBytes } from 'crypto';
 
 // Ensure we have a 32-byte key. 
 // IN PRODUCTION: This MUST be set in .env as a 64-character hex string.
-// For dev/fallback: we use a fixed key (NOT SECURE FOR PROD but keeps app running)
-const FALLBACK_KEY = '0000000000000000000000000000000000000000000000000000000000000000';
-const ENCRYPTION_KEY = process.env.ENCRYPTION_KEY || FALLBACK_KEY;
+const ENCRYPTION_KEY = process.env.ENCRYPTION_KEY;
 
 const IV_LENGTH = 16; // For AES, this is always 16
 
 export function encrypt(text: string): string {
     if (!text) return text;
+    if (!ENCRYPTION_KEY) {
+        console.error("ENCRYPTION_KEY missing");
+        return text;
+    }
     try {
         const iv = randomBytes(IV_LENGTH);
         const key = Buffer.from(ENCRYPTION_KEY, 'hex');

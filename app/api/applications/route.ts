@@ -1,11 +1,13 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import nodemailer from 'nodemailer';
-import { headers } from 'next/headers'; // IP Adresi için gerekli
+import { headers } from 'next/headers';
 
 export const dynamic = 'force-dynamic';
 
-// YARDIMCI: Tarih düzeltici
+// --- YARDIMCI FONKSİYONLAR ---
+
+// 1. Tarih Düzeltici
 function parseDateString(dateStr: any): Date | null {
   if (!dateStr) return null;
   try {
@@ -17,69 +19,72 @@ function parseDateString(dateStr: any): Date | null {
   } catch (e) { return null; }
 }
 
-// YARDIMCI: Akıllı Veri Bulucu (İsimsiz sorununu çözer)
-// Veri bazen direkt body'de, bazen "formData" veya "data" objesinin içinde gelir.
-function getValue(body: any, keys: string[]): any {
-  // 1. Direkt body içinde ara
+// 2. DERİN ARAMA MOTORU (Recursive Search)
+// Veri "body.data.personal.firstName" gibi en dipte olsa bile bulur.
+function findValue(obj: any, keys: string[]): any {
+  if (!obj || typeof obj !== 'object') return undefined;
+
+  // Önce bu seviyede ara
   for (const key of keys) {
-    if (body[key]) return body[key];
+    if (obj[key] !== undefined && obj[key] !== null && obj[key] !== "") return obj[key];
+    // Büyük/Küçük harf duyarsız ara
+    const foundKey = Object.keys(obj).find(k => k.toLowerCase() === key.toLowerCase());
+    if (foundKey && obj[foundKey]) return obj[foundKey];
   }
-  // 2. body.formData içinde ara
-  if (body.formData) {
-    for (const key of keys) {
-      if (body.formData[key]) return body.formData[key];
-    }
-  }
-  // 3. body.data içinde ara
-  if (body.data) {
-    for (const key of keys) {
-      if (body.data[key]) return body.data[key];
+
+  // Bulamazsan alt kutulara (nested object) dal
+  for (const key in obj) {
+    if (typeof obj[key] === 'object' && obj[key] !== null && !Array.isArray(obj[key])) {
+      const found = findValue(obj[key], keys);
+      if (found) return found;
     }
   }
   return undefined;
 }
 
+// --- POST METODU: YENİ BAŞVURU ---
 export async function POST(request: Request) {
   try {
     const body = await request.json();
     const headersList = await headers();
-
-    // 1. IP ve Tarayıcı Bilgilerini Yakala
+    
+    // IP ve Tarayıcı Bilgisi (Unknown sorununu çözer)
     const ipAddress = headersList.get('x-forwarded-for') || 'Unknown IP';
     const userAgent = headersList.get('user-agent') || 'Unknown Browser';
 
-    console.log("GELEN VERİ (DEBUG):", JSON.stringify(body, null, 2));
+    console.log("GELEN BAŞVURU (DEBUG):", JSON.stringify(body, null, 2));
 
-    // 2. Verileri "Akıllı" Şekilde Çek
-    // Frontend farklı isimler kullanıyor olabilir, hepsini deniyoruz.
-    const firstName = getValue(body, ['firstName', 'name', 'applicantName', 'givenName']) || "İsimsiz";
-    const lastName = getValue(body, ['lastName', 'surname', 'familyName']) || "";
-    const email = getValue(body, ['email', 'contactEmail']);
-    const phone = getValue(body, ['phone', 'phoneNumber', 'mobile']);
-    const passportNumber = getValue(body, ['passportNumber', 'passportNo']) || "Yok";
-    const nationality = getValue(body, ['nationality', 'citizenship']) || "Turkey";
-    const gender = getValue(body, ['gender', 'sex']);
+    // --- 1. VERİLERİ BUL (Derin Arama) ---
+    const firstName = findValue(body, ['firstName', 'name', 'givenName', 'applicantName']) || "İsimsiz";
+    const lastName = findValue(body, ['lastName', 'surname', 'familyName']) || "";
+    const email = findValue(body, ['email', 'contactEmail', 'mail']) || "";
+    const phone = findValue(body, ['phone', 'phoneNumber', 'mobile', 'tel']) || "";
+    
+    const passportNumber = findValue(body, ['passportNumber', 'passportNo', 'docNumber', 'passport']) || "Yok";
+    const nationality = findValue(body, ['nationality', 'citizenship', 'country']) || "Turkey";
+    const gender = findValue(body, ['gender', 'sex']) || "male";
     
     // Tarihler
-    const travelDateRaw = getValue(body, ['travelDate', 'arrivalDate', 'dateOfArrival']);
+    const travelDateRaw = findValue(body, ['travelDate', 'arrivalDate', 'tripDate']);
     let travelDate = parseDateString(travelDateRaw);
     if (!travelDate || isNaN(travelDate.getTime())) travelDate = new Date();
 
-    const passportExpiryRaw = getValue(body, ['passportExpiry', 'passportExpirationDate']);
+    const passportExpiryRaw = findValue(body, ['passportExpiry', 'expirationDate', 'expiryDate']);
     const passportExpiry = parseDateString(passportExpiryRaw);
 
-    // Ek Veriler (Dosyalar ve Onaylar)
+    // Dosyalar (URL veya File objesi olarak gelebilir)
     const additionalDataObj = {
-        passportCover: getValue(body, ['passportCover', 'passportCoverUrl', 'files.passportCover']),
-        photo: getValue(body, ['photo', 'photoUrl', 'files.photo']),
-        hotel: getValue(body, ['hotel', 'accommodation']),
-        city: getValue(body, ['city', 'entryCity'])
+        passportCover: findValue(body, ['passportCover', 'passportCoverUrl', 'coverPage', 'file_passport']),
+        photo: findValue(body, ['photo', 'photoUrl', 'facePhoto', 'file_photo']),
+        hotel: findValue(body, ['hotel', 'accommodation', 'hotelName']),
+        city: findValue(body, ['city', 'destination', 'entryCity'])
     };
 
-    const privacyConsent = Boolean(getValue(body, ['privacyConsent', 'privacyPolicy']));
-    const serviceConsent = Boolean(getValue(body, ['serviceConsent', 'serviceAgreement']));
+    // Yasal Onaylar
+    const privacyConsent = Boolean(findValue(body, ['privacyConsent', 'privacy', 'kvkk']));
+    const serviceConsent = Boolean(findValue(body, ['serviceConsent', 'terms', 'agreement']));
 
-    // 3. Sayaç (APP-ID)
+    // --- 2. SAYAÇ (APP-ID) ---
     const counter = await prisma.counter.upsert({
       where: { name: 'application_id' },
       update: { value: { increment: 1 } },
@@ -87,9 +92,7 @@ export async function POST(request: Request) {
     });
     const publicId = counter.value;
 
-    // 4. Veritabanına Kayıt
-    // Not: Admin paneli decrypt yapıyorsa şimdilik plain text kaydediyoruz. 
-    // Eğer şifreli görünmesi gerekiyorsa lib/crypto'yu dahil etmemiz gerekir.
+    // --- 3. KAYIT ---
     const newApplication = await prisma.application.create({
       data: {
         publicId,
@@ -103,15 +106,15 @@ export async function POST(request: Request) {
         travelDate,
         passportExpiry,
         additionalData: JSON.stringify(additionalDataObj),
-        // Loglar artık Unknown gelmeyecek:
-        ipAddress, 
+        ipAddress,
         userAgent,
         privacyConsent,
-        serviceConsent
+        serviceConsent,
+        status: "PROCESSING" // Varsayılan durum
       },
     });
 
-    // 5. E-posta Gönderimi
+    // --- 4. MAİL (Hata olsa da devam et) ---
     try {
         const transporter = nodemailer.createTransport({
           host: process.env.SMTP_HOST,
@@ -125,30 +128,60 @@ export async function POST(request: Request) {
           from: process.env.SMTP_USER,
           to: process.env.ADMIN_EMAIL,
           replyTo: email,
-          subject: `YENİ BAŞVURU: APP-${publicId} - ${firstName} ${lastName}`,
+          subject: `YENİ BAŞVURU: APP-${publicId} (${firstName} ${lastName})`,
           html: `
             <h3>Yeni Başvuru: APP-${publicId}</h3>
             <p><strong>Başvuran:</strong> ${firstName} ${lastName}</p>
             <p><strong>Pasaport:</strong> ${passportNumber}</p>
-            <p><strong>IP Adresi:</strong> ${ipAddress}</p>
-            <p>Detaylar için Admin Paneline gidiniz.</p>
+            <p><strong>IP:</strong> ${ipAddress}</p>
+            <p><a href="https://russiaonlinevisa.vercel.app/admin">Admin Paneline Git</a></p>
           `,
         });
     } catch (e) { console.error("Mail hatası:", e); }
 
-    // 6. DÜZELTME: Frontend'in anlayacağı tüm anahtarları dönüyoruz
-    // "Pending" sorununu bu çözecek.
+    // --- 5. CEVAP (Pending Sorununu Çözer) ---
     return NextResponse.json({ 
         success: true, 
-        id: newApplication.id, 
-        applicationId: newApplication.id, 
+        message: "Application submitted",
+        // Frontend ne ararsa bulsun diye her varyasyonu dönüyoruz
+        id: publicId,
         publicId: publicId,
-        referenceNo: publicId, // Bazı frontendler bunu arar
-        message: "Application submitted successfully" 
+        applicationId: publicId,
+        reference: String(publicId),
+        referenceNo: String(publicId),
+        appNo: `APP-${publicId}`,
+        dbId: newApplication.id
     }, { status: 200 });
 
   } catch (error: any) {
-    console.error('API Critical Error:', error);
+    console.error('POST Error:', error);
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
+}
+
+// --- PATCH METODU: STATUS GÜNCELLEME (Bunu geri getirdik!) ---
+export async function PATCH(request: Request) {
+  try {
+    const body = await request.json();
+    const { id, status, applicationId } = body; 
+    
+    // ID hem 'id' hem 'applicationId' olarak gelebilir
+    const targetId = id || applicationId;
+
+    if (!targetId || !status) {
+      return NextResponse.json({ error: "Missing ID or Status" }, { status: 400 });
+    }
+
+    // Güncelleme işlemi
+    const updatedApp = await prisma.application.update({
+      where: { id: targetId }, // UUID ile güncelleme
+      data: { status },
+    });
+
+    return NextResponse.json({ success: true, data: updatedApp });
+
+  } catch (error: any) {
+    console.error('PATCH Error:', error);
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }

@@ -5,32 +5,34 @@ import { headers } from 'next/headers';
 
 export const dynamic = 'force-dynamic';
 
-// --- YARDIMCI: DERİN ARAMA VE DOSYA BULUCU ---
+// --- AKILLI VE GÜVENLİ ARAMA ---
 function findValue(obj: any, keys: string[], isFile = false): any {
   if (!obj || typeof obj !== 'object') return undefined;
 
   // 1. Bu seviyede ara
   for (const key of keys) {
-    // Büyük/Küçük harf duyarsız eşleştirme
     const match = Object.keys(obj).find(k => k.toLowerCase() === key.toLowerCase());
     
     if (match && obj[match] !== undefined && obj[match] !== null && obj[match] !== "") {
       const val = obj[match];
 
-      // Eğer "FROM_UPLOAD" ise bunu veri kabul etme, aramaya devam et
+      // FİLTRE 1: "FROM_UPLOAD" placeholder'ını yoksay
       if (typeof val === 'string' && val.includes("FROM_UPLOAD")) continue;
 
-      // Eğer dosya arıyorsak ve elimizdeki bir obje ise, içindeki URL'i çek
+      // FİLTRE 2: Base64 (Resim kodlarını) yoksay! (Veri bozulmasını önler)
+      if (!isFile && typeof val === 'string' && (val.startsWith("data:") || val.length > 200)) continue;
+
+      // Dosya arıyorsak URL'i çek
       if (isFile && typeof val === 'object') {
-        return val.url || val.secure_url || val.href || val.path || val.preview || JSON.stringify(val);
+        return val.url || val.secure_url || val.href || val.path || null;
       }
       
       // Dosya aramıyorsak değeri döndür
-      return val;
+      if (!isFile) return val;
     }
   }
 
-  // 2. Alt kutularda (Nested Objects) ara
+  // 2. Alt kutularda ara
   for (const key in obj) {
     if (typeof obj[key] === 'object' && obj[key] !== null && !Array.isArray(obj[key])) {
       const found = findValue(obj[key], keys, isFile);
@@ -40,7 +42,6 @@ function findValue(obj: any, keys: string[], isFile = false): any {
   return undefined;
 }
 
-// --- YARDIMCI: TARİH DÜZELTİCİ ---
 function parseDateString(dateStr: any): Date | null {
   if (!dateStr) return null;
   try {
@@ -52,7 +53,6 @@ function parseDateString(dateStr: any): Date | null {
   } catch (e) { return null; }
 }
 
-// --- POST: YENİ BAŞVURU ---
 export async function POST(request: Request) {
   try {
     const body = await request.json();
@@ -60,38 +60,35 @@ export async function POST(request: Request) {
     const ipAddress = headersList.get('x-forwarded-for') || 'Unknown IP';
     const userAgent = headersList.get('user-agent') || 'Unknown Browser';
 
-    console.log("GELEN BAŞVURU BODY:", JSON.stringify(body, null, 2));
+    console.log("TEMİZ VERİ ARAMASI BAŞLIYOR:", JSON.stringify(body, null, 2));
 
-    // --- 1. VERİLERİ ÇEK ---
+    // --- 1. GÜVENLİ VERİ ÇEKİMİ ---
     const firstName = findValue(body, ['firstName', 'name', 'givenName', 'applicantName']) || "İsimsiz";
     const lastName = findValue(body, ['lastName', 'surname', 'familyName']) || "";
-    const email = findValue(body, ['email', 'contactEmail', 'mail']) || "";
+    const email = findValue(body, ['email', 'contactEmail']) || "";
     const phone = findValue(body, ['phone', 'phoneNumber', 'mobile']) || "";
     
-    // Pasaport No: "FROM_UPLOAD" filtresi sayesinde gerçek veri aranır
+    // Pasaport No (Artık resim kodunu almayacak)
     const passportNumber = findValue(body, ['passportNumber', 'passportNo', 'docNumber', 'passport']) || "Belge Bekleniyor";
-    const nationality = findValue(body, ['nationality', 'citizenship', 'country']) || "Turkey";
+    const nationality = findValue(body, ['nationality', 'citizenship']) || "Turkey";
     const gender = findValue(body, ['gender', 'sex']) || "male";
     
-    const travelDateRaw = findValue(body, ['travelDate', 'arrivalDate', 'tripDate']);
-    let travelDate = parseDateString(travelDateRaw);
-    if (!travelDate || isNaN(travelDate.getTime())) travelDate = new Date(); // Varsayılan: Bugün
+    // Tarihler
+    const travelDate = parseDateString(findValue(body, ['travelDate', 'arrivalDate']));
+    const passportExpiry = parseDateString(findValue(body, ['passportExpiry', 'expirationDate']));
 
-    const passportExpiryRaw = findValue(body, ['passportExpiry', 'expirationDate', 'expiryDate']);
-    const passportExpiry = parseDateString(passportExpiryRaw);
-
-    // Dosyalar (isFile = true moduyla URL araması yapıyoruz)
+    // Dosyalar (Base64 veya URL)
     const additionalDataObj = {
         passportCover: findValue(body, ['passportCover', 'passportCoverUrl', 'coverPage', 'file_passport'], true),
-        photo: findValue(body, ['photo', 'photoUrl', 'facePhoto', 'file_photo', 'selfie'], true),
-        hotel: findValue(body, ['hotel', 'accommodation', 'hotelName']),
-        city: findValue(body, ['city', 'destination', 'entryCity'])
+        photo: findValue(body, ['photo', 'photoUrl', 'facePhoto', 'file_photo'], true),
+        hotel: findValue(body, ['hotel', 'accommodation']),
+        city: findValue(body, ['city', 'destination'])
     };
 
     const privacyConsent = Boolean(findValue(body, ['privacyConsent', 'privacy']));
     const serviceConsent = Boolean(findValue(body, ['serviceConsent', 'terms']));
 
-    // --- 2. SAYAÇ (APP-ID) ---
+    // --- 2. SAYAÇ ---
     const counter = await prisma.counter.upsert({
       where: { name: 'application_id' },
       update: { value: { increment: 1 } },
@@ -110,7 +107,7 @@ export async function POST(request: Request) {
         passportNumber,
         nationality,
         gender,
-        travelDate,
+        travelDate: travelDate || new Date(),
         passportExpiry,
         additionalData: JSON.stringify(additionalDataObj),
         ipAddress,
@@ -135,65 +132,27 @@ export async function POST(request: Request) {
           from: process.env.SMTP_USER,
           to: process.env.ADMIN_EMAIL,
           replyTo: email,
-          subject: `YENİ BAŞVURU: APP-${publicId} (${firstName} ${lastName})`,
-          html: `<h3>Başvuru: APP-${publicId}</h3><p><strong>Pasaport:</strong> ${passportNumber}</p><p>Dosyalar: ${additionalDataObj.passportCover ? 'Var' : 'Yok'}</p>`,
+          subject: `YENİ BAŞVURU: APP-${publicId} (${firstName})`,
+          html: `<h3>Başvuru: APP-${publicId}</h3><p>Pasaport: ${passportNumber}</p>`,
         });
-    } catch (e) { console.error("Mail hatası:", e); }
+    } catch (e) { console.error("Mail Error:", e); }
 
-    // --- 5. ZENGİN CEVAP (Pending Sorununu Çözer) ---
-    // Frontend'in kullanabileceği tüm olası isimlendirmeleri ekliyoruz
+    // --- 5. GARANTİLİ YANIT (Pending Sorununu Çözer) ---
     return NextResponse.json({ 
         success: true, 
         message: "Application submitted",
-        // Standart
+        // Frontend ne bekliyorsa burada bulacak:
         id: publicId,
         publicId: publicId,
         applicationId: publicId,
-        // Snake Case (Hasura/Python stili)
-        application_id: publicId,
-        public_id: publicId,
-        // String formatları
-        reference: String(publicId),
+        reference: String(publicId), // String bekliyorsa
         referenceNo: String(publicId),
-        reference_no: String(publicId),
         appNo: `APP-${publicId}`,
-        // DB UUID
-        uuid: newApplication.id,
-        dbId: newApplication.id
+        data: { id: publicId, publicId: publicId } // Data içinde bekliyorsa
     }, { status: 200 });
 
   } catch (error: any) {
-    console.error('POST Error:', error);
+    console.error('API Error:', error);
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
-
-// --- STATUS GÜNCELLEME İÇİN ORTAK FONKSİYON ---
-async function handleStatusUpdate(request: Request) {
-    try {
-        const body = await request.json();
-        // ID body içinde yoksa belki URL parametresindedir (ama body öncelikli)
-        const targetId = body.id || body.applicationId || body.uuid; 
-        const newStatus = body.status;
-
-        if (!targetId || !newStatus) {
-            return NextResponse.json({ error: "ID and Status are required" }, { status: 400 });
-        }
-
-        console.log(`Updating status for ${targetId} to ${newStatus}`);
-
-        const updatedApp = await prisma.application.update({
-            where: { id: targetId },
-            data: { status: newStatus },
-        });
-
-        return NextResponse.json({ success: true, data: updatedApp });
-    } catch (error: any) {
-        console.error('Status Update Error:', error);
-        return NextResponse.json({ error: error.message }, { status: 500 });
-    }
-}
-
-// --- PATCH VE PUT (İkisini de destekliyoruz) ---
-export async function PATCH(request: Request) { return handleStatusUpdate(request); }
-export async function PUT(request: Request) { return handleStatusUpdate(request); }

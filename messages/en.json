@@ -139,6 +139,9 @@
             "5": "Review & Submit"
         },
         "labels": {
+            "firstName": "First Name / Given Names",
+            "lastName": "Last Name / Surname",
+            "passportNumber": "Passport Number",
             "nationality": "Nationality",
             "personalPhoto": "Personal Photo",
             "passportCover": "Passport Cover Page",
@@ -257,6 +260,9 @@
             "passportValidity": "Important: Your passport must have at least 6 months validity from the date of application."
         },
         "placeholders": {
+            "firstName": "Enter your first name",
+            "lastName": "Enter your last name",
+            "passportNumber": "Enter your passport number",
             "phone": "+1 234 567 890",
             "email": "john@example.com",
             "address": "Street, City, Country",

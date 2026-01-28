@@ -139,6 +139,9 @@
             "5": "Önizle & Gönder"
         },
         "labels": {
+            "firstName": "Ad / İsim",
+            "lastName": "Soyad / Soyadı",
+            "passportNumber": "Pasaport Numarası",
             "nationality": "Uyruk",
             "personalPhoto": "Kişisel Fotoğraf",
             "passportCover": "Pasaport Kapak Sayfası",
@@ -257,6 +260,9 @@
             "passportValidity": "Önemli: Pasaportunuzun başvuru tarihinden itibaren en az 6 ay geçerliliği olmalıdır."
         },
         "placeholders": {
+            "firstName": "Adınızı girin",
+            "lastName": "Soyadınızı girin",
+            "passportNumber": "Pasaport numaranızı girin",
             "phone": "+90 555 123 4567",
             "email": "ornek@email.com",
             "address": "Mahalle, Cadde, Şehir, Ülke",

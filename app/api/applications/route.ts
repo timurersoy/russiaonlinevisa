@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import nodemailer from 'nodemailer';
 import { headers } from 'next/headers';
+import { encrypt } from '@/lib/crypto';
 
 export const dynamic = 'force-dynamic';
 
@@ -12,7 +13,7 @@ function findValue(obj: any, keys: string[], isFile = false): any {
   // 1. Bu seviyede ara
   for (const key of keys) {
     const match = Object.keys(obj).find(k => k.toLowerCase() === key.toLowerCase());
-    
+
     if (match && obj[match] !== undefined && obj[match] !== null && obj[match] !== "") {
       const val = obj[match];
 
@@ -26,7 +27,7 @@ function findValue(obj: any, keys: string[], isFile = false): any {
       if (isFile && typeof val === 'object') {
         return val.url || val.secure_url || val.href || val.path || null;
       }
-      
+
       // Dosya aramıyorsak değeri döndür
       if (!isFile) return val;
     }
@@ -60,35 +61,42 @@ export async function POST(request: Request) {
     const ipAddress = headersList.get('x-forwarded-for') || 'Unknown IP';
     const userAgent = headersList.get('user-agent') || 'Unknown Browser';
 
-    console.log("TEMİZ VERİ ARAMASI BAŞLIYOR:", JSON.stringify(body, null, 2));
+    console.log("APPLICATION SUBMISSION:", { firstName: body.firstName, email: body.email });
 
-    // --- 1. GÜVENLİ VERİ ÇEKİMİ ---
-    const firstName = findValue(body, ['firstName', 'name', 'givenName', 'applicantName']) || "İsimsiz";
-    const lastName = findValue(body, ['lastName', 'surname', 'familyName']) || "";
-    const email = findValue(body, ['email', 'contactEmail']) || "";
-    const phone = findValue(body, ['phone', 'phoneNumber', 'mobile']) || "";
-    
-    // Pasaport No (Artık resim kodunu almayacak)
-    const passportNumber = findValue(body, ['passportNumber', 'passportNo', 'docNumber', 'passport']) || "Belge Bekleniyor";
-    const nationality = findValue(body, ['nationality', 'citizenship']) || "Turkey";
-    const gender = findValue(body, ['gender', 'sex']) || "male";
-    
+    // --- 1. VERİ ÇEKİMİ (Artık direkt body'den çekebiliriz) ---
+    const firstName = body.firstName || findValue(body, ['firstName', 'name']) || "İsimsiz";
+    const lastName = body.lastName || findValue(body, ['lastName', 'surname']) || "";
+    const email = body.email || findValue(body, ['email']) || "";
+    const phone = body.phone || findValue(body, ['phone']) || "";
+    const passportNumber = body.passportNumber || findValue(body, ['passportNumber']) || "Belge Bekleniyor";
+    const nationality = body.nationality || findValue(body, ['nationality']) || "Turkey";
+    const gender = body.gender || findValue(body, ['gender']) || "male";
+
     // Tarihler
-    const travelDate = parseDateString(findValue(body, ['travelDate', 'arrivalDate']));
-    const passportExpiry = parseDateString(findValue(body, ['passportExpiry', 'expirationDate']));
+    const travelDate = parseDateString(body.travelDate || findValue(body, ['travelDate']));
+    const passportExpiry = parseDateString(body.passportExpiryDate || findValue(body, ['passportExpiry']));
 
-    // Dosyalar (Base64 veya URL)
+    // --- 2. ŞİFRELEME (ENCRYPTION) - KRİTİK! ---
+    const encryptedFirstName = encrypt(firstName);
+    const encryptedLastName = encrypt(lastName);
+    const encryptedEmail = encrypt(email);
+    const encryptedPhone = encrypt(phone);
+    const encryptedPassportNumber = encrypt(passportNumber);
+
+    // --- 3. TÜM FORM VERİSİNİ SAKLA (Admin Panel için) ---
     const additionalDataObj = {
-        passportCover: findValue(body, ['passportCover', 'passportCoverUrl', 'coverPage', 'file_passport'], true),
-        photo: findValue(body, ['photo', 'photoUrl', 'facePhoto', 'file_photo'], true),
-        hotel: findValue(body, ['hotel', 'accommodation']),
-        city: findValue(body, ['city', 'destination'])
+      ...body, // Tüm form verisi
+      // Images'ı üstte tut
+      images: body.images || {
+        passport: findValue(body, ['passportCover', 'passport'], true),
+        photo: findValue(body, ['photo'], true)
+      }
     };
 
-    const privacyConsent = Boolean(findValue(body, ['privacyConsent', 'privacy']));
-    const serviceConsent = Boolean(findValue(body, ['serviceConsent', 'terms']));
+    const privacyConsent = Boolean(body.privacyPolicy || findValue(body, ['privacyConsent']));
+    const serviceConsent = Boolean(body.serviceAgreement || findValue(body, ['serviceConsent']));
 
-    // --- 2. SAYAÇ ---
+    // --- 4. SAYAÇ ---
     const counter = await prisma.counter.upsert({
       where: { name: 'application_id' },
       update: { value: { increment: 1 } },
@@ -96,15 +104,15 @@ export async function POST(request: Request) {
     });
     const publicId = counter.value;
 
-    // --- 3. KAYIT ---
+    // --- 5. KAYIT (ŞİFRELENMİŞ VERİLERLE) ---
     const newApplication = await prisma.application.create({
       data: {
         publicId,
-        firstName,
-        lastName,
-        email,
-        phone,
-        passportNumber,
+        firstName: encryptedFirstName,
+        lastName: encryptedLastName,
+        email: encryptedEmail,
+        phone: encryptedPhone,
+        passportNumber: encryptedPassportNumber,
         nationality,
         gender,
         travelDate: travelDate || new Date(),
@@ -120,35 +128,35 @@ export async function POST(request: Request) {
 
     // --- 4. MAİL ---
     try {
-        const transporter = nodemailer.createTransport({
-          host: process.env.SMTP_HOST,
-          port: Number(process.env.SMTP_PORT),
-          secure: false,
-          auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS },
-          tls: { rejectUnauthorized: false },
-        });
+      const transporter = nodemailer.createTransport({
+        host: process.env.SMTP_HOST,
+        port: Number(process.env.SMTP_PORT),
+        secure: false,
+        auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS },
+        tls: { rejectUnauthorized: false },
+      });
 
-        await transporter.sendMail({
-          from: process.env.SMTP_USER,
-          to: process.env.ADMIN_EMAIL,
-          replyTo: email,
-          subject: `YENİ BAŞVURU: APP-${publicId} (${firstName})`,
-          html: `<h3>Başvuru: APP-${publicId}</h3><p>Pasaport: ${passportNumber}</p>`,
-        });
+      await transporter.sendMail({
+        from: process.env.SMTP_USER,
+        to: process.env.ADMIN_EMAIL,
+        replyTo: email,
+        subject: `YENİ BAŞVURU: APP-${publicId} (${firstName})`,
+        html: `<h3>Başvuru: APP-${publicId}</h3><p>Pasaport: ${passportNumber}</p>`,
+      });
     } catch (e) { console.error("Mail Error:", e); }
 
     // --- 5. GARANTİLİ YANIT (Pending Sorununu Çözer) ---
-    return NextResponse.json({ 
-        success: true, 
-        message: "Application submitted",
-        // Frontend ne bekliyorsa burada bulacak:
-        id: publicId,
-        publicId: publicId,
-        applicationId: publicId,
-        reference: String(publicId), // String bekliyorsa
-        referenceNo: String(publicId),
-        appNo: `APP-${publicId}`,
-        data: { id: publicId, publicId: publicId } // Data içinde bekliyorsa
+    return NextResponse.json({
+      success: true,
+      message: "Application submitted",
+      // Frontend ne bekliyorsa burada bulacak:
+      id: publicId,
+      publicId: publicId,
+      applicationId: publicId,
+      reference: String(publicId), // String bekliyorsa
+      referenceNo: String(publicId),
+      appNo: `APP-${publicId}`,
+      data: { id: publicId, publicId: publicId } // Data içinde bekliyorsa
     }, { status: 200 });
 
   } catch (error: any) {

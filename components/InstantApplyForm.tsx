@@ -10,8 +10,11 @@ import PersonalDataContent from './policies/PersonalDataContent';
 import ServicesAgreementContent from './policies/ServicesAgreementContent';
 
 type FormInputs = {
-    // Step 1: Upload Documents & Nationality
+    // Step 1: Personal & Document Information
+    firstName: string;
+    lastName: string;
     nationality: string;
+    passportNumber: string;
     photo: File | null;
     passportCover: File | null;
     passportExpiryDate: string;
@@ -115,7 +118,7 @@ export default function InstantApplyForm() {
     const [currentStep, setCurrentStep] = useState(1);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
-    const [successData, setSuccessData] = useState<{ friendlyId?: string } | null>(null);
+    const [successData, setSuccessData] = useState<{ publicId?: number; id?: number; friendlyId?: string } | null>(null);
 
     const [showWarning, setShowWarning] = useState(false);
     const [activeHelp, setActiveHelp] = useState<string | null>(null);
@@ -176,61 +179,49 @@ export default function InstantApplyForm() {
 
             // Structure data for API
             const payload = {
-                personalDetails: {
-                    givenNames: data.gender === 'male' ? data.partnerName : undefined, // Simplify for demo, mapping feels loose
-                    surname: 'Applicant', // The form doesn't actually have Name/Surname fields separate from specific sections?
-                    // Wait, looking at the form, there are NO generic Name/Surname fields! 
-                    // Only Father/Mother/Partner names.
-                    // Accessing the form definition again...
-
-                    // Actually, let's look at the fields:
-                    // Step 4: Gender, Marital Status.
-                    // Step 2: Phone, Email, Address, Occupancy.
-                    // Step 1: Nationality, Passport Expiry.
-
-                    // MISSING FIELDS: Name, Surname, Passport Number! 
-                    // The user's previous request "Enhance Form Fields" didn't explicitly ask to remove them, 
-                    // but they seem missing from the `FormInputs` type I saw earlier?
-
-                    // Let's check the code I read.
-                    // Lines 10-61 in Step 136 view_file.
-                    // Indeed, no "firstName", "lastName", "passportNumber" in FormInputs!
-                    // This is a critical discovery. The previous agent might have removed them or they were never there?
-                    // Or "Upload Passport" implies we extract it?
-                    // But for an "Application Form", not having Name/Passport Number is weird unless it's ONLY based on the upload.
-
-                    // However, my API schema requires: firstName, lastName, passportNumber.
-                    // I should probably make them optional in schema or add them to the form.
-                    // Given the user wants "Simple Admin Panel", I'll set defaults for now based on the form data I HAVE.
-
-                    nationality: data.nationality,
-                    gender: data.gender,
-                    maritalStatus: data.maritalStatus
-                },
-                passportDetails: {
-                    passportNumber: 'FROM_UPLOAD', // Placeholder since field is missing
-                    expiryDate: data.passportExpiryDate,
-                    passportCoverImage: passportCoverBase64
-                },
-                travelDetails: {
-                    entryDate: data.travelDate,
-                    visitType: data.visitType,
-                    firstCity: data.firstCity,
-                    accommodationType: data.accommodationType
-                },
-                contactDetails: {
-                    phone: data.phone,
-                    email: data.email,
-                    address: data.address,
-                    occupancy: data.occupancy
-                },
-                // Include images in root or separate object
+                firstName: data.firstName,
+                lastName: data.lastName,
+                passportNumber: data.passportNumber,
+                nationality: data.nationality,
+                gender: data.gender,
+                phone: data.phone,
+                email: data.email,
+                address: data.address,
+                travelDate: data.travelDate,
+                passportExpiryDate: data.passportExpiryDate,
+                visitType: data.visitType,
+                firstCity: data.firstCity,
+                accommodationType: data.accommodationType,
+                occupancy: data.occupancy,
+                maritalStatus: data.maritalStatus,
+                // Conditional fields
+                companyName: data.companyName,
+                position: data.position,
+                schoolName: data.schoolName,
+                purpose: data.purpose,
+                hotelName: data.hotelName,
+                apartmentAddress: data.apartmentAddress,
+                hostName: data.hostName,
+                relationship: data.relationship,
+                hostAddress: data.hostAddress,
+                hostPhone: data.hostPhone,
+                visitedCountries: data.visitedCountries,
+                partnerName: data.partnerName,
+                partnerBirthday: data.partnerBirthday,
+                partnerBirthPlace: data.partnerBirthPlace,
+                fatherName: data.fatherName,
+                fatherBirthday: data.fatherBirthday,
+                fatherBirthPlace: data.fatherBirthPlace,
+                motherName: data.motherName,
+                motherBirthday: data.motherBirthday,
+                motherBirthPlace: data.motherBirthPlace,
+                privacyPolicy: data.privacyPolicy,
+                serviceAgreement: data.serviceAgreement,
                 images: {
                     photo: photoBase64,
                     passport: passportCoverBase64
                 },
-                locale: locale,
-                ...data
+                locale: locale
             };
 
             const response = await fetch('/api/applications', {
@@ -257,7 +248,7 @@ export default function InstantApplyForm() {
         setTimeout(() => setShowWarning(false), 4000);
 
         // Determine the earliest step with an error
-        const step1Fields = ['nationality', 'photo', 'passportCover', 'passportExpiryDate'];
+        const step1Fields = ['firstName', 'lastName', 'passportNumber', 'nationality', 'photo', 'passportCover', 'passportExpiryDate'];
         const step2Fields = ['phone', 'email', 'address', 'occupancy', 'companyName', 'position', 'schoolName'];
         const step3Fields = ['travelDate', 'visitType', 'firstCity', 'accommodationType', 'hotelName', 'apartmentAddress', 'hostName', 'relationship', 'hostAddress', 'hostPhone'];
         const step4Fields = ['gender', 'maritalStatus', 'partnerName', 'partnerBirthday', 'partnerBirthPlace'];
@@ -284,7 +275,7 @@ export default function InstantApplyForm() {
                 </p>
                 <div className="bg-gray-50 p-4 rounded-lg inline-block mb-8">
                     <span className="text-gray-500 text-sm block mb-1">{t('success.appId')}</span>
-                    <span className="font-mono font-bold text-xl tracking-wider">{successData?.friendlyId || 'PENDING'}</span>
+                    <span className="font-mono font-bold text-xl tracking-wider">{successData?.publicId || successData?.id || 'PENDING'}</span>
                 </div>
                 <div>
                     <button
@@ -424,9 +415,43 @@ export default function InstantApplyForm() {
 
                     <form onSubmit={handleSubmit(onSubmit, onError)} className="space-y-8">
 
-                        {/* STEP 1: UPLOAD DOCUMENTS & NATIONALITY */}
+                        {/* STEP 1: PERSONAL & DOCUMENT INFORMATION */}
                         {currentStep === 1 && (
                             <div className="animate-in slide-in-from-right duration-500 space-y-8">
+                                {/* Name Fields */}
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div className="space-y-2">
+                                        <label className="text-sm font-semibold text-gray-700">{t('labels.firstName')} <span className="text-red-500">*</span></label>
+                                        <input
+                                            {...register('firstName', { required: t('errors.required') })}
+                                            className="w-full rounded-md border border-gray-300 px-4 py-3"
+                                            placeholder={t('placeholders.firstName')}
+                                        />
+                                        {errors.firstName && <span className="text-red-500 text-xs">{errors.firstName.message}</span>}
+                                    </div>
+                                    <div className="space-y-2">
+                                        <label className="text-sm font-semibold text-gray-700">{t('labels.lastName')} <span className="text-red-500">*</span></label>
+                                        <input
+                                            {...register('lastName', { required: t('errors.required') })}
+                                            className="w-full rounded-md border border-gray-300 px-4 py-3"
+                                            placeholder={t('placeholders.lastName')}
+                                        />
+                                        {errors.lastName && <span className="text-red-500 text-xs">{errors.lastName.message}</span>}
+                                    </div>
+                                </div>
+
+                                {/* Passport Number */}
+                                <div className="space-y-2">
+                                    <label className="text-sm font-semibold text-gray-700">{t('labels.passportNumber')} <span className="text-red-500">*</span></label>
+                                    <input
+                                        {...register('passportNumber', { required: t('errors.required') })}
+                                        className="w-full rounded-md border border-gray-300 px-4 py-3"
+                                        placeholder={t('placeholders.passportNumber')}
+                                    />
+                                    {errors.passportNumber && <span className="text-red-500 text-xs">{errors.passportNumber.message}</span>}
+                                </div>
+
+                                {/* Nationality */}
                                 <div className="space-y-2">
                                     <label className="text-sm font-semibold text-gray-700">{t('labels.nationality')} <span className="text-red-500">*</span></label>
                                     <select

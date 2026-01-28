@@ -12,7 +12,6 @@ import { setRequestLocale, getTranslations } from 'next-intl/server';
 // Validated inside functions
 const JWT_SECRET = process.env.JWT_SECRET;
 
-
 async function getAdminSession() {
     const cookieStore = await cookies();
     const token = cookieStore.get('admin_session')?.value;
@@ -61,10 +60,22 @@ export default async function AdminDashboardPage({
         additionalData: decrypt(app.additionalData || ''),
     }));
 
-    const messages = await prisma.contactRequest.findMany({
+    // DÜZELTME BURADA:
+    // Artık 'ContactRequest' (eski) yerine 'ContactSubmission' (yeni) tablosundan çekiyoruz.
+    const rawMessages = await prisma.contactSubmission.findMany({
         orderBy: { createdAt: 'desc' },
         take: 50
     });
+
+    // UYUMLULUK DÜZELTMESİ:
+    // AdminMessagesTable bileşeni muhtemelen "read" (boolean) bekliyor.
+    // Bizim yeni tablomuzda "status" (string) var. Bunu çeviriyoruz.
+    const messages = rawMessages.map(msg => ({
+        ...msg,
+        read: msg.status !== 'NEW', // Eğer status 'NEW' değilse okunmuş say
+        // Eğer tabloda updatedAt gerekiyorsa, createdAt'i kopyala (fallback)
+        updatedAt: msg.createdAt 
+    }));
 
     return (
         <div className="min-h-screen bg-gray-50">
@@ -106,6 +117,7 @@ export default async function AdminDashboardPage({
                     <div className="overflow-hidden rounded-lg bg-white px-4 py-5 shadow sm:p-6">
                         <dt className="truncate text-sm font-medium text-gray-500">Unread Messages</dt>
                         <dd className="mt-1 text-3xl font-semibold tracking-tight text-gray-900">
+                            {/* Burada da status kontrolü yapıyoruz */}
                             {messages.filter(m => !m.read).length}
                         </dd>
                     </div>

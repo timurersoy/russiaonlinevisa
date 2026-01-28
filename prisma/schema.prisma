@@ -60,9 +60,9 @@ model Counter {
   value Int
 }
 
-// BU MODELİN EKLENDİĞİNDEN EMİN OL
 model ContactSubmission {
   id        String   @id @default(cuid())
+  publicId  Int?     @unique  // <--- YENİ EKLENEN SATIR (REQ Numarası için)
   name      String
   email     String
   subject   String

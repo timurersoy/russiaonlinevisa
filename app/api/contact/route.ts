@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server';
-import { prisma } from '@/lib/prisma'; // Prisma ayarının burada olduğundan emin ol
+import { prisma } from '@/lib/prisma';
 import nodemailer from 'nodemailer';
+
+// Dinamik olmaya zorla (Statik hatasını önlemek için)
+export const dynamic = 'force-dynamic';
 
 export async function POST(request: Request) {
   try {
@@ -8,8 +11,6 @@ export async function POST(request: Request) {
     const { name, email, subject, message } = body;
 
     // 1. Veritabanına Kaydet
-    // Not: Schema'nda "ContactSubmission" veya "Contact" tablosu olmalı.
-    // Eğer tablonun adı farklıysa burayı güncellemelisin.
     await prisma.contactSubmission.create({
       data: {
         name,
@@ -19,20 +20,23 @@ export async function POST(request: Request) {
       },
     });
 
-    // 2. E-posta Gönderimi (SMTP Ayarlarını kullanarak)
+    // 2. E-posta Gönderimi
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: Number(process.env.SMTP_PORT),
-      secure: true, // 465 portu için true
+      secure: false, // DÜZELTME: Genellikle 587 portu için false olmalıdır
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
       },
+      tls: {
+        rejectUnauthorized: false // Sertifika hatalarını önlemek için garanti ayar
+      }
     });
 
     await transporter.sendMail({
       from: process.env.SMTP_FROM,
-      to: process.env.ADMIN_EMAIL, // Senin mailin
+      to: process.env.ADMIN_EMAIL,
       subject: `Yeni İletişim Formu: ${subject}`,
       text: `Gönderen: ${name} (${email})\n\nMesaj:\n${message}`,
       html: `<p><strong>Gönderen:</strong> ${name} (${email})</p><p><strong>Konu:</strong> ${subject}</p><p><strong>Mesaj:</strong><br/>${message}</p>`,

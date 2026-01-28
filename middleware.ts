@@ -16,10 +16,13 @@ export default async function middleware(request: NextRequest) {
     response.headers.set('X-Frame-Options', 'DENY');
     response.headers.set('X-Content-Type-Options', 'nosniff');
     response.headers.set('Referrer-Policy', 'origin-when-cross-origin');
+    
+    // DÜZELTME: Harita (cdn.jsdelivr.net) ve API için izinler eklendi
     response.headers.set(
         'Content-Security-Policy',
-        "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:;"
+        "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:; font-src 'self' data:; connect-src 'self' https://cdn.jsdelivr.net https://russiaonlinevisa.vercel.app;"
     );
+    
     response.headers.set(
         'Strict-Transport-Security',
         'max-age=31536000; includeSubDomains; preload'
@@ -30,6 +33,5 @@ export default async function middleware(request: NextRequest) {
 
 export const config = {
     // Match only internationalized pathnames
-    // matcher: ['/', '/(en|tr|ru|ar|zh)/:path*']
     matcher: ['/((?!api|_next|.*\\..*).*)']
 };

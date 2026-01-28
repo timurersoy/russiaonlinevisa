@@ -4,7 +4,6 @@ const withNextIntl = createNextIntlPlugin('./app/i18n/request.ts');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    // output: 'export', // Disabled for dynamic deployment
     eslint: {
         ignoreDuringBuilds: true,
     },
@@ -14,7 +13,7 @@ const nextConfig = {
     typescript: {
         ignoreBuildErrors: true,
     },
-    // --- YENİ EKLENEN KISIM (HARİTA İÇİN) ---
+    // BU KISIM HARİTAYI KURTARACAK:
     async headers() {
         return [
             {
@@ -28,7 +27,6 @@ const nextConfig = {
             }
         ];
     }
-    // ----------------------------------------
 };
 
 export default withNextIntl(nextConfig);

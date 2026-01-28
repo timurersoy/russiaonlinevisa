@@ -1,74 +1,58 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-generator client {
-  provider = "prisma-client-js"
-}
-
+// Bu dosyanın en üstünde postgresql yazdığından emin ol!
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
 }
 
 model User {
   id           String   @id @default(cuid())
   email        String   @unique
   passwordHash String
-  totpSecret   String?  // Secret for 2FA
+  totpSecret   String?
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
 }
 
 model Application {
   id              String   @id @default(cuid())
-  publicId        Int?     @unique // Friendly ID for humans
-  status          String   @default("PROCESSING") // PROCESSING, CONFIRMED, DECLINED
-  paymentStatus   String   @default("UNPAID")  // UNPAID, PAID
-  
-  // Personal Details
+  publicId        Int?     @unique
+  status          String   @default("PROCESSING")
+  paymentStatus   String   @default("UNPAID")
   firstName       String
   lastName        String
   email           String
   phone           String
   gender          String?
   nationality     String
-  
-  // Passport Details
   passportNumber  String
   passportExpiry  DateTime?
-  
-  // Travel Details
   travelDate      DateTime
-  
-  // JSON blob for flexible storage of other fields
-  additionalData  String? // JSON string
-  
+  additionalData  String?
   contactRequest  ContactRequest? @relation(fields: [contactRequestId], references: [id])
   contactRequestId String?
-
-  // Legal Consent Logging
   ipAddress       String?
   userAgent       String?
   privacyConsent  Boolean  @default(false)
   serviceConsent  Boolean  @default(false)
-  
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
 }
 
 model ContactRequest {
-  id        String   @id @default(cuid())
-  name      String
-  email     String
-  subject   String
-  message   String
-  read      Boolean  @default(false)
-  
+  id           String   @id @default(cuid())
+  name         String
+  email        String
+  subject      String
+  message      String
+  read         Boolean  @default(false)
   applications Application[]
-  
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  publicId  Int?     @unique // Friendly ID for humans
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  publicId     Int?     @unique
 }
 
 model Counter {
@@ -76,12 +60,13 @@ model Counter {
   value Int
 }
 
+// BU MODELİN EKLENDİĞİNDEN EMİN OL
 model ContactSubmission {
   id        String   @id @default(cuid())
   name      String
   email     String
   subject   String
   message   String
-  status    String   @default("NEW") // NEW, READ, ARCHIVED
+  status    String   @default("NEW")
   createdAt DateTime @default(now())
 }

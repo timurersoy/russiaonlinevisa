@@ -153,9 +153,31 @@ export default function InstantApplyForm() {
         else setError(field, { type: 'required', message: t('errors.docRequired') });
     };
 
-    const nextStep = () => {
-        setCurrentStep((prev) => prev + 1);
-        window.scrollTo(0, 0);
+    const nextStep = async () => {
+        // Define which fields to validate for each step
+        const step1Fields: (keyof FormInputs)[] = ['firstName', 'lastName', 'passportNumber', 'nationality', 'photo', 'passportCover', 'passportExpiryDate'];
+        const step2Fields: (keyof FormInputs)[] = ['phone', 'email', 'address'];
+        const step3Fields: (keyof FormInputs)[] = ['travelDate', 'visitType', 'firstCity', 'accommodationType'];
+        const step4Fields: (keyof FormInputs)[] = ['gender', 'maritalStatus'];
+
+        let fieldsToValidate: (keyof FormInputs)[] = [];
+
+        if (currentStep === 1) fieldsToValidate = step1Fields;
+        else if (currentStep === 2) fieldsToValidate = step2Fields;
+        else if (currentStep === 3) fieldsToValidate = step3Fields;
+        else if (currentStep === 4) fieldsToValidate = step4Fields;
+
+        // Trigger validation for current step
+        const result = await trigger(fieldsToValidate);
+
+        if (result) {
+            setCurrentStep((prev) => prev + 1);
+            window.scrollTo(0, 0);
+        } else {
+            // Show warning if validation fails
+            setShowWarning(true);
+            setTimeout(() => setShowWarning(false), 3000);
+        }
     };
 
     const prevStep = () => {

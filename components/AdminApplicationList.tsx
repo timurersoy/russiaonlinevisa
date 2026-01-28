@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { Eye, FileText, X } from 'lucide-react';
 import { Application } from '@prisma/client';
+import { decrypt } from '@/lib/crypto';
 
 interface AdminApplicationListProps {
     applications: Application[];
@@ -108,12 +109,12 @@ export default function AdminApplicationList({ applications }: AdminApplicationL
                                     APP-{app.publicId ?? '???'}
                                 </td>
                                 <td className="px-6 py-4 whitespace-nowrap">
-                                    <div className="text-sm font-medium text-gray-900">{app.firstName} {app.lastName}</div>
-                                    <div className="text-sm text-gray-500">{app.email}</div>
+                                    <div className="text-sm font-medium text-gray-900">{decrypt(app.firstName)} {decrypt(app.lastName)}</div>
+                                    <div className="text-sm text-gray-500">{decrypt(app.email)}</div>
                                 </td>
                                 <td className="px-6 py-4 whitespace-nowrap">
                                     <div className="text-sm text-gray-900">{app.nationality}</div>
-                                    <div className="text-sm text-gray-500">{app.passportNumber}</div>
+                                    <div className="text-sm text-gray-500">{decrypt(app.passportNumber)}</div>
                                 </td>
                                 <td className="px-6 py-4 whitespace-nowrap">
                                     <span className={`inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset ${app.status === 'APPROVED' || app.status === 'CONFIRMED' ? 'bg-green-50 text-green-700 ring-green-600/20' :
@@ -243,7 +244,7 @@ export default function AdminApplicationList({ applications }: AdminApplicationL
                                     <div className="bg-gray-50 rounded-lg p-4 space-y-2">
                                         <div className="grid grid-cols-3 gap-2 text-sm">
                                             <span className="font-semibold text-gray-700">Name:</span>
-                                            <span className="col-span-2">{selectedApp.firstName} {selectedApp.lastName}</span>
+                                            <span className="col-span-2">{decrypt(selectedApp.firstName)} {decrypt(selectedApp.lastName)}</span>
                                         </div>
                                         <div className="grid grid-cols-3 gap-2 text-sm">
                                             <span className="font-semibold text-gray-700">Nationality:</span>
@@ -261,7 +262,7 @@ export default function AdminApplicationList({ applications }: AdminApplicationL
                                     <div className="bg-gray-50 rounded-lg p-4 space-y-2">
                                         <div className="grid grid-cols-3 gap-2 text-sm">
                                             <span className="font-semibold text-gray-700">Passport No:</span>
-                                            <span className="col-span-2 font-mono">{selectedApp.passportNumber}</span>
+                                            <span className="col-span-2 font-mono">{decrypt(selectedApp.passportNumber)}</span>
                                         </div>
                                         <div className="grid grid-cols-3 gap-2 text-sm">
                                             <span className="font-semibold text-gray-700">Expiry:</span>
@@ -279,11 +280,11 @@ export default function AdminApplicationList({ applications }: AdminApplicationL
                                     <div className="bg-gray-50 rounded-lg p-4 space-y-2">
                                         <div className="grid grid-cols-3 gap-2 text-sm">
                                             <span className="font-semibold text-gray-700">Email:</span>
-                                            <span className="col-span-2">{selectedApp.email}</span>
+                                            <span className="col-span-2">{decrypt(selectedApp.email)}</span>
                                         </div>
                                         <div className="grid grid-cols-3 gap-2 text-sm">
                                             <span className="font-semibold text-gray-700">Phone:</span>
-                                            <span className="col-span-2">{selectedApp.phone}</span>
+                                            <span className="col-span-2">{decrypt(selectedApp.phone)}</span>
                                         </div>
                                     </div>
                                 </div>

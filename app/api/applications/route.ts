@@ -54,6 +54,29 @@ function parseDateString(dateStr: any): Date | null {
   } catch (e) { return null; }
 }
 
+const EMAIL_TEMPLATES: Record<string, { subject: (id: any) => string, body: (fn: string, ln: string, id: any, pass: string, date: string) => string }> = {
+  en: {
+    subject: (id) => `Application Received: APP-${id} - Russia Online Visa`,
+    body: (fn, ln, id, pass, date) => `Dear ${fn} ${ln},<br>We have successfully received your visa application via russiaonlinevisa.com.<br>Your Application Reference: <strong>APP-${id}</strong><br>Our team at Timtur Travel Agency has started reviewing your documents.<br><br><strong>Summary:</strong><br>- Passport: ${pass}<br>- Travel Date: ${date}<br>- Status: Processing<br><br>Contact: info@russiaonlinevisa.com | +90 530 202 85 30`
+  },
+  tr: {
+    subject: (id) => `Başvurunuz Alındı: APP-${id}`,
+    body: (fn, ln, id, pass, date) => `Sayın ${fn} ${ln},<br>russiaonlinevisa.com üzerinden başvurunuz alınmıştır.<br>Referans No: <strong>APP-${id}</strong><br>Timtur Travel Agency ekibi belgelerinizi inceliyor.<br><br><strong>Özet:</strong><br>- Pasaport: ${pass}<br>- Seyahat Tarihi: ${date}<br>- Durum: İşleniyor<br><br>İletişim: info@russiaonlinevisa.com | +90 530 202 85 30`
+  },
+  ru: {
+    subject: (id) => `Заявка получена: APP-${id}`,
+    body: (fn, ln, id, pass, date) => `Уважаемый(ая) ${fn} ${ln},<br>Мы получили вашу заявку через russiaonlinevisa.com.<br>Номер заявки: <strong>APP-${id}</strong><br>Команда Timtur Travel Agency начала проверку.<br><br><strong>Сводка:</strong><br>- Паспорт: ${pass}<br>- Дата поездки: ${date}<br>- Статус: В обработке<br><br>Контакты: info@russiaonlinevisa.com | +90 530 202 85 30`
+  },
+  ar: {
+    subject: (id) => `تم استلام الطلب: APP-${id}`,
+    body: (fn, ln, id, pass, date) => `عزيزي ${fn} ${ln}،<br>تم استلام طلبك عبر russiaonlinevisa.com.<br>رقم المرجع: <strong>APP-${id}</strong><br>فريق Timtur Travel Agency يراجع مستنداتك.<br><br><strong>ملخص:</strong><br>- جواز السفر: ${pass}<br>- تاريخ السفر: ${date}<br>- الحالة: قيد المعالجة<br><br>اتصل بنا: info@russiaonlinevisa.com | +90 530 202 85 30`
+  },
+  zh: {
+    subject: (id) => `申请已收到: APP-${id}`,
+    body: (fn, ln, id, pass, date) => `尊敬的 ${fn} ${ln},<br>我们已收到您的申请 (russiaonlinevisa.com).<br>参考号: <strong>APP-${id}</strong><br>Timtur Travel Agency 正在审核您的文件.<br><br><strong>摘要:</strong><br>- 护照: ${pass}<br>- 旅行日期: ${date}<br>- 状态: 处理中<br><br>联系方式: info@russiaonlinevisa.com | +90 530 202 85 30`
+  }
+};
+
 export async function POST(request: Request) {
   try {
     const body = await request.json();
@@ -62,6 +85,9 @@ export async function POST(request: Request) {
     const userAgent = headersList.get('user-agent') || 'Unknown Browser';
 
     console.log("APPLICATION SUBMISSION:", { firstName: body.firstName, email: body.email });
+
+    // Extract Locale (default 'en')
+    const locale = body.locale || 'en';
 
     // --- 1. VERİ ÇEKİMİ (Artık direkt body'den çekebiliriz) ---
     const firstName = body.firstName || findValue(body, ['firstName', 'name']) || "İsimsiz";
@@ -143,6 +169,22 @@ export async function POST(request: Request) {
         subject: `YENİ BAŞVURU: APP-${publicId} (${firstName})`,
         html: `<h3>Başvuru: APP-${publicId}</h3><p>Pasaport: ${passportNumber}</p>`,
       });
+
+      // --- 4.1 KULLANICIYA OTOMATİK YANIT (USER CONFIRMATION EMAIL) ---
+      if (email) {
+        // Select Template based on locale (fallback to 'en')
+        const template = EMAIL_TEMPLATES[locale] || EMAIL_TEMPLATES['en'];
+        const formattedDate = travelDate ? new Date(travelDate).toLocaleDateString(locale) : 'N/A';
+
+        await transporter.sendMail({
+          from: `"Russia Online Visa" <${process.env.SMTP_USER}>`,
+          to: email,
+          subject: template.subject(publicId),
+          html: template.body(firstName, lastName, publicId, passportNumber, formattedDate),
+        });
+        console.log(`User confirmation email sent to ${email} [${locale}]`);
+      }
+
     } catch (e) { console.error("Mail Error:", e); }
 
     // --- 5. GARANTİLİ YANIT (Pending Sorununu Çözer) ---

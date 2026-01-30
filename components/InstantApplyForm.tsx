@@ -1,14 +1,40 @@
 'use strict';
 'use client';
 
-import { useState } from 'react';
-import { useForm, SubmitHandler, UseFormRegisterReturn } from 'react-hook-form';
-import { ChevronRight, ChevronLeft, CheckCircle, Upload, Info, X, CreditCard } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { useForm, SubmitHandler, UseFormRegisterReturn, Controller } from 'react-hook-form';
+import { ChevronRight, ChevronLeft, CheckCircle, Upload, Info, X, CreditCard, Calendar } from 'lucide-react';
 import FileUpload from './ui/FileUpload';
 import { useTranslations, useMessages, useLocale } from 'next-intl';
 import { Link } from '@/app/i18n/navigation';
 import PersonalDataContent from './policies/PersonalDataContent';
 import ServicesAgreementContent from './policies/ServicesAgreementContent';
+
+import DatePicker, { registerLocale } from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
+import { tr, enGB, ru, ar, zhCN } from 'date-fns/locale';
+
+registerLocale('tr', tr);
+registerLocale('en', enGB);
+registerLocale('ru', ru);
+registerLocale('ar', ar);
+registerLocale('zh', zhCN);
+
+const PLACEHOLDERS: Record<string, string> = {
+    en: 'dd.mm.yyyy',
+    tr: 'gg.aa.yyyy',
+    ru: 'дд.мм.гггг',
+    ar: 'yyyy/mm/dd',
+    zh: 'yyyy-mm-dd'
+};
+
+const DATE_FORMATS: Record<string, string> = {
+    en: 'dd.MM.yyyy',
+    tr: 'dd.MM.yyyy',
+    ru: 'dd.MM.yyyy',
+    ar: 'yyyy/MM/dd',
+    zh: 'yyyy-MM-dd'
+};
 
 type FormInputs = {
     // Step 1: Personal & Document Information
@@ -132,6 +158,8 @@ export default function InstantApplyForm() {
         setValue,
         setError,
         clearErrors,
+        reset,
+        control,
         formState: { errors },
     } = useForm<FormInputs>({
         mode: 'onChange'
@@ -192,6 +220,27 @@ export default function InstantApplyForm() {
         reader.onload = () => resolve(reader.result as string);
         reader.onerror = error => reject(error);
     });
+
+
+
+    // --- FORM PERSISTENCE ---
+    useEffect(() => {
+        const savedData = localStorage.getItem('visa_app_form_data');
+        if (savedData) {
+            try {
+                const parsed = JSON.parse(savedData);
+                reset(parsed);
+            } catch (e) { console.error("Failed to load saved form data", e); }
+        }
+    }, [reset]);
+
+    useEffect(() => {
+        const subscription = watch((value) => {
+            localStorage.setItem('visa_app_form_data', JSON.stringify(value));
+        });
+        return () => subscription.unsubscribe();
+    }, [watch]);
+    // ------------------------
 
     const onSubmit: SubmitHandler<FormInputs> = async (data) => {
         setIsSubmitting(true);
@@ -507,28 +556,38 @@ export default function InstantApplyForm() {
                                         <p>{t('warning.passportValidity')}</p>
                                     </div>
 
-                                    <DateInput
-                                        registration={register('passportExpiryDate', {
+                                    <Controller
+                                        control={control}
+                                        name="passportExpiryDate"
+                                        rules={{
                                             required: t('errors.required'),
                                             validate: (value) => {
                                                 if (!value) return true;
                                                 const selectedDate = new Date(value);
                                                 const minDate = new Date();
-                                                minDate.setDate(minDate.getDate() + 180); // Today + 180 days
-
-                                                if (selectedDate < minDate) {
-                                                    return t('errors.passportExpiryInvalid');
-                                                }
+                                                minDate.setDate(minDate.getDate() + 180);
+                                                if (selectedDate < minDate) return t('errors.passportExpiryInvalid');
                                                 return true;
                                             }
-                                        })}
-                                        min={(() => {
-                                            const d = new Date();
-                                            d.setDate(d.getDate() + 180);
-                                            return d.toISOString().split('T')[0];
-                                        })()}
-                                        className="w-full rounded-md border border-gray-300 px-4 py-3"
-                                        placeholder={t('placeholders.entryDate')}
+                                        }}
+                                        render={({ field }) => (
+                                            <div className="relative">
+                                                <DatePicker
+                                                    selected={field.value ? new Date(field.value) : null}
+                                                    onChange={(date: Date | null) => field.onChange(date ? date.toISOString().split('T')[0] : '')}
+                                                    dateFormat={DATE_FORMATS[locale] || 'dd.MM.yyyy'}
+                                                    placeholderText={PLACEHOLDERS[locale] || 'dd.mm.yyyy'}
+                                                    locale={locale}
+                                                    minDate={(() => {
+                                                        const d = new Date();
+                                                        d.setDate(d.getDate() + 180);
+                                                        return d;
+                                                    })()}
+                                                    className="w-full rounded-md border border-gray-300 px-4 py-3 pl-10"
+                                                />
+                                                <Calendar className="absolute left-3 top-3.5 h-5 w-5 text-gray-400 pointer-events-none" />
+                                            </div>
+                                        )}
                                     />
                                     {errors.passportExpiryDate && <span className="text-red-500 text-xs">{errors.passportExpiryDate.message}</span>}
                                 </div>
@@ -672,20 +731,33 @@ export default function InstantApplyForm() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-in slide-in-from-right duration-500">
                                 <div className="space-y-2">
                                     <label className="text-sm font-semibold text-gray-700">{t('labels.travelDate')} <span className="text-red-500">*</span></label>
-                                    <DateInput
-                                        registration={register('travelDate', { required: t('errors.required') })}
-                                        min={(() => {
-                                            const d = new Date();
-                                            d.setDate(d.getDate() + 5);
-                                            return d.toISOString().split('T')[0];
-                                        })()}
-                                        max={(() => {
-                                            const d = new Date();
-                                            d.setDate(d.getDate() + 89);
-                                            return d.toISOString().split('T')[0];
-                                        })()}
-                                        className="w-full rounded-md border border-gray-300 px-4 py-3"
-                                        placeholder={t('placeholders.entryDate')}
+                                    <Controller
+                                        control={control}
+                                        name="travelDate"
+                                        rules={{ required: t('errors.required') }}
+                                        render={({ field }) => (
+                                            <div className="relative">
+                                                <DatePicker
+                                                    selected={field.value ? new Date(field.value) : null}
+                                                    onChange={(date: Date | null) => field.onChange(date ? date.toISOString().split('T')[0] : '')}
+                                                    dateFormat={DATE_FORMATS[locale] || 'dd.MM.yyyy'}
+                                                    placeholderText={PLACEHOLDERS[locale] || 'dd.mm.yyyy'}
+                                                    locale={locale}
+                                                    minDate={(() => {
+                                                        const d = new Date();
+                                                        d.setDate(d.getDate() + 5);
+                                                        return d;
+                                                    })()}
+                                                    maxDate={(() => {
+                                                        const d = new Date();
+                                                        d.setDate(d.getDate() + 89);
+                                                        return d;
+                                                    })()}
+                                                    className="w-full rounded-md border border-gray-300 px-4 py-3 pl-10"
+                                                />
+                                                <Calendar className="absolute left-3 top-3.5 h-5 w-5 text-gray-400 pointer-events-none" />
+                                            </div>
+                                        )}
                                     />
                                     {errors.travelDate && <span className="text-red-500 text-xs">{errors.travelDate.message}</span>}
                                 </div>
@@ -850,7 +922,24 @@ export default function InstantApplyForm() {
                                             </div>
                                             <div className="space-y-2">
                                                 <label className="text-sm text-gray-700">{t('labels.partnerBirthday')} <span className="text-red-500">*</span></label>
-                                                <DateInput registration={register('partnerBirthday', { required: t('errors.required') })} className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm" placeholder={t('placeholders.entryDate')} />
+                                                <Controller
+                                                    control={control}
+                                                    name="partnerBirthday"
+                                                    rules={{ required: t('errors.required') }}
+                                                    render={({ field }) => (
+                                                        <div className="relative">
+                                                            <DatePicker
+                                                                selected={field.value ? new Date(field.value) : null}
+                                                                onChange={(date: Date | null) => field.onChange(date ? date.toISOString().split('T')[0] : '')}
+                                                                dateFormat={DATE_FORMATS[locale] || 'dd.MM.yyyy'}
+                                                                placeholderText={PLACEHOLDERS[locale] || 'dd.mm.yyyy'}
+                                                                locale={locale}
+                                                                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm pl-9"
+                                                            />
+                                                            <Calendar className="absolute left-2.5 top-2.5 h-4 w-4 text-gray-400 pointer-events-none" />
+                                                        </div>
+                                                    )}
+                                                />
                                                 {errors.partnerBirthday && <span className="text-red-500 text-xs">{errors.partnerBirthday.message}</span>}
                                             </div>
                                             <div className="space-y-2">
@@ -870,7 +959,24 @@ export default function InstantApplyForm() {
                                         </div>
                                         <div className="space-y-2">
                                             <label className="text-sm text-gray-700">{t('labels.birthday')}</label>
-                                            <DateInput registration={register('fatherBirthday', { required: false })} className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm" placeholder={t('placeholders.entryDate')} />
+                                            <Controller
+                                                control={control}
+                                                name="fatherBirthday"
+                                                rules={{ required: false }}
+                                                render={({ field }) => (
+                                                    <div className="relative">
+                                                        <DatePicker
+                                                            selected={field.value ? new Date(field.value) : null}
+                                                            onChange={(date: Date | null) => field.onChange(date ? date.toISOString().split('T')[0] : '')}
+                                                            dateFormat={DATE_FORMATS[locale] || 'dd.MM.yyyy'}
+                                                            placeholderText={PLACEHOLDERS[locale] || 'dd.mm.yyyy'}
+                                                            locale={locale}
+                                                            className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm pl-9"
+                                                        />
+                                                        <Calendar className="absolute left-2.5 top-2.5 h-4 w-4 text-gray-400 pointer-events-none" />
+                                                    </div>
+                                                )}
+                                            />
                                         </div>
                                         <div className="space-y-2">
                                             <label className="text-sm text-gray-700">{t('labels.birthPlace')}</label>
@@ -887,7 +993,24 @@ export default function InstantApplyForm() {
                                         </div>
                                         <div className="space-y-2">
                                             <label className="text-sm text-gray-700">{t('labels.birthday')}</label>
-                                            <DateInput registration={register('motherBirthday', { required: false })} className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm" placeholder={t('placeholders.entryDate')} />
+                                            <Controller
+                                                control={control}
+                                                name="motherBirthday"
+                                                rules={{ required: false }}
+                                                render={({ field }) => (
+                                                    <div className="relative">
+                                                        <DatePicker
+                                                            selected={field.value ? new Date(field.value) : null}
+                                                            onChange={(date: Date | null) => field.onChange(date ? date.toISOString().split('T')[0] : '')}
+                                                            dateFormat={DATE_FORMATS[locale] || 'dd.MM.yyyy'}
+                                                            placeholderText={PLACEHOLDERS[locale] || 'dd.mm.yyyy'}
+                                                            locale={locale}
+                                                            className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm pl-9"
+                                                        />
+                                                        <Calendar className="absolute left-2.5 top-2.5 h-4 w-4 text-gray-400 pointer-events-none" />
+                                                    </div>
+                                                )}
+                                            />
                                         </div>
                                         <div className="space-y-2">
                                             <label className="text-sm text-gray-700">{t('labels.birthPlace')}</label>

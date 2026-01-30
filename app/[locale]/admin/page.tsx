@@ -74,7 +74,7 @@ export default async function AdminDashboardPage({
         ...msg,
         read: msg.status !== 'NEW', // Eğer status 'NEW' değilse okunmuş say
         // Eğer tabloda updatedAt gerekiyorsa, createdAt'i kopyala (fallback)
-        updatedAt: msg.createdAt 
+        updatedAt: msg.createdAt
     }));
 
     return (
@@ -124,7 +124,7 @@ export default async function AdminDashboardPage({
                 </div>
 
                 {/* Applications List with Decryption and Modal Support */}
-                <AdminApplicationList applications={applications} />
+                <AdminApplicationList applications={applications} locale={locale} />
 
                 {/* Messages Table */}
                 <AdminMessagesTable messages={messages} />

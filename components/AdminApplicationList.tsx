@@ -8,6 +8,7 @@ import { decrypt } from '@/lib/crypto';
 
 interface AdminApplicationListProps {
     applications: Application[];
+    locale: string;
 }
 
 const FileViewer = ({ label, dataUrl }: { label: string, dataUrl?: string }) => {
@@ -51,11 +52,34 @@ const FileViewer = ({ label, dataUrl }: { label: string, dataUrl?: string }) => 
     );
 };
 
-export default function AdminApplicationList({ applications }: AdminApplicationListProps) {
+export default function AdminApplicationList({ applications, locale }: AdminApplicationListProps) {
     const router = useRouter();
     const [selectedApp, setSelectedApp] = useState<Application | null>(null);
     const [localApplications, setLocalApplications] = useState<Application[]>(applications);
     const [parsedData, setParsedData] = useState<any>(null);
+
+    const formatDate = (dateInput: Date | string | null, includeTime = false) => {
+        if (!dateInput) return 'N/A';
+        const d = new Date(dateInput);
+        if (isNaN(d.getTime())) return 'N/A';
+
+        const day = String(d.getDate()).padStart(2, '0');
+        const month = String(d.getMonth() + 1).padStart(2, '0');
+        const year = d.getFullYear();
+
+        let dateStr = '';
+        if (locale === 'zh') dateStr = `${year}-${month}-${day}`;
+        else if (locale === 'ar') dateStr = `${year}/${month}/${day}`;
+        else if (locale === 'en') dateStr = `${day}-${month}-${year}`;
+        else dateStr = `${day}.${month}.${year}`;
+
+        if (includeTime) {
+            const hour = String(d.getHours()).padStart(2, '0');
+            const min = String(d.getMinutes()).padStart(2, '0');
+            return `${dateStr} ${hour}:${min}`;
+        }
+        return dateStr;
+    };
 
     // Sync prop changes to state (important if parent re-renders)
     useEffect(() => {
@@ -132,16 +156,7 @@ export default function AdminApplicationList({ applications }: AdminApplicationL
                                     </span>
                                 </td>
                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    {(() => {
-                                        if (!app.createdAt) return 'N/A';
-                                        const d = new Date(app.createdAt);
-                                        const day = String(d.getDate()).padStart(2, '0');
-                                        const month = String(d.getMonth() + 1).padStart(2, '0');
-                                        const year = d.getFullYear();
-                                        const hour = String(d.getHours()).padStart(2, '0');
-                                        const min = String(d.getMinutes()).padStart(2, '0');
-                                        return `${day}-${month}-${year} ${hour}:${min}`;
-                                    })()}
+                                    {formatDate(app.createdAt, true)}
                                 </td>
                                 <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                     <button
@@ -269,23 +284,11 @@ export default function AdminApplicationList({ applications }: AdminApplicationL
                                         </div>
                                         <div className="grid grid-cols-3 gap-2 text-sm">
                                             <span className="font-semibold text-gray-700">Expiry:</span>
-                                            <span className="col-span-2">{selectedApp.passportExpiry ? (() => {
-                                                const d = new Date(selectedApp.passportExpiry!);
-                                                const day = String(d.getDate()).padStart(2, '0');
-                                                const month = String(d.getMonth() + 1).padStart(2, '0');
-                                                const year = d.getFullYear();
-                                                return `${day}-${month}-${year}`;
-                                            })() : 'N/A'}</span>
+                                            <span className="col-span-2">{formatDate(selectedApp.passportExpiry)}</span>
                                         </div>
                                         <div className="grid grid-cols-3 gap-2 text-sm">
                                             <span className="font-semibold text-gray-700">Travel Date:</span>
-                                            <span className="col-span-2">{(() => {
-                                                const d = new Date(selectedApp.travelDate);
-                                                const day = String(d.getDate()).padStart(2, '0');
-                                                const month = String(d.getMonth() + 1).padStart(2, '0');
-                                                const year = d.getFullYear();
-                                                return `${day}-${month}-${year}`;
-                                            })()}</span>
+                                            <span className="col-span-2">{formatDate(selectedApp.travelDate)}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -360,15 +363,7 @@ export default function AdminApplicationList({ applications }: AdminApplicationL
                                     </div>
                                     <div className="grid grid-cols-12 gap-2 hover:bg-white/5 py-1 rounded">
                                         <div className="col-span-3 text-green-400">
-                                            {(() => {
-                                                const d = new Date(selectedApp.createdAt);
-                                                const day = String(d.getDate()).padStart(2, '0');
-                                                const month = String(d.getMonth() + 1).padStart(2, '0');
-                                                const year = d.getFullYear();
-                                                const hour = String(d.getHours()).padStart(2, '0');
-                                                const min = String(d.getMinutes()).padStart(2, '0');
-                                                return `${day}-${month}-${year} ${hour}:${min}`;
-                                            })()}
+                                            {formatDate(selectedApp.createdAt, true)}
                                         </div>
                                         <div className="col-span-3 text-white">
                                             <span className="text-green-500">✓</span> Privacy Policy
@@ -378,15 +373,7 @@ export default function AdminApplicationList({ applications }: AdminApplicationL
                                     </div>
                                     <div className="grid grid-cols-12 gap-2 hover:bg-white/5 py-1 rounded">
                                         <div className="col-span-3 text-green-400">
-                                            {(() => {
-                                                const d = new Date(selectedApp.createdAt);
-                                                const day = String(d.getDate()).padStart(2, '0');
-                                                const month = String(d.getMonth() + 1).padStart(2, '0');
-                                                const year = d.getFullYear();
-                                                const hour = String(d.getHours()).padStart(2, '0');
-                                                const min = String(d.getMinutes()).padStart(2, '0');
-                                                return `${day}-${month}-${year} ${hour}:${min}`;
-                                            })()}
+                                            {formatDate(selectedApp.createdAt, true)}
                                         </div>
                                         <div className="col-span-3 text-white">
                                             <span className="text-green-500">✓</span> Service Agreement

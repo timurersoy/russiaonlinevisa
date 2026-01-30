@@ -54,10 +54,25 @@ function parseDateString(dateStr: any): Date | null {
   } catch (e) { return null; }
 }
 
-const EMAIL_TEMPLATES: Record<string, { subject: (id: any) => string, body: (fn: string, ln: string, id: any, pass: string, date: string) => string }> = {
+// Helper: DD-MM-YYYY Format
+function formatDateDDMMYYYY(dateInput: string | Date | null): string {
+  if (!dateInput) return "N/A";
+  const d = new Date(dateInput);
+  if (isNaN(d.getTime())) return "N/A";
+  const day = String(d.getDate()).padStart(2, '0');
+  const month = String(d.getMonth() + 1).padStart(2, '0');
+  const year = d.getFullYear();
+  return `${day}-${month}-${year}`;
+}
+
+const EMAIL_TEMPLATES: Record<string, { subject: (id: any) => string, body: (fn: string, ln: string, id: any, pass: string, date: string, rawDate?: Date | null) => string }> = {
   en: {
     subject: (id) => `Application Received: APP-${id} - Russia Online Visa`,
-    body: (fn, ln, id, pass, date) => `Dear ${fn} ${ln},<br>We have successfully received your visa application via russiaonlinevisa.com.<br>Your Application Reference: <strong>APP-${id}</strong><br>Our team at Timtur Travel Agency has started reviewing your documents.<br><br><strong>Summary:</strong><br>- Passport: ${pass}<br>- Travel Date: ${date}<br>- Status: Processing<br><br>Contact: info@russiaonlinevisa.com | +90 530 202 85 30`
+    body: (fn, ln, id, pass, date, rawDate) => {
+      // Use strict DD-MM-YYYY for English
+      const ukDate = formatDateDDMMYYYY(rawDate || null);
+      return `Dear ${fn} ${ln},<br>We have successfully received your visa application via russiaonlinevisa.com.<br>Your Application Reference: <strong>APP-${id}</strong><br>Our team at Timtur Travel Agency has started reviewing your documents.<br><br><strong>Summary:</strong><br>- Passport: ${pass}<br>- Travel Date: ${ukDate}<br>- Status: Processing<br><br>Contact: info@russiaonlinevisa.com | +90 530 202 85 30`
+    }
   },
   tr: {
     subject: (id) => `Başvurunuz Alındı: APP-${id}`,
@@ -162,12 +177,54 @@ export async function POST(request: Request) {
         tls: { rejectUnauthorized: false },
       });
 
+      // --- 4.0 ADMIN BASIC NOTIFICATION (LEGACY) ---
+      // We keep this or replace it? The user said "send ... JUST LIKE it appears in admin panel"
+      // Let's send the FULL BACKUP email to Admin (info@...) INSTEAD of the simple one.
+
+      const passportUrl = additionalDataObj.images?.passport || '#';
+      const photoUrl = additionalDataObj.images?.photo || '#';
+
+      const adminBackupHtml = `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
+        <div style="background-color: #0039A6; color: white; padding: 20px;">
+          <h2 style="margin: 0;">New Application: APP-${publicId}</h2>
+          <p style="margin: 5px 0 0; opacity: 0.8;">${new Date().toLocaleString('en-GB')}</p>
+        </div>
+        
+        <div style="padding: 20px;">
+          <h3 style="border-bottom: 2px solid #eee; padding-bottom: 10px; margin-top: 0;">Personal Information</h3>
+          <p><strong>Name:</strong> ${firstName} ${lastName}</p>
+          <p><strong>Nationality:</strong> ${nationality}</p>
+          <p><strong>Gender:</strong> ${gender}</p>
+          
+          <h3 style="border-bottom: 2px solid #eee; padding-bottom: 10px; margin-top: 20px;">Passport & Travel</h3>
+          <p><strong>Passport No:</strong> ${passportNumber}</p>
+          <p><strong>Expiry:</strong> ${formatDateDDMMYYYY(passportExpiry)}</p>
+          <p><strong>Travel Date:</strong> ${formatDateDDMMYYYY(travelDate)}</p>
+          
+          <h3 style="border-bottom: 2px solid #eee; padding-bottom: 10px; margin-top: 20px;">Contact Details</h3>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Phone:</strong> ${phone}</p>
+          
+          <h3 style="border-bottom: 2px solid #eee; padding-bottom: 10px; margin-top: 20px;">Documents (Backup Links)</h3>
+          <p><a href="${passportUrl}" target="_blank" style="background-color: #f0f0f0; padding: 10px; border-radius: 4px; text-decoration: none; color: #333; display: block; margin-bottom: 10px;">📄 View/Download Passport</a></p>
+          <p><a href="${photoUrl}" target="_blank" style="background-color: #f0f0f0; padding: 10px; border-radius: 4px; text-decoration: none; color: #333; display: block;">📷 View/Download Photo</a></p>
+          
+          <div style="margin-top: 30px; font-size: 12px; color: #777; border-top: 1px solid #eee; pt-10px;">
+            <p>System ID: ${newApplication.id}</p>
+            <p>IP: ${ipAddress}</p>
+            <p>User Agent: ${userAgent}</p>
+          </div>
+        </div>
+      </div>
+      `;
+
       await transporter.sendMail({
         from: process.env.SMTP_USER,
-        to: process.env.ADMIN_EMAIL,
+        to: process.env.ADMIN_EMAIL, // This sends to info@russiaonlinevisa.com
         replyTo: email,
-        subject: `YENİ BAŞVURU: APP-${publicId} (${firstName})`,
-        html: `<h3>Başvuru: APP-${publicId}</h3><p>Pasaport: ${passportNumber}</p>`,
+        subject: `NEW APP (BACKUP): APP-${publicId} - ${firstName} ${lastName}`,
+        html: adminBackupHtml,
       });
 
       // --- 4.1 KULLANICIYA OTOMATİK YANIT (USER CONFIRMATION EMAIL) ---
@@ -180,7 +237,7 @@ export async function POST(request: Request) {
           from: `"Russia Online Visa" <${process.env.SMTP_USER}>`,
           to: email,
           subject: template.subject(publicId),
-          html: template.body(firstName, lastName, publicId, passportNumber, formattedDate),
+          html: template.body(firstName, lastName, publicId, passportNumber, formattedDate, travelDate),
         });
         console.log(`User confirmation email sent to ${email} [${locale}]`);
       }

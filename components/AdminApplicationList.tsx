@@ -132,13 +132,16 @@ export default function AdminApplicationList({ applications }: AdminApplicationL
                                     </span>
                                 </td>
                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    {new Date(app.createdAt).toLocaleString('en-GB', {
-                                        day: '2-digit',
-                                        month: '2-digit',
-                                        year: 'numeric',
-                                        hour: '2-digit',
-                                        minute: '2-digit'
-                                    })}
+                                    {(() => {
+                                        if (!app.createdAt) return 'N/A';
+                                        const d = new Date(app.createdAt);
+                                        const day = String(d.getDate()).padStart(2, '0');
+                                        const month = String(d.getMonth() + 1).padStart(2, '0');
+                                        const year = d.getFullYear();
+                                        const hour = String(d.getHours()).padStart(2, '0');
+                                        const min = String(d.getMinutes()).padStart(2, '0');
+                                        return `${day}-${month}-${year} ${hour}:${min}`;
+                                    })()}
                                 </td>
                                 <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                     <button
@@ -266,11 +269,23 @@ export default function AdminApplicationList({ applications }: AdminApplicationL
                                         </div>
                                         <div className="grid grid-cols-3 gap-2 text-sm">
                                             <span className="font-semibold text-gray-700">Expiry:</span>
-                                            <span className="col-span-2">{selectedApp.passportExpiry ? new Date(selectedApp.passportExpiry).toLocaleDateString('en-GB') : 'N/A'}</span>
+                                            <span className="col-span-2">{selectedApp.passportExpiry ? (() => {
+                                                const d = new Date(selectedApp.passportExpiry!);
+                                                const day = String(d.getDate()).padStart(2, '0');
+                                                const month = String(d.getMonth() + 1).padStart(2, '0');
+                                                const year = d.getFullYear();
+                                                return `${day}-${month}-${year}`;
+                                            })() : 'N/A'}</span>
                                         </div>
                                         <div className="grid grid-cols-3 gap-2 text-sm">
                                             <span className="font-semibold text-gray-700">Travel Date:</span>
-                                            <span className="col-span-2">{new Date(selectedApp.travelDate).toLocaleDateString('en-GB')}</span>
+                                            <span className="col-span-2">{(() => {
+                                                const d = new Date(selectedApp.travelDate);
+                                                const day = String(d.getDate()).padStart(2, '0');
+                                                const month = String(d.getMonth() + 1).padStart(2, '0');
+                                                const year = d.getFullYear();
+                                                return `${day}-${month}-${year}`;
+                                            })()}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -345,7 +360,15 @@ export default function AdminApplicationList({ applications }: AdminApplicationL
                                     </div>
                                     <div className="grid grid-cols-12 gap-2 hover:bg-white/5 py-1 rounded">
                                         <div className="col-span-3 text-green-400">
-                                            {new Date(selectedApp.createdAt).toLocaleString('en-GB')}
+                                            {(() => {
+                                                const d = new Date(selectedApp.createdAt);
+                                                const day = String(d.getDate()).padStart(2, '0');
+                                                const month = String(d.getMonth() + 1).padStart(2, '0');
+                                                const year = d.getFullYear();
+                                                const hour = String(d.getHours()).padStart(2, '0');
+                                                const min = String(d.getMinutes()).padStart(2, '0');
+                                                return `${day}-${month}-${year} ${hour}:${min}`;
+                                            })()}
                                         </div>
                                         <div className="col-span-3 text-white">
                                             <span className="text-green-500">✓</span> Privacy Policy
@@ -355,7 +378,15 @@ export default function AdminApplicationList({ applications }: AdminApplicationL
                                     </div>
                                     <div className="grid grid-cols-12 gap-2 hover:bg-white/5 py-1 rounded">
                                         <div className="col-span-3 text-green-400">
-                                            {new Date(selectedApp.createdAt).toLocaleString('en-GB')}
+                                            {(() => {
+                                                const d = new Date(selectedApp.createdAt);
+                                                const day = String(d.getDate()).padStart(2, '0');
+                                                const month = String(d.getMonth() + 1).padStart(2, '0');
+                                                const year = d.getFullYear();
+                                                const hour = String(d.getHours()).padStart(2, '0');
+                                                const min = String(d.getMinutes()).padStart(2, '0');
+                                                return `${day}-${month}-${year} ${hour}:${min}`;
+                                            })()}
                                         </div>
                                         <div className="col-span-3 text-white">
                                             <span className="text-green-500">✓</span> Service Agreement

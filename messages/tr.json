@@ -40,7 +40,8 @@
             "contact": "İletişim",
             "faq": "SSS",
             "privacy": "Gizlilik Politikası",
-            "terms": "Hizmet Sözleşmesi"
+            "terms": "Hizmet Sözleşmesi",
+            "refund": "İade ve İptal Politikası"
         },
         "copyright": "© {year} Russian Online Visa. Tüm hakları saklıdır.",
         "brand": "Timtur Seyahat Acentesi tarafından işletilmektedir."
@@ -406,32 +407,33 @@
                 "list": [
                     "<strong>Devlet Zorunlu Harcı:</strong> Doğrudan Rusya Federasyonu'nun resmi vize sistemine ödenen sabit konsolosluk ücreti.",
                     "<strong>Hizmet ve Danışmanlık Ücreti:</strong> Belge doğrulama, veri girişi, profesyonel destek ve sistem bakımı için Şirket tarafından alınan ücret.",
-                    "<strong>Banka ve İşlem Maliyetleri:</strong> Kredi/banka kartı işlemini işlemek için Ödeme Hizmeti Sağlayıcısı (PSP) tarafından alınan komisyon ücretleri.",
-                    "<strong>Hızlandırılmış Hizmet Ücreti (İsteğe Bağlı):</strong> Yalnızca Kullanıcı \"Hızlı\" veya \"Öncelikli\" işlem seçeneklerini seçerse geçerli olan ek ücretler."
+                    "<strong>Banka ve İşlem Maliyetleri:</strong> Kredi/banka kartı işlemini işlemek için Ödeme Hizmeti Sağlayıcısı (PSP) tarafından alınan komisyon ücretleri."
                 ],
                 "note": "<strong>Ödeme Koşulları:</strong> Toplam tutar tek bir işlemde tahsil edilir. Ödemeyi tamamlayarak, Kullanıcı bu ücret yapısını kabul eder."
             },
             {
                 "id": "5",
                 "title": "İade ve İptal Politikası",
-                "content": "Hizmetin doğası gereği, aşağıdaki iade kuralları kesinlikle uygulanır:",
+                "content": "Hizmetimizin dijital doğası ve anında ifa edilmesi nedeniyle aşağıdaki iade kuralları titizlikle uygulanmaktadır:",
                 "subsections": [
                     {
-                        "title": "Gönüllü İptal Süresi (30 Dakika)",
-                        "text": "Kullanıcı, ödeme yapıldıktan sonraki 30 dakika içinde e-posta yoluyla iptal talebinde bulunursa, tam iade yapılacaktır."
+                        "title": "1. İsteğe Bağlı İptal Süresi (30 Dakika)",
+                        "text": "Kullanıcı, ödeme yaptıktan sonraki 30 dakika içinde e-posta yoluyla iptal talebinde bulunursa, herhangi bir kesinti yapılmaksızın ücretin tamamı (%100) iade edilir."
                     },
                     {
-                        "title": "Cayma Hakkı İstisnası",
-                        "text": "Mesafeli Sözleşmeler Yönetmeliği'nin (R.G.: 27.11.2014, Sayı: 29188) 15 (ğ) Maddesi uyarınca, Cayma Hakkı, \"elektronik ortamda anında ifa edilen hizmetlere ilişkin sözleşmeler\" için geçerli değildir. Şirket, Kullanıcının dosyasını incelemeye başladığında (genellikle ödemeden 30 dakika sonra), hizmet \"ifa edilmiş\" sayılır ve iade yapılamaz."
+                        "title": "2. Cayma Hakkı İstisnası",
+                        "text": "Mesafeli Sözleşmeler Yönetmeliği'nin 15. Maddesi (ğ) bendi (Resmi Gazete: 27.11.2014, Sayı: 29188) uyarınca, \"Elektronik ortamda anında ifa edilen hizmetlere ilişkin sözleşmeler\" Cayma Hakkı kapsamı dışındadır. Uzmanlarımız dosyanızı incelemeye başladığında (bu işlem genellikle ödemeden 30 dakika sonra başlar), hizmet \"ifa edilmiş\" sayılır ve iade yapılamaz."
                     },
                     {
-                        "title": "İade Edilemeyen Devlet Harçları",
-                        "text": "Başvuru Rus makamlarına gönderildikten sonra, vize sonucuna bakılmaksızın Devlet Harcı bileşeni kesinlikle iade edilemez."
+                        "title": "3. İade Edilemez Aşama",
+                        "text": "Başvuru dosyası Rusya Federasyonu makamlarına iletildikten sonra, vize sonucu (onay veya ret) ne olursa olsun ödenen toplam ücret kesinlikle iade edilmez."
                     }
                 ],
                 "endList": [
-                    "<strong>İade Prosedürü:</strong> Tüm iptal talepleri <link>info@russiaonlinevisa.com</link> adresine gönderilmelidir.",
-                    "<strong>Hata Koruması:</strong> Mükerrer tahsilatla sonuçlanan bir sistem hatası durumunda, fazla ödenen tutar tespit edildikten hemen sonra iade edilecektir."
+                    "<strong>4. İade Prosedürü</strong>",
+                    "<strong>Talep:</strong> Tüm iptal talepleri Başvuru Numarası ile birlikte <link>info@russiaonlinevisa.com</link> adresine gönderilmelidir.",
+                    "<strong>Sistem Hataları:</strong> Sistemsel bir hata nedeniyle mükerrer (çift) çekim yapılması durumunda, fazla çekilen tutar tespit edilir edilmez iade edilir.",
+                    "<strong>İşlem Süresi:</strong> Onaylanan iadeler, bankanızın prosedürlerine bağlı olarak 7-14 iş günü içinde kartınıza yansır."
                 ]
             },
             {

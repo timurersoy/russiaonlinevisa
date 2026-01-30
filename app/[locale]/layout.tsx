@@ -138,6 +138,7 @@ export default async function RootLayout({
                                         <ul className="mt-4 space-y-3">
                                             <li><Link href="/policies/personal-data" className="text-sm text-gray-400 hover:text-white transition-colors">{tFooter('links.privacy')}</Link></li>
                                             <li><Link href="/policies/services-agreement" className="text-sm text-gray-400 hover:text-white transition-colors">{tFooter('links.terms')}</Link></li>
+                                            <li><Link href="/policies/services-agreement#refund-policy" className="text-sm text-gray-400 hover:text-white transition-colors">{tFooter('links.refund')}</Link></li>
                                         </ul>
                                     </div>
                                 </div>

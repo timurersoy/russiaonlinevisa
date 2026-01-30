@@ -6,6 +6,7 @@ import { useForm, SubmitHandler, UseFormRegisterReturn } from 'react-hook-form';
 import { ChevronRight, ChevronLeft, CheckCircle, Upload, Info, X, CreditCard } from 'lucide-react';
 import FileUpload from './ui/FileUpload';
 import { useTranslations, useMessages, useLocale } from 'next-intl';
+import { Link } from '@/app/i18n/navigation';
 import PersonalDataContent from './policies/PersonalDataContent';
 import ServicesAgreementContent from './policies/ServicesAgreementContent';
 
@@ -1062,6 +1063,12 @@ export default function InstantApplyForm() {
                                                     <h3 className="text-lg font-bold text-gray-900">{t('review.feeSummary')}</h3>
 
                                                     <div className="space-y-3 text-sm text-gray-600">
+                                                        <label className="flex items-center text-sm leading-relaxed cursor-pointer">
+                                                            <span className="text-gray-700">{t('review.serviceAgree')} </span>
+                                                            <Link href="/policies/services-agreement#refund-policy" target="_blank" className="text-[#D52B1E] font-semibold hover:underline px-1">
+                                                                {t('review.terms')}
+                                                            </Link>
+                                                        </label>
                                                         <div className="flex justify-between items-baseline py-2">
                                                             <span className="text-lg font-bold text-gray-900">{t('review.totalFee')}</span>
                                                             <span className="text-2xl font-bold text-[#0039A6]">$110</span>

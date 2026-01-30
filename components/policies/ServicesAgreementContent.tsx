@@ -80,7 +80,6 @@ export default function ServicesAgreementContent() {
                     <li>{t.rich('sections.3.list.0', { strong: (chunks) => <strong>{chunks}</strong> })}</li>
                     <li>{t.rich('sections.3.list.1', { strong: (chunks) => <strong>{chunks}</strong> })}</li>
                     <li>{t.rich('sections.3.list.2', { strong: (chunks) => <strong>{chunks}</strong> })}</li>
-                    <li>{t.rich('sections.3.list.3', { strong: (chunks) => <strong>{chunks}</strong> })}</li>
                 </ol>
                 <p className="pl-11">
                     {t.rich('sections.3.note', { strong: (chunks) => <strong>{chunks}</strong> })}
@@ -88,7 +87,7 @@ export default function ServicesAgreementContent() {
             </section>
 
             {/* Section 5 */}
-            <section className="mb-10">
+            <section className="mb-10" id="refund-policy">
                 <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-3">
                     <span className="flex items-center justify-center w-8 h-8 rounded-full bg-red-50 text-[#D52B1E] text-sm font-bold">5</span>
                     {t('sections.4.title')}
@@ -108,11 +107,13 @@ export default function ServicesAgreementContent() {
                         <p className="text-sm">{t('sections.4.subsections.2.text')}</p>
                     </div>
                     <ul className="list-disc pl-5 mt-2 space-y-1">
-                        <li>{t.rich('sections.4.endList.0', {
+                        <li>{t.rich('sections.4.endList.0', { strong: (chunks) => <strong>{chunks}</strong> })}</li>
+                        <li>{t.rich('sections.4.endList.1', {
                             strong: (chunks) => <strong>{chunks}</strong>,
                             link: (chunks) => <a href="mailto:info@russiaonlinevisa.com" className="text-[#D52B1E] hover:underline">{chunks}</a>
                         })}</li>
-                        <li>{t.rich('sections.4.endList.1', { strong: (chunks) => <strong>{chunks}</strong> })}</li>
+                        <li>{t.rich('sections.4.endList.2', { strong: (chunks) => <strong>{chunks}</strong> })}</li>
+                        <li>{t.rich('sections.4.endList.3', { strong: (chunks) => <strong>{chunks}</strong> })}</li>
                     </ul>
                 </div>
             </section>

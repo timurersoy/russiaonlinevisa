@@ -20,7 +20,7 @@ export default function Navbar() {
                 onClose={() => setIsCalculatorOpen(false)}
             />
             <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur-md">
-                <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-2 sm:px-4 lg:px-6">
+                <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2">
                         <Image
@@ -34,45 +34,45 @@ export default function Navbar() {
                     </Link>
 
                     {/* Desktop Navigation */}
-                    <nav className="hidden md:flex items-center gap-1 lg:gap-4">
-                        <Link href="/" className="text-xs lg:text-sm font-medium text-gray-700 hover:text-[#0039A6] transition-colors whitespace-nowrap">
+                    <nav className="hidden lg:flex items-center gap-8">
+                        <Link href="/" className="text-sm font-medium text-gray-700 hover:text-[#0039A6] transition-colors whitespace-nowrap">
                             {t('home')}
                         </Link>
                         <button
                             onClick={() => setIsCalculatorOpen(true)}
-                            className="text-xs lg:text-sm font-medium text-gray-700 hover:text-[#0039A6] transition-colors whitespace-nowrap"
+                            className="text-sm font-medium text-gray-700 hover:text-[#0039A6] transition-colors whitespace-nowrap"
                         >
                             {t('calculator')}
                         </button>
-                        <Link href="/instructions" className="text-xs lg:text-sm font-medium text-gray-700 hover:text-[#0039A6] transition-colors whitespace-nowrap">
+                        <Link href="/instructions" className="text-sm font-medium text-gray-700 hover:text-[#0039A6] transition-colors whitespace-nowrap">
                             {t('instructions')}
                         </Link>
-                        <Link href="/faq" className="text-xs lg:text-sm font-medium text-gray-700 hover:text-[#0039A6] transition-colors whitespace-nowrap">
+                        <Link href="/faq" className="text-sm font-medium text-gray-700 hover:text-[#0039A6] transition-colors whitespace-nowrap">
                             {t('faq')}
                         </Link>
-                        <Link href="/services" className="text-xs lg:text-sm font-medium text-gray-700 hover:text-[#0039A6] transition-colors whitespace-nowrap">
+                        <Link href="/services" className="text-sm font-medium text-gray-700 hover:text-[#0039A6] transition-colors whitespace-nowrap">
                             {t('services')}
                         </Link>
-                        <Link href="/contact" className="text-xs lg:text-sm font-medium text-gray-700 hover:text-[#0039A6] transition-colors whitespace-nowrap">
+                        <Link href="/contact" className="text-sm font-medium text-gray-700 hover:text-[#0039A6] transition-colors whitespace-nowrap">
                             {t('contact')}
                         </Link>
-                        <Link href="/about" className="text-xs lg:text-sm font-medium text-gray-700 hover:text-[#0039A6] transition-colors whitespace-nowrap">
+                        <Link href="/about" className="text-sm font-medium text-gray-700 hover:text-[#0039A6] transition-colors whitespace-nowrap">
                             {t('about')}
                         </Link>
                     </nav>
 
                     {/* Desktop Right Actions */}
-                    <div className="hidden lg:flex items-center gap-4">
-                        <div className="flex items-center gap-2">
+                    <div className="hidden lg:flex items-center gap-6">
+                        <div className="flex items-center gap-3">
                             <Link
                                 href="/apply"
-                                className="rounded-md bg-[#D52B1E] px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[#B01F15] transition-all"
+                                className="rounded-md bg-[#D52B1E] px-5 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[#B01F15] transition-all"
                             >
                                 {t('apply')}
                             </Link>
                             <Link
                                 href="/track"
-                                className="rounded-md bg-[#0039A6] px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[#002D80] transition-all"
+                                className="rounded-md bg-[#0039A6] px-5 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[#002D80] transition-all"
                             >
                                 {t('track')}
                             </Link>
@@ -83,8 +83,8 @@ export default function Navbar() {
                         <LanguageSwitcher />
                     </div>
 
-                    {/* Mobile Menu Button */}
-                    <div className="flex md:hidden">
+                    {/* Mobile Menu Button - Visible on screens smaller than lg */}
+                    <div className="flex lg:hidden">
                         <button
                             type="button"
                             onClick={() => setIsOpen(!isOpen)}
@@ -100,9 +100,9 @@ export default function Navbar() {
                     </div>
                 </div>
 
-                {/* Mobile Menu */}
+                {/* Mobile Menu - Visible on screens smaller than lg */}
                 {isOpen && (
-                    <div className="absolute top-16 left-0 w-full border-t border-gray-100 bg-white shadow-xl md:hidden animate-in slide-in-from-top-2 duration-200 z-40">
+                    <div className="absolute top-16 left-0 w-full border-t border-gray-100 bg-white shadow-xl lg:hidden animate-in slide-in-from-top-2 duration-200 z-40">
                         <div className="space-y-1 px-4 pb-6 pt-4">
                             <Link
                                 href="/"

@@ -40,7 +40,8 @@
             "contact": "Contact Us",
             "faq": "FAQ",
             "privacy": "Privacy Policy",
-            "terms": "Services Agreement"
+            "terms": "Services Agreement",
+            "refund": "Refund and Cancellation Policy"
         },
         "copyright": "© {year} Russian Online Visa. All rights reserved.",
         "brand": "Operated by Timtur Travel Agency"
@@ -406,32 +407,33 @@
                 "list": [
                     "<strong>Government Mandated Fee:</strong> The fixed consular fee paid directly to the Russian Federation's official visa system.",
                     "<strong>Service & Consultancy Fee:</strong> The fee charged by the Company for document verification, data entry, professional support, and system maintenance.",
-                    "<strong>Bank & Transaction Costs:</strong> Commission fees charged by the Payment Service Provider (PSP) for processing the credit/debit card transaction.",
-                    "<strong>Expedited Service Fee (Optional):</strong> Additional fees applicable only if the User selects \"Fast\" or \"Priority\" processing options."
+                    "<strong>Bank & Transaction Costs:</strong> Commission fees charged by the Payment Service Provider (PSP) for processing the credit/debit card transaction."
                 ],
                 "note": "<strong>Payment Terms:</strong> The total amount is collected in a single transaction. By completing the payment, the User agrees to this fee structure."
             },
             {
                 "id": "5",
                 "title": "Refund and Cancellation Policy",
-                "content": "Due to the nature of the service, the following refund rules apply strictly:",
+                "content": "Due to the digital and instant nature of our visa consultancy service, the following strict refund rules apply:",
                 "subsections": [
                     {
-                        "title": "Voluntary Cancellation Window (30 Minutes)",
-                        "text": "If the User requests a cancellation via email within 30 minutes of making the payment, a full refund will be issued."
+                        "title": "1. Voluntary Cancellation Window (30 Minutes)",
+                        "text": "If the User requests a cancellation via email within 30 minutes of making the payment, a full refund (100%) will be issued without any questions asked."
                     },
                     {
-                        "title": "Statutory Right of Withdrawal Exception",
-                        "text": "Pursuant to Article 15 (ğ) of the Turkish Distance Contracts Regulation (Official Gazette: 27.11.2014, No: 29188), the Right of Withdrawal does not apply to \"contracts regarding services performed instantly in the electronic environment.\" Once the Company begins reviewing the User's file (which typically occurs 30 minutes after payment), the service is deemed \"performed,\" and no refund can be issued."
+                        "title": "2. Statutory Right of Withdrawal Exception",
+                        "text": "Pursuant to Article 15 (ğ) of the Turkish Distance Contracts Regulation (Official Gazette: 27.11.2014, No: 29188), the legal \"Right of Withdrawal\" does not apply to \"contracts regarding services performed instantly in the electronic environment.\" Once our team begins reviewing the User's file (which automatically occurs 30 minutes after payment), the service is deemed \"performed,\" and no refund can be issued."
                     },
                     {
-                        "title": "Non-Refundable Government Fees",
-                        "text": "Once the application has been submitted to the Russian authorities, the Government Fee component is strictly non-refundable, regardless of the visa outcome."
+                        "title": "3. Non-Refundable Stage",
+                        "text": "Once the application has been submitted to the Russian authorities authorities, the total fee paid is strictly non-refundable, regardless of the visa outcome (approval or rejection) or processing time."
                     }
                 ],
                 "endList": [
-                    "<strong>Refund Procedure:</strong> All cancellation requests must be sent to <link>info@russiaonlinevisa.com</link>.",
-                    "<strong>Error Protection:</strong> In the event of a system error resulting in a duplicate charge, the overpaid amount will be refunded in full immediately upon detection."
+                    "<strong>4. Refund Procedure</strong>",
+                    "<strong>Request:</strong> All cancellation requests must be sent to <link>info@russiaonlinevisa.com</link> with the Application ID.",
+                    "<strong>System Errors:</strong> In the event of a system error resulting in a duplicate charge, the overpaid amount will be refunded in full immediately upon detection.",
+                    "<strong>Processing Time:</strong> Approved refunds will be reflected on the original payment card within 7-14 business days, depending on the bank's procedures."
                 ]
             },
             {
